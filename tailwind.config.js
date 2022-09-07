@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-// const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   mode: 'jit',
@@ -8,12 +8,16 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      wiggle: {
+        '0%, 100%': { transform: 'rotate(-3deg)' },
+        '50%': { transform: 'rotate(3deg)' },
+      },
       width: {
         recaptcha: '304px', // recaptcha width
       },
       fontFamily: {
-        // barlow: ["'Barlow', sans-serif", ...defaultTheme.fontFamily.sans],
-        // redHat: ['Red Hat Display', ...defaultTheme.fontFamily.sans],
+        lato: ['Lato, sans-serif', ...defaultTheme.fontFamily.sans],
+        roboto: ['Roboto, sans-serif', ...defaultTheme.fontFamily.sans],
       },
       minHeight: {
         pageView: 'calc(100vh - 128px)',
@@ -25,6 +29,7 @@ module.exports = {
         base: '1rem',
       },
       letterSpacing: {
+        hero: '0.0rem',
         logo: '0.5rem',
       },
       colors: {
@@ -81,9 +86,16 @@ module.exports = {
       },
       animation: {
         shake: 'shake 1.5s infinite',
+        wiggle: 'wiggle 0.8s infinite',
         menuAppear: 'appear 0.2s 1 ease-in-out forwards',
       },
       keyframes: {
+        wiggle: {
+          '0%': { transform: 'rotate(-16deg)' },
+          '20%': { transform: 'rotate(16deg)' },
+          '40%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
         shake: {
           '0%': { transform: 'translate(2px, 0) rotate(0deg)' },
           '25%': { transform: 'translate(-2px, 0) rotate(1deg)' },

@@ -1,17 +1,17 @@
 {
-  "name": "bask-website",
-  "version": "0.1.0",
+  "name": "odkurza-cz-website",
+  "version": "1.0.0",
   "private": true,
-  "description": "Bask, ekologiczne stroje kąpielowe dla dzieci, projektowanie i produkowane w Polsce.",
+  "description": "Odkurza.cz - wypożyczalnia sprzętu do sprzątania",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sebastian-lucjan/bask.git"
   },
   "bugs": {
-    "url": "https://github.com/sebastian-lucjan/bask/issues"
+    "url": "https://github.com/sebastian-lucjan/odkurza.cz/issues"
   },
-  "homepage": "https://github.com/sebastian-lucjan/bask#readme",
+  "homepage": "https://github.com/sebastian-lucjan/odkurza.cz#readme",
   "author": "ioten.io",
   "license": "ISC",
   "scripts": {
@@ -25,7 +25,8 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@heroicons/react": "^1.0.6",
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^2.0.10",
     "next": "12.2.5",
     "next-seo": "^5.5.0",
     "react": "18.2.0",

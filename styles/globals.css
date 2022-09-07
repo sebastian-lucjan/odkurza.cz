@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Poppins:wght@100;300;400;600&family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,8 +19,9 @@
   }
 
   html {
-    font-family: poppins, sans-serif;
-    font-size: 62.5%;
+    /*font-family: poppins, sans-serif;*/
+    /*font-size: 62.5%;*/
+    font-family: 'Poppins', sans-serif;
   }
 
   body {
