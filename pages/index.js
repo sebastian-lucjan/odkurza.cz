@@ -1,15 +1,24 @@
 import HeadMeta from 'src/HeadMeta';
 import { Popover } from '@headlessui/react';
-import Hero from '../components/Hero';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Pros from '../components/Pros';
-import Equipment from '../components/Equipment';
+import Hero from 'components/Hero';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import Pros from 'components/Pros';
+import Equipment from 'components/Equipment';
+import { NextSeo } from 'next-seo';
+
+const title = '';
+const description = '';
+const ogData = {};
+const canonical = 'https://odkurza.cz';
+
+// todo: DO this => title and desc
 
 export default function Home() {
   return (
     <Popover className="relative bg-white">
       <HeadMeta />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
 
       <Header />
       <Hero />

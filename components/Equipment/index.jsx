@@ -3,7 +3,6 @@ import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import vacuumCleaner from 'public/images/karcher-puzzi.png';
-// import classNames from '../../helpers/classNames';
 
 export default function Equipment() {
   return (

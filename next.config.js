@@ -1,7 +1,22 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-};
 
-module.exports = nextConfig;
+module.exports = () => {
+  const reactStrictMode = true;
+
+  const swcMinify = true;
+
+  // const redirects = () => {
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/lublin',
+  //     },
+  //   ];
+  // };
+
+  return {
+    reactStrictMode,
+    // redirects,
+    swcMinify,
+  };
+};
