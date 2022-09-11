@@ -3,6 +3,8 @@ import { Popover } from '@headlessui/react';
 import Hero from '../components/Hero';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Pros from '../components/Pros';
+import Equipment from '../components/Equipment';
 
 export default function Home() {
   return (
@@ -11,6 +13,11 @@ export default function Home() {
 
       <Header />
       <Hero />
+      <Pros />
+      <Equipment />
+
+      {/* <GoogleMap /> */}
+      {/* <ContactForm /> */}
 
       <Footer />
     </Popover>

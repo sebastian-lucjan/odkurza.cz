@@ -14,10 +14,10 @@ export default function Footer() {
       <div>
         <p className="font-bold">odkurza.cz</p>
         <p>Odkurzacze piorące Lublin</p>
-        <p>
+        <p className="h-[24px] ">
           tel:
           <a href="tel:+48602446335" className="ml-2 inline-flex items-center justify-center underline underline-offset-2 decoration-amber-300">
-            <span>602 446 335</span>
+            <span className="hover:font-bold">602 446 335</span>
           </a>
         </p>
         <p>ul. Skrzetuskiego 8, Lublin</p>
