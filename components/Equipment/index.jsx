@@ -3,11 +3,12 @@ import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import vacuumCleaner from 'public/images/karcher-puzzi.png';
+import Link from 'next/link';
 
 export default function Equipment() {
   return (
-    <div id="equipment" className="mx-auto py-12 flex justify-evenly items-end max-w-7xl px-4 sm:px-6 border-b-2 border-gray-100">
-      <div className="border flex flex-col bg-white border-gray-200 shadow-lg rounded-xl w-[40%]">
+    <div id="equipment" className="mx-auto py-12 flex justify-evenly items-end max-w-7xl  sm:px-6 border-b-2 border-gray-100">
+      <div className="border flex flex-col bg-white border-gray-200 shadow-lg rounded-xl mx-4 tablet:w-[60%] laptop:w-[480px]">
         <div className="m-8">
           <Image className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" src={vacuumCleaner} alt="" />
         </div>
@@ -64,14 +65,6 @@ export default function Equipment() {
                         <p>Wszystkie ceny brutto</p>
                       </div>
                     </div>
-
-                    {/* <Menu.Item> */}
-                    {/*  {({ active }) => ( */}
-                    {/*    <a href="#" className={classNames(active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm')}> */}
-                    {/*      Share */}
-                    {/*    </a> */}
-                    {/*  )} */}
-                    {/* </Menu.Item> */}
                   </div>
                 </Menu.Items>
               </Transition>
@@ -80,6 +73,15 @@ export default function Equipment() {
           <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8 flex justify-center">
             <div>
               CENA: od <span className="text-6xl font-bold decoration-amber-300 underline underline-offset-4">60zł</span> / za dobę
+            </div>
+          </div>
+          <div className="my-5 sm:mt-8 sm:flex sm:justify-center">
+            <div className="rounded-md">
+              <Link href="/kontakt">
+                <a className="flex w-full items-center justify-center rounded-md border border-transparent bg-lime-300 color-black px-8 py-3 text-base font-medium text-black font-black hover:bg-lime-400 md:py-4 md:px-10 md:text-lg shadow-lg">
+                  Wynajmij <span className="text-4xl ml-2">🫧</span>
+                </a>
+              </Link>
             </div>
           </div>
         </div>

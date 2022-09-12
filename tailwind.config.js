@@ -4,7 +4,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -68,16 +68,9 @@ module.exports = {
         400: '400px',
         xs: '480px',
         tablet: '768px',
-        // => @media (min-width: 640px) { ... }
-
         laptop: '1024px',
-        // => @media (min-width: 1024px) { ... }
-
         desktop: '1280px',
-        // => @media (min-width: 1280px) { ... }
-
         desktopLg: '1536px',
-        // => @media (min-width: 1536px) { ... }
 
         tall: { raw: '(min-height: 900px)' },
         tallMobile: { raw: '(orientation: portrait) and (max-width: 500px)' },

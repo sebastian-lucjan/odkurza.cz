@@ -3,11 +3,12 @@ import { Popover, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import vacuumCleaner from 'public/images/karcher-puzzi.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <div className="relative overflow-hidden bg-white">
-      <div className="mx-auto max-w-7xl border-b-2 border-gray-100">
+    <div className="relative laptop:flex justify-between max-w-7xl mx-auto laptop:w-full overflow-hidden bg-white border-b-2 border-gray-100">
+      <div className="mx-auto max-w-7xl">
         <div className="relative z-10 bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
           <Popover>
             <Transition
@@ -37,7 +38,7 @@ export default function Hero() {
 
           <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl tracking-hero">
+              <h1 className="text-4xl laptop:text-5xl desktop:text-6xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl tracking-hero">
                 <span className="block xl:inline font-roboto font-black">Wypożyczalnia</span>{' '}
                 <span className="block text-lime-300 leading-relaxed xl:inline ">odkurzaczy Lublin</span>
               </h1>
@@ -46,28 +47,20 @@ export default function Hero() {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md">
-                  <a
-                    href="#"
+                  <Link
+                    href="/kontakt"
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-lime-300 color-black px-8 py-3 text-base font-medium text-black font-black hover:bg-lime-400 md:py-4 md:px-10 md:text-lg shadow-lg"
                   >
                     Wynajmij
-                  </a>
+                  </Link>
                 </div>
-                {/* <div className="mt-3 sm:mt-0 sm:ml-3"> */}
-                {/*  <a */}
-                {/*    href="#" */}
-                {/*    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-100 px-8 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200 md:py-4 md:px-10 md:text-lg" */}
-                {/*  > */}
-                {/*    Live demo */}
-                {/*  </a> */}
-                {/* </div> */}
               </div>
             </div>
           </main>
         </div>
       </div>
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <Image className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" src={vacuumCleaner} alt="" />
+      <div className="flex justify-center my-8 tablet:my-12 laptop:w-1/2">
+        <Image className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" src={vacuumCleaner} alt="Odkurzacz piorący Karcher" />
       </div>
     </div>
   );
