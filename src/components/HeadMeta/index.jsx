@@ -18,13 +18,13 @@ const HeadMeta = () => {
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
 
-      <meta name="title" content="bask - ekologiczne, Polskie stroje kąpielowe dla dzieci" />
-      <meta name="description" content="Bask, ekologiczne stroje kąpielowe dla dzieci, projektowanie i produkowane w Polsce." />
-      <meta name="keywords" content="bask, ekologiczne stroje kąpielowe dla dzieci, modne stroje kąpielowe dla dzieci" />
+      <meta name="title" content="odkurza.cz - wynajem odkurzaczy piorących Lublin" />
+      <meta name="description" content="odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan lub tapicerkę." />
+      <meta name="keywords" content="odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan lub tapicerkę." />
 
       <meta property="og:locale" content="pl_PL" />
 
-      <title>bask - ekologiczne, Polskie stroje kąpielowe dla dzieci</title>
+      <title>odkurza.cz - wynajem odkurzaczy piorących Lublin</title>
     </Head>
   );
 };

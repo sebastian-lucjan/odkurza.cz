@@ -1,10 +1,10 @@
-import HeadMeta from 'src/HeadMeta';
+import HeadMeta from 'src/components/HeadMeta';
 import { Popover } from '@headlessui/react';
-import Hero from 'components/Hero';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Pros from 'components/Pros';
-import Equipment from 'components/Equipment';
+import Hero from 'src/components/Hero';
+import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
+import Pros from 'src/components/Pros';
+import Equipment from 'src/components/Equipment';
 import { NextSeo } from 'next-seo';
 
 const title = '';
@@ -26,7 +26,7 @@ export default function Home() {
       <Equipment />
 
       {/* <GoogleMap /> */}
-      {/* <ContactForm /> */}
+      {/* <Contact /> */}
 
       <Footer />
     </Popover>
