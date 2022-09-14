@@ -1,6 +1,6 @@
 import { renderToString } from 'react-dom/server';
 import nodemailer from 'nodemailer';
-import EmailTemplate from 'src/components/EmailTemplate';
+import EmailTemplate from 'components/EmailTemplate';
 
 const plainVersionText = (name, companyName, email, description, phoneNumber = 'unknown', from = 'Lublin') => {
   return `Autor wiadomości: ${name}

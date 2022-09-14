@@ -1,10 +1,9 @@
-import HeadMeta from 'src/components/HeadMeta';
-import { Popover } from '@headlessui/react';
-import Hero from 'src/components/Hero';
-import Header from 'src/components/Header';
-import Footer from 'src/components/Footer';
-import Pros from 'src/components/Pros';
-import Equipment from 'src/components/Equipment';
+import HeadMeta from 'components/HeadMeta';
+import Hero from 'components/Hero';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import Pros from 'components/Pros';
+import Equipment from 'components/Equipment';
 import { NextSeo } from 'next-seo';
 
 const title = '';
@@ -16,20 +15,22 @@ const canonical = 'https://odkurza.cz';
 
 export default function Home() {
   return (
-    <Popover className="relative bg-white">
+    <>
       <HeadMeta />
-      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
+      <main className="relative bg-white">
+        <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
 
-      <Header />
-      <Hero />
-      <Pros />
-      <Equipment />
+        <Header />
+        <Hero />
+        <Pros />
+        <Equipment />
 
-      {/* <GoogleMap /> */}
-      {/* <Contact /> */}
+        {/* <GoogleMap /> */}
+        {/* <Contact /> */}
 
-      <Footer />
-    </Popover>
+        <Footer />
+      </main>
+    </>
   );
 }
 
