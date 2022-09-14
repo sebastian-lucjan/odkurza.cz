@@ -8,6 +8,7 @@ const schema = Joi.object({
 });
 
 const validate = async (payload) => {
+  console.log('payload validate->', payload);
   const validateFormContent = await schema.validateAsync(payload);
 
   return validateFormContent;

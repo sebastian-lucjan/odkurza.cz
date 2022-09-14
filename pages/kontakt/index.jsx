@@ -17,8 +17,6 @@ export default function ContactPage() {
 
       <Header />
       <Contact />
-      {/* <Pros /> */}
-      {/* <Equipment /> */}
 
       <Footer />
     </main>
