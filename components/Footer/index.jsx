@@ -30,7 +30,7 @@ export default function Footer() {
       </div>
 
       <Link href="https://www.ioten.io" target="_blank" title="autor strony" rel="noopener noreferrer">
-        <div className="flex pt-2 pb-4 w-full h-full items-end justify-left tablet:pt-4 tablet:pb-0 laptop:pt-0 laptop:w-[unset]">
+        <div className="flex pt-2 pb-4 w-full h-full self-end justify-left tablet:pt-4 tablet:pb-0 laptop:pt-0 laptop:w-[unset]">
           <p className="text-xs text-neutral-400 font-light">Created by</p>
           <div className="relative w-[70px] h-[16px]">
             <Image src={iotenWhiteLogo} priority layout="fill" objectFit="contain" alt="ioten, autor strony internetowej pulire" />
