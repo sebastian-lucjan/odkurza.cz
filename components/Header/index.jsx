@@ -1,11 +1,16 @@
 import Link from 'next/link';
+// import Image from 'next/image';
+// import labelLublin from 'public/images/label-lublin.png';
 
 export default function Header() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
       <div className="flex flex-col laptop:flex-row items-center justify-between border-b-2 border-gray-100 py-6">
-        <div className="text-4xl text-gray-800 font-bold">
+        <div className="relative text-4xl text-gray-800 font-bold">
           <Link href="/">odkurza.cz</Link>
+          {/* <div className="w-[80px] h-[40xp]"> */}
+          {/*  <Image src={labelLublin} priority alt="metka z napisem Lublin" /> */}
+          {/* </div> */}
         </div>
         <nav className="my-8">
           <Link href="/">

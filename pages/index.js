@@ -1,5 +1,4 @@
-import HeadMeta from 'src/HeadMeta';
-import { Popover } from '@headlessui/react';
+import HeadMeta from 'components/HeadMeta';
 import Hero from 'components/Hero';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -16,20 +15,22 @@ const canonical = 'https://odkurza.cz';
 
 export default function Home() {
   return (
-    <Popover className="relative bg-white">
+    <>
       <HeadMeta />
-      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
+      <main className="relative bg-white">
+        <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
 
-      <Header />
-      <Hero />
-      <Pros />
-      <Equipment />
+        <Header />
+        <Hero />
+        <Pros />
+        <Equipment />
 
-      {/* <GoogleMap /> */}
-      {/* <ContactForm /> */}
+        {/* <GoogleMap /> */}
+        {/* <Contact /> */}
 
-      <Footer />
-    </Popover>
+        <Footer />
+      </main>
+    </>
   );
 }
 

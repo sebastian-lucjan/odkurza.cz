@@ -16,9 +16,14 @@ export default function Footer() {
         <p className="font-bold hidden laptop:block">odkurza.cz</p>
         <p>Odkurzacze piorące Lublin</p>
         <p className="h-[24px] ">
+          <a href="mailto:lublin@odkurza.cz" className="inline-flex items-center justify-center underline underline-offset-2 decoration-amber-300">
+            <span className="hover:font-semibold">lublin@odkurza.cz</span>
+          </a>
+        </p>
+        <p className="h-[24px] ">
           tel:
           <a href="tel:+48602446335" className="ml-2 inline-flex items-center justify-center underline underline-offset-2 decoration-amber-300">
-            <span className="hover:font-bold">602 446 335</span>
+            <span className="hover:font-semibold">602 446 335</span>
           </a>
         </p>
         <p>ul. Skrzetuskiego 8, Lublin</p>
