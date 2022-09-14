@@ -44,7 +44,8 @@ export default function Equipment() {
                       <p className="font-bold mr-4 w-[20%]">GRATIS:</p>
                       <div className="w-[80%]">
                         <p>100g proszku w cenie</p>
-                        <p>starcza na około 10-15m2 w zależności od poziomu zabrudzenia.</p>
+                        <p>Taka ilość proszku wystarczy na ok. 10-15m2 w zależności od poziomu zabrudzenia.</p>
+                        <p>Dodatkowe 100g proszku w cenie 5zł.</p>
                       </div>
                     </div>
                     <div className="flex mb-4">
@@ -63,6 +64,13 @@ export default function Equipment() {
                           <p>120zł / dzień</p>
                         </div>
                         <p>Wszystkie ceny brutto</p>
+                      </div>
+                    </div>
+                    <div className="flex mb-4">
+                      <p className="font-bold mr-4 w-[20%]">GRATIS:</p>
+                      <div className="w-[80%]">
+                        <p>100g proszku w cenie</p>
+                        <p>starcza na około 10-15m2 w zależności od poziomu zabrudzenia.</p>
                       </div>
                     </div>
                   </div>
