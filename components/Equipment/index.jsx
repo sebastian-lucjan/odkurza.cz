@@ -3,7 +3,6 @@ import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import vacuumCleaner from 'public/images/karcher-se-5100.jpeg';
-// import vacuumCleaner from 'public/images/karcher-puzzi.png';
 import Link from 'next/link';
 
 export default function Equipment() {
@@ -14,7 +13,7 @@ export default function Equipment() {
           <Image
             className="transition-transform h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full hover:scale-105"
             src={vacuumCleaner}
-            alt=""
+            alt="Odkurzacz piorący z akcesoriami dostępny w wypożyczalni w Lublinie"
           />
         </div>
         <div className="bg-gray-50 pt-6 px-6">
@@ -102,8 +101,8 @@ export default function Equipment() {
           <div className="my-5 sm:mt-8 sm:flex sm:justify-center">
             <div className="rounded-md">
               <Link href="/kontakt">
-                <a className="flex w-full items-center justify-center rounded-md border border-transparent bg-lime-300 color-black px-8 py-3 text-base font-medium text-black font-black hover:bg-lime-400 md:py-4 md:px-10 md:text-lg shadow-lg">
-                  Wynajmij <span className="text-4xl ml-2">🫧</span>
+                <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 color-black px-8 py-3 text-base font-medium text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125">
+                  <p>Wynajmij</p> <span className="text-4xl ml-2">🫧</span>
                 </a>
               </Link>
             </div>
