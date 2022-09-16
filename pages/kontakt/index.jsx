@@ -5,8 +5,8 @@ import Footer from 'components/Footer';
 import Contact from 'components/Contact';
 import Script from 'next/script';
 
-const title = '';
-const description = '';
+const title = 'odkurza.cz - kontakt, wynajem odkurzaczy piorących Lublin';
+const description = 'odkurza.cz, napisz lub zadzwoń i wynajmij odkurzacz piorący Lublin, wyczyść dywan lub tapicerkę.';
 const ogData = {};
 const canonical = 'https://odkurza.cz/kontakt';
 

@@ -1,29 +1,9 @@
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
 import { useState } from 'react';
 import contactData from 'src/data/contactForm';
 import Link from 'next/link';
+import submitFunc from 'utils/submitFunc';
 import FormErrors from '../FormErrors';
-
-export const onSubmit = async (reset, getFormValues, setError) => {
-  try {
-    setError('');
-
-    const payload = getFormValues();
-
-    console.log('payload ->', payload);
-
-    const response = await axios.post('/api/contact', { ...payload }).catch((responseError) => setError(responseError.data.error));
-
-    if (response.status === 200) {
-      // reset form
-      reset();
-    }
-  } catch (error) {
-    console.log('error', error);
-    setError(error);
-  }
-};
 
 export default function ContactForm() {
   const [error, setError] = useState('');
@@ -43,7 +23,7 @@ export default function ContactForm() {
   return (
     <div className="mt-5 md:col-span-2 md:mt-0">
       {isSubmitSuccessful ? (
-        <div className="overflow-hidden h-full flex flex-col justify-between shadow sm:rounded-md bg-white px-4 py-5 sm:p-6">
+        <div className="overflow-hidden h-full flex flex-col justify-between shadow rounded-md bg-white px-4 py-5 sm:p-6">
           <h2 className="text-lg text-green-600 font-semibold text-gray-800 mb-4">Twoja wiadomość została wysłana.</h2>
           <p className="text-sm text-gray-700">Zwykle odpowiadamy maksymalnie w ciągu kilku godzin roboczych.</p>
           <p className="text-sm text-gray-700">Jeśli zależy Ci na czasie zadzwoń do nas.</p>
@@ -54,8 +34,8 @@ export default function ContactForm() {
           </Link>
         </div>
       ) : (
-        <form onSubmit={handleSubmit(() => onSubmit(reset, watch, setError))}>
-          <div className="overflow-hidden shadow sm:rounded-md">
+        <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError))}>
+          <div className="overflow-hidden shadow rounded-md">
             <div className="bg-white px-4 py-5 sm:p-6">
               <div className="grid grid-cols-6 gap-6">
                 <div className="col-span-6 sm:col-span-3">
