@@ -21,6 +21,10 @@ export default function Header() {
             <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Sprzęt</a>
           </Link>
 
+          <Link href="/#faq">
+            <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">FAQ</a>
+          </Link>
+
           <Link href="/kontakt">
             <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Kontakt</a>
           </Link>

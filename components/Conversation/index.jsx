@@ -12,7 +12,7 @@ export default function Conversation() {
   });
 
   return (
-    <section id="text-knowledge" className="mx-auto py-12 flex flex-col max-w-7xl sm:px-6 border-b-2 border-gray-100">
+    <section id="faq" className="mx-auto py-12 flex flex-col max-w-7xl sm:px-6 border-b-2 border-gray-100">
       <div className="mx-4 laptop:mx-20">
         <div className="flex justify-center text-3xl font-semibold text-gray-800">Porozmawiajmy...</div>
         <div className="flex items-center border-b-2 border-gray-100 pb-4 mb-4">

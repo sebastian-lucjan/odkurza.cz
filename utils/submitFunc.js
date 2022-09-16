@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-export default async function submitFunc(reset, getFormValues, setError) {
+export default async function submitFunc(reset, getFormValues, setError, setMessage = {}) {
   try {
     setError('');
 
     const payload = getFormValues();
 
-    console.log('payload ->', payload);
+    setMessage({ ...payload });
+
+    // console.log('payload ->', payload);
 
     const response = await axios.post('/api/contact', { ...payload }).catch((responseError) => setError(responseError.data.error));
 
@@ -15,7 +17,7 @@ export default async function submitFunc(reset, getFormValues, setError) {
       reset();
     }
   } catch (error) {
-    console.log('error', error);
+    // console.log('error', error);
     setError(error);
   }
 }
