@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default async function submitFunc(reset, getFormValues, setError, setMessage = {}) {
+export default async function submitFunc(reset, getFormValues, setError, setMessage = () => {}) {
   try {
     setError('');
 

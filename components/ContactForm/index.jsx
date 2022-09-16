@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import contactData from 'src/data/contactForm';
 import Link from 'next/link';
 import submitFunc from 'utils/submitFunc';
@@ -7,6 +7,7 @@ import FormErrors from '../FormErrors';
 
 export default function ContactForm() {
   const [error, setError] = useState('');
+  const [messageSend, setMessageSend] = useState(false);
 
   const {
     register,
@@ -20,9 +21,19 @@ export default function ContactForm() {
     conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
   } = contactData.form;
 
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      setMessageSend(true);
+    }
+
+    return () => {
+      setMessageSend(false);
+    };
+  }, [isSubmitSuccessful, setMessageSend]);
+
   return (
     <div className="mt-5 md:col-span-2 md:mt-0">
-      {isSubmitSuccessful ? (
+      {messageSend ? (
         <div className="overflow-hidden h-full flex flex-col justify-between shadow rounded-md bg-white px-4 py-5 sm:p-6">
           <h2 className="text-lg text-green-600 font-semibold text-gray-800 mb-4">Twoja wiadomość została wysłana.</h2>
           <p className="text-sm text-gray-700">Zwykle odpowiadamy maksymalnie w ciągu kilku godzin roboczych.</p>
