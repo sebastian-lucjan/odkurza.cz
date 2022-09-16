@@ -1,7 +1,9 @@
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import vacuumCleaner from 'public/images/karcher-puzzi.png';
+import vacuumCleaner from 'public/images/karcher-se-5100.jpeg';
+import { CheckCircleIcon } from '@heroicons/react/20/solid';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -42,13 +44,29 @@ export default function Hero() {
                 <span className="block xl:inline font-roboto font-black">Wypożyczalnia</span>{' '}
                 <span className="block text-lime-300 leading-relaxed xl:inline ">odkurzaczy Lublin</span>
               </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
-                Przed wypożyczeniem sprzętu nie pobieramy żadnej kaucji, potrzebny nam jest tylko Twój podpis pod regulaminem i umową wynajmu.
-              </p>
+              <div className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+                <h3>Zamów odkurzacz piorący w Lublinie i wypierz sam:</h3>
+                <ul className="flex flex-col">
+                  <li className="inline-flex">
+                    <CheckCircleIcon className="w-6 h-6 mr-2 mt-[2px] text-lime-300" />
+                    <p>Wykładziny i dywany</p>
+                  </li>
+                  <li className="inline-flex">
+                    <CheckCircleIcon className="w-6 h-6 mr-2 mt-[2px] text-lime-300" />
+
+                    <p>Sofy, kanapy, fotele</p>
+                  </li>
+                  <li className="inline-flex">
+                    <CheckCircleIcon className="w-6 h-6 mr-2 mt-[2px] text-lime-300" />
+
+                    <p>Tapicerka samochodowa</p>
+                  </li>
+                </ul>
+              </div>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md">
                   <Link href="/kontakt">
-                    <a className="flex w-full items-center justify-center rounded-md border border-transparent bg-lime-300 color-black px-8 py-3 text-base font-medium text-black font-black hover:bg-lime-400 md:py-4 md:px-10 md:text-lg shadow-lg">
+                    <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200  to-lime-400 color-black px-8 py-3 text-base font-medium text-black font-black hover:bg-lime-400 md:py-4 md:px-10 md:text-lg shadow-lg">
                       Wynajmij
                     </a>
                   </Link>

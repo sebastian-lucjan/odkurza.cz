@@ -2,7 +2,8 @@ import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
-import vacuumCleaner from 'public/images/karcher-puzzi.png';
+import vacuumCleaner from 'public/images/karcher-se-5100.jpeg';
+// import vacuumCleaner from 'public/images/karcher-puzzi.png';
 import Link from 'next/link';
 
 export default function Equipment() {
@@ -10,11 +11,15 @@ export default function Equipment() {
     <div id="equipment" className="mx-auto py-12 flex justify-evenly items-end max-w-7xl  sm:px-6 border-b-2 border-gray-100">
       <div className="border flex flex-col bg-white border-gray-200 shadow-lg rounded-xl mx-4 tablet:w-[60%] laptop:w-[480px]">
         <div className="m-8">
-          <Image className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" src={vacuumCleaner} alt="" />
+          <Image
+            className="transition-transform h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full hover:scale-105"
+            src={vacuumCleaner}
+            alt=""
+          />
         </div>
         <div className="bg-gray-50 pt-6 px-6">
           <div className="flex justify-center pb-6 flex flex-col">
-            <p className="text-2xl font-[600]">ODKURZACZ KARCHER PUZZI 10/1</p>
+            <p className="text-2xl font-[600]">ODKURZACZ PIORĄCY KARCHER SE 5.100</p>
             <p className="text-md mt-4">
               Profesjonalne urządzenie do czyszczenie dywanów i wykładzin. Metoda polega na natryskiwaniu silnie skoncentrowanego środka czyszczącego
               i jednoczesnym odsysaniu go wraz z rozpuszczonym brudem, dzięki czemu czyszczona tkanina jest dogłębnie wyprana a czas schnięcia
@@ -43,9 +48,9 @@ export default function Equipment() {
                     <div className="flex mb-4">
                       <p className="font-bold mr-4 w-[20%]">GRATIS:</p>
                       <div className="w-[80%]">
-                        <p>100g proszku w cenie</p>
+                        <p className="font-semibold">100g proszku w cenie</p>
                         <p>Taka ilość proszku wystarczy na ok. 10-15m2 w zależności od poziomu zabrudzenia.</p>
-                        <p>Dodatkowe 100g proszku w cenie 5zł.</p>
+                        <p>Dodatkowe 100g proszku w cenie 10zł.</p>
                       </div>
                     </div>
                     <div className="flex mb-4">
@@ -53,11 +58,11 @@ export default function Equipment() {
                       <div className="w-[80%]">
                         <div className="flex justify-between">
                           <p>Pon. - Czw.:</p>
-                          <p>60zł / dzień</p>
+                          <p className="font-semibold">60zł / dzień</p>
                         </div>
                         <div className="flex justify-between">
                           <p>Pt. - Nd. (weekend):</p>
-                          <p>100zł / dzień</p>
+                          <p>80zł / dzień</p>
                         </div>
                         <div className="flex justify-between">
                           <p>Święta ustawowe:</p>
@@ -67,10 +72,21 @@ export default function Equipment() {
                       </div>
                     </div>
                     <div className="flex mb-4">
-                      <p className="font-bold mr-4 w-[20%]">GRATIS:</p>
+                      <p className="font-bold mr-4 w-[20%]">DOWÓZ:</p>
                       <div className="w-[80%]">
-                        <p>100g proszku w cenie</p>
-                        <p>starcza na około 10-15m2 w zależności od poziomu zabrudzenia.</p>
+                        <p>W granicach Lublina:</p>
+                        <div className="flex justify-between">
+                          <p>Dowóz:</p>
+                          <p>20zł</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <p>Odbiór:</p>
+                          <p>20zł</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <p className="font-semibold">Osobiście:</p>
+                          <p className="font-semibold">0zł</p>
+                        </div>
                       </div>
                     </div>
                   </div>
