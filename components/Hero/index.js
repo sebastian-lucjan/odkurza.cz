@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import vacuumCleaner from 'public/images/karcher-se-5100.jpeg';
+import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 import { CheckCircleIcon } from '@heroicons/react/20/solid';
 
 import Image from 'next/image';

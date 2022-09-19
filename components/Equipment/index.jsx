@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
-import vacuumCleaner from 'public/images/karcher-se-5100.jpeg';
+import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 import Link from 'next/link';
 
 export default function Equipment() {
