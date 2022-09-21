@@ -47,9 +47,9 @@ export default function Equipment() {
                     <div className="flex mb-4">
                       <p className="font-bold mr-4 w-[20%]">GRATIS:</p>
                       <div className="w-[80%]">
-                        <p className="font-semibold">100g proszku w cenie</p>
-                        <p>Taka ilość proszku wystarczy na ok. 10-15m2 w zależności od poziomu zabrudzenia.</p>
-                        <p>Dodatkowe 100g proszku w cenie 10zł.</p>
+                        <p className="font-semibold">100ml środka czyszczącego w cenie</p>
+                        <p>Taka ilość środka czyszczącego wystarczy na ok. 10-15m2 w zależności od poziomu zabrudzenia.</p>
+                        <p>Dodatkowe 100ml środka czyszczącego w cenie 10zł.</p>
                       </div>
                     </div>
                     <div className="flex mb-4">

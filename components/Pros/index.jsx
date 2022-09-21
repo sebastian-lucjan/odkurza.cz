@@ -20,7 +20,7 @@ export default function Pros() {
           <SparklesIcon className="w-20 h-20 mb-2" />
 
           <p className="text-center font-bold">
-            <span className="font-extrabold text-2xl">100g</span> wysokiej jakości proszku w cenie
+            <span className="font-extrabold text-2xl">100ml</span> wysokiej jakości proszku w cenie
           </p>
         </div>
       </Link>
