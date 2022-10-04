@@ -39,7 +39,7 @@ export default function Footer() {
           <div className="relative w-[70px] h-[16px]">
             <Image src={iotenWhiteLogo} priority layout="fill" objectFit="contain" alt="ioten, autor strony internetowej pulire" />
           </div>
-          <p className="text-xs font-bold text-neutral-500 pt-[2px]">ioten.io</p>
+          <p className="text-xs font-bold text-neutral-500 pt-[1px]">ioten.io</p>
         </a>
       </Link>
     </div>

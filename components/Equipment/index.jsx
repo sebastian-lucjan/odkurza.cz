@@ -48,7 +48,7 @@ export default function Equipment() {
                       <p className="font-bold mr-4 w-[20%]">GRATIS:</p>
                       <div className="w-[80%]">
                         <p className="font-semibold">100ml środka czyszczącego w cenie</p>
-                        <p>Taka ilość środka czyszczącego wystarczy na ok. 10-15m2 w zależności od poziomu zabrudzenia.</p>
+                        <p>Taka ilość środka czyszczącego wystarczy na ok. 10m2 w zależności od poziomu zabrudzenia.</p>
                         <p>Dodatkowe 100ml środka czyszczącego w cenie 10zł.</p>
                       </div>
                     </div>
