@@ -155,7 +155,7 @@ export default function Equipment() {
                         </div>
                         <div className="flex justify-between">
                           <div className="flex font-bold text-green-600">
-                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Osobiście:</p>
+                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Odbiór osobisty:</p>
                             <p className="text-xl">*</p>
                           </div>
                           <p className="font-semibold">0zł</p>
