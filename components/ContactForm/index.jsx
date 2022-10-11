@@ -61,7 +61,7 @@ export default function ContactForm() {
                     id="name"
                     autoComplete="name"
                     {...register('name', nameStringConditions)}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
 
@@ -75,7 +75,7 @@ export default function ContactForm() {
                     id="mobile"
                     autoComplete="tel"
                     {...register('mobile', phoneNumberStringConditions)}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
 
@@ -89,7 +89,7 @@ export default function ContactForm() {
                     id="email"
                     autoComplete="email"
                     {...register('email', emailStringConditions)}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
 
@@ -103,7 +103,7 @@ export default function ContactForm() {
                     id="message"
                     rows="6"
                     {...register('message', textareaStringConditions)}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default function ContactForm() {
             <div className="flex justify-end bg-gray-50 px-6 py-3 text-left">
               <button
                 type="submit"
-                className="inline-flex justify-center rounded-md border border-transparent bg-green-600 py-3 w-full laptop:w-[300px] text-md font-semibold text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="inline-flex justify-center rounded-md border border-transparent bg-green-600 py-3 w-full laptop:w-[300px] text-md font-semibold text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
               >
                 {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
               </button>
