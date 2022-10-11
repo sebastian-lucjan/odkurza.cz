@@ -29,10 +29,16 @@ module.exports = (phase) => {
   //   ];
   // };
 
+  const i18n = {
+    locales: ['pl'],
+    defaultLocale: 'pl',
+  };
+
   return {
     env,
     reactStrictMode,
     swcMinify,
+    i18n,
     // redirects,
   };
 };
