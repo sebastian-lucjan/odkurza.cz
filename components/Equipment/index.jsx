@@ -29,6 +29,7 @@ export default function Equipment() {
               <div className="mt-6">
                 <Menu.Button className="inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-100">
                   Szczegółowy <span className="ml-2 font-semibold">CENNIK</span>
+                  <span className="ml-2 animate-wiggle">🔔</span>
                   <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                 </Menu.Button>
               </div>
@@ -147,11 +148,11 @@ export default function Equipment() {
                         <p>W granicach Lublina:</p>
                         <div className="flex justify-between">
                           <p>Dowóz:</p>
-                          <p>20zł</p>
+                          <p>30zł</p>
                         </div>
                         <div className="flex justify-between">
                           <p>Odbiór:</p>
-                          <p>20zł</p>
+                          <p>30zł</p>
                         </div>
                         <div className="flex justify-between">
                           <div className="flex font-bold text-green-600">

@@ -2,12 +2,13 @@ import { renderToString } from 'react-dom/server';
 import nodemailer from 'nodemailer';
 import EmailTemplate from 'components/EmailTemplate';
 
-const plainVersionText = (name, companyName, email, description, phoneNumber = 'unknown', from = 'Lublin') => {
+const plainVersionText = (name, companyName, email, description, phoneNumber = 'unknown', fromType = 'unset', from = 'Lublin') => {
   return `Autor wiadomości: ${name}
   Email podany w formularzu: ${email}
   Numer telefonu: ${phoneNumber}
   Treść wiadomości: ${description}
-  Wiadomość przesłana z: ${from}`;
+  Wiadomość przesłana z formularza: ${fromType}
+  Wiadomość przesłana z miasta: ${from}`;
 };
 
 const transporterProd = nodemailer.createTransport({
@@ -19,8 +20,8 @@ const transporterProd = nodemailer.createTransport({
   },
 });
 
-const sendMessageToIoten = async (name, mobile, email, message, from = 'lublin') => {
-  console.log('sendMessage -> ', name);
+const sendMessageToOdkurzaCz = async (name, mobile, email, message, formType, from = 'lublin') => {
+  // console.log('sendMessage -> ', name);
   // const transporterSelected = process.env.IS_PROD ? transporterProd : transporterProd;
 
   await transporterProd.sendMail({
@@ -28,9 +29,9 @@ const sendMessageToIoten = async (name, mobile, email, message, from = 'lublin')
     to: 'odkurza.cz <info@odkurza.cz>',
     replyTo: `${email}`,
     subject: `✔ odkurza.cz - wiadomość z formularza kontaktowego od "${name}"`,
-    text: plainVersionText(name, email, message),
-    html: renderToString(<EmailTemplate name={name} mobile={mobile} email={email} message={message} from={from} />),
+    text: plainVersionText(name, mobile, email, message, formType, formType, from),
+    html: renderToString(<EmailTemplate name={name} mobile={mobile} email={email} message={message} formType={formType} from={from} />),
   });
 };
 
-export default sendMessageToIoten;
+export default sendMessageToOdkurzaCz;

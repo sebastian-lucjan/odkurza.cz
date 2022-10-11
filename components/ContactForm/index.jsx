@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import contactData from 'src/data/contactForm';
 import Link from 'next/link';
 import submitFunc from 'utils/submitFunc';
-import FormErrors from '../FormErrors';
+import FormErrors from 'components/FormErrors';
 
 export default function ContactForm() {
   const [error, setError] = useState('');
@@ -16,6 +16,8 @@ export default function ContactForm() {
     watch,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
+
+  const formType = 'contact-form';
 
   const {
     conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
@@ -45,7 +47,7 @@ export default function ContactForm() {
           </Link>
         </div>
       ) : (
-        <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError))}>
+        <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType))}>
           <div className="overflow-hidden shadow rounded-md">
             <div className="bg-white px-4 py-5 sm:p-6">
               <div className="grid grid-cols-6 gap-6">

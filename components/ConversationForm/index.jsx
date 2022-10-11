@@ -5,7 +5,7 @@ import submitFunc from 'utils/submitFunc';
 import FormErrors from '../FormErrors';
 import { CustomersIcon } from '../Icons';
 
-export default function ConversationForm({ setMessageSend, setMessage, message = {} }) {
+export default function ConversationForm({ setMessageSend, setMessage, message }) {
   const [error, setError] = useState('');
 
   const {
@@ -15,6 +15,8 @@ export default function ConversationForm({ setMessageSend, setMessage, message =
     watch,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
+
+  const formType = 'conversation-form';
 
   const {
     conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
@@ -71,7 +73,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message =
       ) : (
         <div className="flex flex-row-reverse justify-start items-end my-8 ml-10">
           <CustomersIcon />
-          <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, setMessage))}>
+          <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType, setMessage))}>
             <div className="overflow-hidden shadow bg-gray-50 border border-gray-200 rounded-2xl">
               <div className="px-4 py-5 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
@@ -85,7 +87,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message =
                       id="name"
                       autoComplete="name"
                       {...register('name', nameStringConditions)}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                     />
                   </div>
 
@@ -99,7 +101,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message =
                       id="mobile"
                       autoComplete="tel"
                       {...register('mobile', phoneNumberStringConditions)}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                     />
                   </div>
 
@@ -113,7 +115,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message =
                       id="email"
                       autoComplete="email"
                       {...register('email', emailStringConditions)}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                     />
                   </div>
 
@@ -127,7 +129,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message =
                       id="message"
                       rows="6"
                       {...register('message', textareaStringConditions)}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                     />
                   </div>
                 </div>
@@ -142,7 +144,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message =
               <div className="flex justify-end bg-gray-100 px-6 py-3 text-left">
                 <button
                   type="submit"
-                  className="inline-flex justify-center rounded-md border border-transparent bg-lime-300 text-gray-800 py-3 w-full laptop:w-[300px] text-md font-semibold text-black shadow-sm hover:bg-green-500 focus:outline-none hover:text-white focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="inline-flex justify-center rounded-md border border-transparent bg-lime-300 text-gray-800 py-3 w-full laptop:w-[300px] text-md font-semibold text-black shadow-sm hover:bg-green-500 focus:outline-none hover:text-white focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                 >
                   {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
                 </button>

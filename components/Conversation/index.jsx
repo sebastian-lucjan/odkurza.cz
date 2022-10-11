@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import ConversationForm from '../ConversationForm';
-import { CustomersIcon, FirmIcon } from '../Icons';
+import ConversationForm from 'components/ConversationForm';
+import { CustomersIcon, FirmIcon } from 'components/Icons';
 
 export default function Conversation() {
   const [messageSend, setMessageSend] = useState(false);
@@ -9,6 +9,7 @@ export default function Conversation() {
     mobile: null,
     email: null,
     message: null,
+    formType: 'unset',
   });
 
   return (
