@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import vacuumCleaner from 'public/images/karcher-se-5100.jpeg';
+import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 import { CheckCircleIcon } from '@heroicons/react/20/solid';
 
 import Image from 'next/image';
@@ -66,7 +66,7 @@ export default function Hero() {
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md">
                   <Link href="/kontakt">
-                    <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200  to-lime-400 color-black px-8 py-3 text-base font-medium text-black font-black hover:bg-lime-400 md:py-4 md:px-10 md:text-lg shadow-lg">
+                    <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200  to-lime-400 color-black px-8 py-3 text-base font-medium text-black font-black hover:from-green-400 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg">
                       Wynajmij
                     </a>
                   </Link>

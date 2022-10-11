@@ -21,6 +21,10 @@ export default function Header() {
             <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Sprzęt</a>
           </Link>
 
+          <Link href="/#faq">
+            <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">FAQ</a>
+          </Link>
+
           <Link href="/kontakt">
             <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Kontakt</a>
           </Link>
@@ -28,7 +32,7 @@ export default function Header() {
         <div className="items-center justify-end">
           <a
             href="tel:+48602446335"
-            className="flex items-center justify-center whitespace-nowrap transition-colors rounded-md bg-gradient-to-b from-lime-200 to-lime-400 hover:from-green-300 hover:to-green-400 px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-lime-400"
+            className="flex items-center justify-center whitespace-nowrap transition-colors rounded-md bg-gradient-to-b from-lime-200 to-lime-400 hover:from-green-400 hover:to-green-600 px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-lime-400"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

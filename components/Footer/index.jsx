@@ -29,14 +29,18 @@ export default function Footer() {
         <p>ul. Skrzetuskiego 8, Lublin</p>
       </div>
 
-      <Link href="https://www.ioten.io" target="_blank" title="autor strony" rel="noopener noreferrer">
-        <div className="flex pt-2 pb-4 w-full h-full self-end justify-left tablet:pt-4 tablet:pb-0 laptop:pt-0 laptop:w-[unset]">
+      <Link href="https://www.ioten.io" title="autor strony">
+        <a
+          target="_blank"
+          className="flex pt-2 pb-4 w-full h-full self-end justify-left tablet:pt-4 tablet:pb-0 laptop:pt-0 laptop:w-[unset]"
+          rel="noopener noreferrer"
+        >
           <p className="text-xs text-neutral-600 font-light">Created by</p>
           <div className="relative w-[70px] h-[16px]">
             <Image src={iotenWhiteLogo} priority layout="fill" objectFit="contain" alt="ioten, autor strony internetowej pulire" />
           </div>
-          <p className="text-xs font-bold text-neutral-500 pt-[2px]">ioten.io</p>
-        </div>
+          <p className="text-xs font-bold text-neutral-500 pt-[1px]">ioten.io</p>
+        </a>
       </Link>
     </div>
   );

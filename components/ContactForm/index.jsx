@@ -1,12 +1,13 @@
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import contactData from 'src/data/contactForm';
 import Link from 'next/link';
 import submitFunc from 'utils/submitFunc';
-import FormErrors from '../FormErrors';
+import FormErrors from 'components/FormErrors';
 
 export default function ContactForm() {
   const [error, setError] = useState('');
+  const [messageSend, setMessageSend] = useState(false);
 
   const {
     register,
@@ -16,13 +17,25 @@ export default function ContactForm() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
 
+  const formType = 'contact-form';
+
   const {
     conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
   } = contactData.form;
 
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      setMessageSend(true);
+    }
+
+    return () => {
+      setMessageSend(false);
+    };
+  }, [isSubmitSuccessful, setMessageSend]);
+
   return (
     <div className="mt-5 md:col-span-2 md:mt-0">
-      {isSubmitSuccessful ? (
+      {messageSend ? (
         <div className="overflow-hidden h-full flex flex-col justify-between shadow rounded-md bg-white px-4 py-5 sm:p-6">
           <h2 className="text-lg text-green-600 font-semibold text-gray-800 mb-4">Twoja wiadomość została wysłana.</h2>
           <p className="text-sm text-gray-700">Zwykle odpowiadamy maksymalnie w ciągu kilku godzin roboczych.</p>
@@ -34,7 +47,7 @@ export default function ContactForm() {
           </Link>
         </div>
       ) : (
-        <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError))}>
+        <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType))}>
           <div className="overflow-hidden shadow rounded-md">
             <div className="bg-white px-4 py-5 sm:p-6">
               <div className="grid grid-cols-6 gap-6">
@@ -48,7 +61,7 @@ export default function ContactForm() {
                     id="name"
                     autoComplete="name"
                     {...register('name', nameStringConditions)}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
 
@@ -62,7 +75,7 @@ export default function ContactForm() {
                     id="mobile"
                     autoComplete="tel"
                     {...register('mobile', phoneNumberStringConditions)}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
 
@@ -76,7 +89,7 @@ export default function ContactForm() {
                     id="email"
                     autoComplete="email"
                     {...register('email', emailStringConditions)}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
 
@@ -90,7 +103,7 @@ export default function ContactForm() {
                     id="message"
                     rows="6"
                     {...register('message', textareaStringConditions)}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
               </div>
@@ -105,7 +118,7 @@ export default function ContactForm() {
             <div className="flex justify-end bg-gray-50 px-6 py-3 text-left">
               <button
                 type="submit"
-                className="inline-flex justify-center rounded-md border border-transparent bg-green-600 py-3 w-full laptop:w-[300px] text-md font-semibold text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="inline-flex justify-center rounded-md border border-transparent bg-green-600 py-3 w-full laptop:w-[300px] text-md font-semibold text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
               >
                 {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
               </button>
