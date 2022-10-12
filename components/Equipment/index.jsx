@@ -85,7 +85,7 @@ export default function Equipment() {
                           <p className="w-1/5">200ml</p>
                           <ul className="w-3/5">
                             <li>- Kanapa 3os.</li>
-                            <li>- Fotel</li>
+                            <li>- Pufa</li>
                           </ul>
                           <p className="w-1/5 font-semibold">10zł</p>
                         </div>
@@ -93,7 +93,7 @@ export default function Equipment() {
                           <p className="w-1/5">300ml</p>
                           <ul className="w-3/5">
                             <li>- Kanapa 3os.</li>
-                            <li>- Fotel x2</li>
+                            <li>- Fotel</li>
                             <li>
                               - Dywanik 4m<sup>2</sup>
                             </li>
@@ -104,7 +104,7 @@ export default function Equipment() {
                           <p className="w-1/5">400ml</p>
                           <ul className="w-3/5">
                             <li>- Kanapa 4os.</li>
-                            <li>- Fotel x2</li>
+                            <li>- Fotel</li>
                             <li>
                               - Dywan/wykładzina 10m<sup>2</sup>
                             </li>
