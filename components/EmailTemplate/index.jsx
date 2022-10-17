@@ -24,7 +24,7 @@ const EmailTemplate = ({ name, mobile = 'unknown', email, message, formType, fro
       <hr />
       <footer>
         <p>
-          <i>Ta wiadomość została wysłana z formularza kontaktowego na stronie ioten.io</i>
+          <i>Ta wiadomość została wysłana z formularza kontaktowego na stronie odkurza.cz</i>
         </p>
         <p>
           <i>Zachowaj ostrożność w stosunku do załączonych linków bądź treści.</i>
