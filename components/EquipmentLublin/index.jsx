@@ -4,8 +4,15 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 import Link from 'next/link';
+import { pricesLublin } from 'data/pricesList';
 
-export default function Equipment() {
+export default function EquipmentLublin() {
+  const {
+    dayRenting: { smallPrice, mediumPrice, biggestPrice },
+    cleaner,
+    delivery: { toCustomer, fromCustomer },
+  } = pricesLublin;
+
   return (
     <div id="equipment" className="mx-auto py-12 flex justify-evenly items-end max-w-7xl  sm:px-6 border-b-2 border-gray-100">
       <div className="border flex flex-col bg-white border-gray-200 shadow-lg rounded-xl mx-4 tablet:w-[60%] laptop:w-[480px]">
@@ -50,18 +57,18 @@ export default function Equipment() {
                       <div className="w-[80%]">
                         <div className="flex justify-between">
                           <p>Pon. - Czw.:</p>
-                          <p className="font-semibold">60zł / dzień</p>
+                          <p className="font-semibold">{smallPrice} / dzień</p>
                         </div>
                         <div className="flex justify-between">
                           <div className="flex font-bold text-green-600">
                             <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Pt. - Nd. (weekend):</p>
                             <p className="text-xl">*</p>
                           </div>
-                          <p>80zł / dzień</p>
+                          <p>{mediumPrice} / dzień</p>
                         </div>
                         <div className="flex justify-between">
                           <p>Święta ustawowe:</p>
-                          <p>120zł / dzień</p>
+                          <p>{biggestPrice} / dzień</p>
                         </div>
                       </div>
                     </div>
@@ -87,7 +94,7 @@ export default function Equipment() {
                             <li>- Kanapa 3os.</li>
                             <li>- Pufa</li>
                           </ul>
-                          <p className="w-1/5 font-semibold">10zł</p>
+                          <p className="w-1/5 font-semibold">{cleaner[200]}zł</p>
                         </div>
                         <div className="flex justify-between border-t border-gray-100">
                           <p className="w-1/5">300ml</p>
@@ -98,7 +105,7 @@ export default function Equipment() {
                               - Dywanik 4m<sup>2</sup>
                             </li>
                           </ul>
-                          <p className="w-1/5 font-semibold">18zł</p>
+                          <p className="w-1/5 font-semibold">{cleaner[300]}zł</p>
                         </div>
                         <div className="flex justify-between border-t border-gray-100">
                           <p className="w-1/5">400ml</p>
@@ -109,11 +116,11 @@ export default function Equipment() {
                               - Dywan/wykładzina 10m<sup>2</sup>
                             </li>
                           </ul>
-                          <p className="w-1/5 font-semibold">26zł</p>
+                          <p className="w-1/5 font-semibold">{cleaner[400]}zł</p>
                         </div>
                         <div className="flex justify-between border-t border-gray-100">
                           <div className="flex font-bold text-green-600 w-1/5">
-                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">600ml</p>
+                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">{cleaner[600]}ml</p>
                             <p className="text-xl">*</p>
                           </div>
                           <ul className="w-3/5">
@@ -132,7 +139,7 @@ export default function Equipment() {
                             <li>- jw.</li>
                             <li>- Zabrudzenia wymagające użycia większej ilości środka czyszczącego</li>
                           </ul>
-                          <p className="w-1/5 font-semibold">50zł</p>
+                          <p className="w-1/5 font-semibold">{cleaner[1000]}zł</p>
                         </div>
                         <div className="flex justify-between border-t border-gray-100">
                           <p className="font-semibold text-[10px] text-gray-700">
@@ -148,11 +155,11 @@ export default function Equipment() {
                         <p>W granicach Lublina:</p>
                         <div className="flex justify-between">
                           <p>Dowóz:</p>
-                          <p>30zł</p>
+                          <p>{toCustomer}zł</p>
                         </div>
                         <div className="flex justify-between">
                           <p>Odbiór:</p>
-                          <p>30zł</p>
+                          <p>{fromCustomer}zł</p>
                         </div>
                         <div className="flex justify-between">
                           <div className="flex font-bold text-green-600">
@@ -179,7 +186,7 @@ export default function Equipment() {
           </div>
           <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8 flex justify-center">
             <div>
-              CENA: od <span className="text-6xl font-bold decoration-amber-300 underline underline-offset-4">60zł</span> / za dobę
+              CENA: od <span className="text-6xl font-bold decoration-amber-300 underline underline-offset-4">{smallPrice}zł</span> / za dobę
             </div>
           </div>
           <div className="my-5 sm:mt-8 sm:flex sm:justify-center">

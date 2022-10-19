@@ -3,13 +3,15 @@ import Hero from 'components/Hero';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Pros from 'components/Pros';
-import Equipment from 'components/Equipment';
+import Equipment from 'components/EquipmentLublin';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
 import Conversation from 'components/Conversation';
+import Link from 'next/link';
 
-const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
-const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
+const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin i Wrocław';
+const description =
+  'odkurza.cz, wynajem odkurzaczy piorących w Lublinie i Wrocławiu, wypożycz odkurzacz i wyczyść dywan, wykładzinę oraz tapicerkę samochodową.';
 const ogData = {};
 const canonical = 'https://odkurza.cz';
 
@@ -31,6 +33,27 @@ export default function Home() {
 
       <main className="relative bg-white">
         <Header />
+
+        {/* <PolishMap/> */}
+        <div className="my-5 sm:mt-8 sm:flex sm:justify-center">
+          <div className="rounded-md">
+            <Link href="/lublin">
+              <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-blue-200 to-lime-400 color-black px-8 py-3 text-base font-medium text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125">
+                <p>Lublin</p> <span className="text-4xl ml-2">🫧</span>
+              </a>
+            </Link>
+          </div>
+        </div>
+
+        <div className="my-5 sm:mt-8 sm:flex sm:justify-center">
+          <div className="rounded-md">
+            <Link href="/wroclaw">
+              <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 color-black px-8 py-3 text-base font-medium text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125">
+                <p>Wroclaw</p> <span className="text-4xl ml-2">🫧</span>
+              </a>
+            </Link>
+          </div>
+        </div>
 
         <Hero />
 

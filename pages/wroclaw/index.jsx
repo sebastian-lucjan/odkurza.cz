@@ -3,18 +3,17 @@ import Hero from 'components/Hero';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Pros from 'components/Pros';
-import Equipment from 'components/EquipmentLublin';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
 import Conversation from 'components/Conversation';
-import { pricesLublin } from '../../data/pricesList';
+import EquipmentWroclaw from 'components/EquipmentWroclaw';
 
-const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
-const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
+const title = 'odkurza.cz - wynajem odkurzaczy piorących Wrocław';
+const description = 'odkurza.cz, wynajem odkurzaczy piorących we Wrocławiu, wypożycz odkurzacz i wyczyść wykładzinę, dywan, tapicerkę samochodową.';
 const ogData = {};
-const canonical = 'https://odkurza.cz/lublin';
+const canonical = 'https://odkurza.cz/wroclaw';
 
-export default function Lublin() {
+export default function Wroclaw() {
   return (
     <>
       <HeadMeta />
@@ -33,15 +32,15 @@ export default function Lublin() {
       <main className="relative bg-white">
         <Header />
 
-        <Hero city="Lublin" color="#BEF264" />
+        <Hero city="Wrocław" color="#F63A34" />
 
-        <Pros />
+        <Pros city="Wrocław" />
 
-        <Equipment pricesList={pricesLublin} />
+        <EquipmentWroclaw />
 
-        <Conversation />
+        <Conversation city="Wrocław" />
 
-        <Footer />
+        <Footer city="Wrocław" />
       </main>
     </>
   );
