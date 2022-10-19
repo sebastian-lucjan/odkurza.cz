@@ -2,26 +2,26 @@ import Link from 'next/link';
 // import Image from 'next/image';
 // import labelLublin from 'public/images/label-lublin.png';
 
-export default function Header() {
+export default function HeaderLublin() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
       <div className="flex flex-col laptop:flex-row items-center justify-between border-b-2 border-gray-100 py-6">
         <div className="relative text-4xl text-gray-800 font-bold">
-          <Link href="/">odkurza.cz</Link>
+          <Link href="/pages">odkurza.cz</Link>
           {/* <div className="w-[80px] h-[40xp]"> */}
           {/*  <Image src={labelLublin} priority alt="metka z napisem Lublin" /> */}
           {/* </div> */}
         </div>
         <nav className="my-8">
-          <Link href="/">
+          <Link href="/pages">
             <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Home</a>
           </Link>
 
-          <Link href="/#equipment">
+          <Link href="/pages#equipment">
             <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Sprzęt</a>
           </Link>
 
-          <Link href="/#faq">
+          <Link href="/pages#faq">
             <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">FAQ</a>
           </Link>
 

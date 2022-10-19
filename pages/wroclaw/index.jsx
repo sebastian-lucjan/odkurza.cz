@@ -1,12 +1,12 @@
 import HeadMeta from 'components/HeadMeta';
-import Hero from 'components/Hero';
-import Header from 'components/Header';
+import HeroWroclaw from 'components/Wroclaw/Hero';
 import Footer from 'components/Footer';
-import Pros from 'components/Pros';
+import Pros from 'components/Wroclaw/Pros';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
 import Conversation from 'components/Conversation';
-import EquipmentWroclaw from 'components/EquipmentWroclaw';
+import EquipmentWroclaw from 'components/Wroclaw/Equipment';
+import HeaderWroclaw from 'components/Wroclaw/Header';
 
 const title = 'odkurza.cz - wynajem odkurzaczy piorących Wrocław';
 const description = 'odkurza.cz, wynajem odkurzaczy piorących we Wrocławiu, wypożycz odkurzacz i wyczyść wykładzinę, dywan, tapicerkę samochodową.';
@@ -30,15 +30,15 @@ export default function Wroclaw() {
       </Script>
 
       <main className="relative bg-white">
-        <Header />
+        <HeaderWroclaw />
 
-        <Hero city="Wrocław" color="#F63A34" />
+        <HeroWroclaw />
 
-        <Pros city="Wrocław" />
+        <Pros />
 
         <EquipmentWroclaw />
 
-        <Conversation city="Wrocław" />
+        <Conversation />
 
         <Footer city="Wrocław" />
       </main>

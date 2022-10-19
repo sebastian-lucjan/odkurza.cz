@@ -7,7 +7,7 @@ import { CheckCircleIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Hero({ city }) {
+export default function HeroLublin() {
   return (
     <div className="relative laptop:flex justify-between max-w-7xl mx-auto laptop:w-full overflow-hidden bg-white border-b-2 border-gray-100">
       <div className="mx-auto max-w-7xl">
@@ -42,7 +42,7 @@ export default function Hero({ city }) {
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl laptop:text-4xl desktop:text-5xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl tracking-hero">
                 <span className="block xl:inline font-roboto font-black">Wypożyczalnia</span>{' '}
-                <span className="block text-blue-500 leading-relaxed xl:inline">odkurzaczy {city}</span>
+                <span className="block text-sky-500 leading-relaxed xl:inline">odkurzaczy Lublin</span>
               </h1>
               <div className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
                 <h3>Zamów odkurzacz piorący w Lublinie i wypierz sam:</h3>

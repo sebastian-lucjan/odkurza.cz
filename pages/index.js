@@ -1,9 +1,9 @@
 import HeadMeta from 'components/HeadMeta';
-import Hero from 'components/Hero';
-import Header from 'components/Header';
+import Hero from 'components/Lublin/Hero';
+import Header from 'components/Lublin/Header';
 import Footer from 'components/Footer';
-import Pros from 'components/Pros';
-import Equipment from 'components/EquipmentLublin';
+import Pros from 'components/Lublin/Pros';
+import Equipment from 'components/Lublin/Equipment';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
 import Conversation from 'components/Conversation';
@@ -38,7 +38,7 @@ export default function Home() {
         <div className="my-5 sm:mt-8 sm:flex sm:justify-center">
           <div className="rounded-md">
             <Link href="/lublin">
-              <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-blue-200 to-lime-400 color-black px-8 py-3 text-base font-medium text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125">
+              <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-sky-200 to-lime-400 color-black px-8 py-3 text-base font-medium text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125">
                 <p>Lublin</p> <span className="text-4xl ml-2">🫧</span>
               </a>
             </Link>

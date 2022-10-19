@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 import HeadMeta from 'components/HeadMeta';
-import Header from 'components/Header';
+import Header from 'components/Lublin/Header';
 import Footer from 'components/Footer';
 import Contact from 'components/Contact';
 import Script from 'next/script';
