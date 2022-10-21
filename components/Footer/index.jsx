@@ -2,31 +2,41 @@ import Image from 'next/image';
 import iotenWhiteLogo from 'public/ioten-logo-white-small.png';
 import Link from 'next/link';
 
-export default function Footer() {
+export default function Footer({ cityObj }) {
+  const { cityName, mail, mobile, address } = cityObj;
+
+  const mainColor = cityName === 'Lublin' ? 'lime' : 'sky';
+
   return (
     <div className="mx-auto py-12 flex flex-col laptop:flex-row justify-between max-w-7xl px-4 sm:px-6">
       <div className="pb-4 laptop:pb-0">
         <p className="font-bold">odkurza.cz</p>
-        <p>Wypożyczalnia odkurzaczy Lublin</p>
+        <p>Wypożyczalnia odkurzaczy {cityName}</p>
         <p>Wynajmij, posprzątaj i oddaj...</p>
-        <p>Miej problem z głowy i miejsce w domu.</p>
+        {cityName === 'Lublin' ? <p>Miej problem z głowy i wolne miejsce w domu.</p> : <p>Bez kaucji, 7 dni w tygodniu.</p>}
       </div>
 
       <div className="py-4 laptop:pt-0 laptop:pb-0">
         <p className="font-bold hidden laptop:block">odkurza.cz</p>
-        <p>Odkurzacze piorące Lublin</p>
+        <p>Odkurzacze piorące {cityName}</p>
         <p className="h-[24px] ">
-          <a href="mailto:lublin@odkurza.cz" className="inline-flex items-center justify-center underline underline-offset-2 decoration-amber-300">
-            <span className="hover:font-semibold">lublin@odkurza.cz</span>
+          <a
+            href={`mailto:${mail}`}
+            className={`inline-flex items-center justify-center underline underline-offset-2 decoration-2 decoration-${mainColor}-300`}
+          >
+            <span className="hover:font-semibold">{mail}</span>
           </a>
         </p>
         <p className="h-[24px] ">
           tel:
-          <a href="tel:+48602446335" className="ml-2 inline-flex items-center justify-center underline underline-offset-2 decoration-amber-300">
-            <span className="hover:font-semibold">602 446 335</span>
+          <a
+            href={`tel:+48${mobile}`}
+            className={`ml-2 inline-flex items-center justify-center underline underline-offset-2 decoration-2 decoration-${mainColor}-300`}
+          >
+            <span className="hover:font-semibold">{mobile}</span>
           </a>
         </p>
-        <p>ul. Skrzetuskiego 8, Lublin</p>
+        <p>{address}</p>
       </div>
 
       <Link href="https://www.ioten.io" title="autor strony">

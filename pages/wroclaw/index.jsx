@@ -1,21 +1,21 @@
 import HeadMeta from 'components/HeadMeta';
-import HeaderLublin from 'components/Lublin/Header';
+import HeroWroclaw from 'components/Wroclaw/Hero';
 import Footer from 'components/Footer';
-import Pros from 'components/Lublin/Pros';
-import Equipment from 'components/Equipment';
+import Pros from 'components/Wroclaw/Pros';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
 import Conversation from 'components/Conversation';
-import HeroLublin from 'components/Lublin/Hero';
-import { pricesLublin } from 'data/pricesList';
+import Equipment from 'components/Equipment';
+import HeaderWroclaw from 'components/Wroclaw/Header';
+import { pricesWroclaw } from 'data/pricesList';
 import cityData from 'data/citiesData';
 
-const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
-const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
+const title = 'odkurza.cz - wynajem odkurzaczy piorących Wrocław';
+const description = 'odkurza.cz, wynajem odkurzaczy piorących we Wrocławiu, wypożycz odkurzacz i wyczyść wykładzinę, dywan, tapicerkę samochodową.';
 const ogData = {};
-const canonical = 'https://odkurza.cz';
+const canonical = 'https://odkurza.cz/wroclaw';
 
-export default function Lublin() {
+export default function Wroclaw() {
   return (
     <>
       <HeadMeta />
@@ -27,22 +27,22 @@ export default function Lublin() {
           function gtag(){window.dataLayer.push(arguments);} 
           gtag('js', new Date()); 
 
-          gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}'); 
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
         `}
       </Script>
 
       <main className="relative bg-white">
-        <HeaderLublin />
+        <HeaderWroclaw />
 
-        <HeroLublin />
+        <HeroWroclaw />
 
         <Pros />
 
-        <Equipment city="Lublin" prices={pricesLublin} />
+        <Equipment city="Wrocław" prices={pricesWroclaw} />
 
-        <Conversation lublin />
+        <Conversation />
 
-        <Footer cityObj={cityData.lublin} />
+        <Footer cityObj={cityData.wroclaw} />
       </main>
     </>
   );
