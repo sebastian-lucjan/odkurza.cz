@@ -5,8 +5,10 @@ import Pros from 'components/Wroclaw/Pros';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
 import Conversation from 'components/Conversation';
-import EquipmentWroclaw from 'components/Wroclaw/Equipment';
+import Equipment from 'components/Equipment';
 import HeaderWroclaw from 'components/Wroclaw/Header';
+import { pricesWroclaw } from 'data/pricesList';
+import cityData from 'data/citiesData';
 
 const title = 'odkurza.cz - wynajem odkurzaczy piorących Wrocław';
 const description = 'odkurza.cz, wynajem odkurzaczy piorących we Wrocławiu, wypożycz odkurzacz i wyczyść wykładzinę, dywan, tapicerkę samochodową.';
@@ -25,7 +27,7 @@ export default function Wroclaw() {
           function gtag(){window.dataLayer.push(arguments);} 
           gtag('js', new Date()); 
 
-          gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}'); 
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
         `}
       </Script>
 
@@ -36,11 +38,11 @@ export default function Wroclaw() {
 
         <Pros />
 
-        <EquipmentWroclaw />
+        <Equipment city="Wrocław" prices={pricesWroclaw} />
 
         <Conversation />
 
-        <Footer city="Wrocław" />
+        <Footer cityObj={cityData.wroclaw} />
       </main>
     </>
   );

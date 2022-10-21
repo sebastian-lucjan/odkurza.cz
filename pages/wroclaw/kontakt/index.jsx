@@ -1,20 +1,17 @@
-import HeadMeta from 'components/HeadMeta';
-import HeaderLublin from 'components/Lublin/Header';
-import Footer from 'components/Footer';
-import Pros from 'components/Lublin/Pros';
-import Equipment from 'components/Lublin/Equipment';
 import { NextSeo } from 'next-seo';
+import HeadMeta from 'components/HeadMeta';
+import Header from 'components/Wroclaw/Header';
+import Footer from 'components/Footer';
+import ContactWroclaw from 'components/Wroclaw/Contact';
 import Script from 'next/script';
-import Conversation from 'components/Conversation';
-import HeroLublin from 'components/Lublin/Hero';
-import { pricesLublin } from 'data/pricesList';
+import cityData from 'data/citiesData';
 
-const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
-const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
+const title = 'odkurza.cz - kontakt, wynajem odkurzaczy piorących Wrocław';
+const description = 'odkurza.cz, wynajmij odkurzacz piorący Wrocław, wyczyść dywan lub tapicerkę w samochodzie.';
 const ogData = {};
-const canonical = 'https://odkurza.cz/lublin';
+const canonical = 'https://odkurza.cz/wroclaw/kontakt';
 
-export default function Lublin() {
+export default function ContactPage() {
   return (
     <>
       <HeadMeta />
@@ -29,19 +26,11 @@ export default function Lublin() {
           gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}'); 
         `}
       </Script>
-
       <main className="relative bg-white">
-        <HeaderLublin />
+        <Header />
+        <ContactWroclaw />
 
-        <HeroLublin />
-
-        <Pros />
-
-        <Equipment pricesList={pricesLublin} />
-
-        <Conversation lublin />
-
-        <Footer />
+        <Footer cityObj={cityData.wroclaw} />
       </main>
     </>
   );

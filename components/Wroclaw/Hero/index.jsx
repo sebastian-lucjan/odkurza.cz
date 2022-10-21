@@ -45,27 +45,27 @@ export default function HeroWroclaw() {
                 <span className="block text-sky-500 leading-relaxed xl:inline">odkurzaczy Wrocław</span>
               </h1>
               <div className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
-                <h3>Zamów odkurzacz piorący w Lublinie i wypierz sam:</h3>
+                <h3>Wypożycz odkurzacz piorący we Wrocławiu i wypierz sam:</h3>
                 <ul className="flex flex-col">
                   <li className="inline-flex">
                     <CheckCircleIcon className="w-6 h-6 mr-2 mt-[2px] text-sky-500" />
-                    <p>Wykładziny i dywany</p>
+                    <p>Dywany i wykładziny</p>
                   </li>
                   <li className="inline-flex">
                     <CheckCircleIcon className="w-6 h-6 mr-2 mt-[2px] text-sky-500" />
 
-                    <p>Sofy, kanapy, fotele</p>
+                    <p>Kanapy, sofy, fotele</p>
                   </li>
                   <li className="inline-flex">
                     <CheckCircleIcon className="w-6 h-6 mr-2 mt-[2px] text-sky-500" />
 
-                    <p>Tapicerka samochodowa</p>
+                    <p>Tapicerka i dywaniki samochodowe</p>
                   </li>
                 </ul>
               </div>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md">
-                  <Link href="/kontakt">
+                  <Link href="/wroclaw/kontakt">
                     <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-sky-400 to-sky-600 color-black px-8 py-3 text-base font-medium text-white font-black hover:from-green-400 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg">
                       Wynajmij
                     </a>

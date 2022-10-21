@@ -17,6 +17,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message, 
   } = useForm();
 
   const formType = 'conversation-form';
+  const city = lublin ? 'Lublin' : 'Wrocław';
 
   const {
     conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
@@ -73,7 +74,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message, 
       ) : (
         <div className="flex flex-row-reverse justify-start items-end my-8 ml-10">
           <CustomersIcon />
-          <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType, setMessage))}>
+          <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType, city, setMessage))}>
             <div className="overflow-hidden shadow bg-gray-50 border border-gray-200 rounded-2xl">
               <div className="px-4 py-5 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">

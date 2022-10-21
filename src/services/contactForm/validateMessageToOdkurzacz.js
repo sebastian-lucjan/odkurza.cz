@@ -5,7 +5,8 @@ const schema = Joi.object({
   mobile: Joi.string().min(3).max(40).allow(''),
   email: Joi.string().email().min(6).max(60).required(),
   message: Joi.string().min(3).max(2000).required(),
-  formType: Joi.string().valid('conversation-form', 'contact-form', 'unset'),
+  formType: Joi.string().valid('conversation-form', 'contact-form', 'unset').required(),
+  city: Joi.string().valid('Lublin', 'Wrocław', 'unset').required(),
 });
 
 const validate = async (payload) => {

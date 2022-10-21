@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ConversationForm from 'components/ConversationForm';
 import { CustomersIcon, FirmIcon } from 'components/Icons';
 
-export default function Conversation({ lublin }) {
+export default function Conversation({ lublin = false }) {
   const [messageSend, setMessageSend] = useState(false);
   const [message, setMessage] = useState({
     name: null,
@@ -10,6 +10,7 @@ export default function Conversation({ lublin }) {
     email: null,
     message: null,
     formType: 'unset',
+    city: 'unset',
   });
 
   return (
@@ -17,7 +18,7 @@ export default function Conversation({ lublin }) {
       <div className="mx-4 laptop:mx-20">
         <div className="flex justify-center text-3xl font-semibold text-gray-800">Porozmawiajmy...</div>
         <div className="flex items-center border-b-2 border-gray-100 pb-4 mb-4">
-          <FirmIcon iconSize={60} bubblesSize="4xl" />
+          <FirmIcon iconSize={60} bubblesSize="4xl" lublin={lublin} />
           <h2 className="ml-4 text-2xl font-semibold text-gray-800">odkurza.cz</h2>
         </div>
 
@@ -34,8 +35,8 @@ export default function Conversation({ lublin }) {
               lublin ? 'from-lime-200 to-lime-300' : 'from-sky-200 to-sky-300'
             } max-w-[60%] rounded-2xl px-4 py-2 text-black shadow-md`}
           >
-            Wypożyczalnia odkurzaczy piorących z Lublina <span className="font-semibold">odkurza.cz</span> ma dla Was profesjonalne odkurzacze znanej
-            firmy <span className="font-semibold">Karcher</span> wraz z dostosowanym środkiem piorącym.
+            Wypożyczalnia odkurzaczy piorących{lublin ? ' z Lublina' : null} <span className="font-semibold">odkurza.cz</span> ma dla Ciebie
+            profesjonalne odkurzacze znanej firmy <span className="font-semibold">Karcher</span> wraz ze środkiem piorącym Karcher.
           </p>
         </div>
 
@@ -103,7 +104,11 @@ export default function Conversation({ lublin }) {
         {messageSend ? (
           <div className="flex items-start mr-10 items-end my-4">
             <FirmIcon iconSize={32} bubblesSize="xl" lublin={lublin} />
-            <p className="ml-4 bg-gradient-to-b from-lime-200 max-w-[60%] to-lime-300 rounded-2xl px-4 py-2 text-black shadow-md">
+            <p
+              className={`ml-4 bg-gradient-to-b ${
+                lublin ? 'from-lime-200 to-lime-300' : 'from-sky-200 to-sky-300'
+              } max-w-[60%] rounded-2xl px-4 py-2 text-black shadow-md`}
+            >
               Dzięki za wiadomość <span className="font-semibold">{message.name}</span>. Odpiszemy w ciągu kilku godzin roboczych. Jeśli zależy Ci na
               czasie zapraszamy do kontaktu telefonicznego.
             </p>

@@ -13,15 +13,15 @@ export default function HeaderLublin() {
           {/* </div> */}
         </div>
         <nav className="my-8">
-          <Link href="/pages">
+          <Link href="/">
             <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Home</a>
           </Link>
 
-          <Link href="/pages#equipment">
+          <Link href="/#equipment">
             <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Sprzęt</a>
           </Link>
 
-          <Link href="/pages#faq">
+          <Link href="/#faq">
             <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">FAQ</a>
           </Link>
 

@@ -7,7 +7,7 @@ export function FirmIcon({ iconSize, bubblesSize, lublin }) {
         lublin ? 'from-lime-100 to-lime-400' : 'from-sky-200 to-sky-400'
       } w-[${iconSize}px] h-[${iconSize}px] px-2 py-2 rounded-full text-${bubblesSize} ml-2 shadow-md`}
     >
-      <span className="brightness-150">🫧</span>
+      <span className={`brightness-${lublin ? '100' : '150'}`}>🫧</span>
     </div>
   );
 }

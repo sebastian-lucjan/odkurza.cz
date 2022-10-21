@@ -40,9 +40,9 @@ export default function HeroLublin() {
 
           <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl laptop:text-4xl desktop:text-5xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl tracking-hero">
+              <h1 className="text-4xl laptop:text-5xl desktop:text-6xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl tracking-hero">
                 <span className="block xl:inline font-roboto font-black">Wypożyczalnia</span>{' '}
-                <span className="block text-sky-500 leading-relaxed xl:inline">odkurzaczy Lublin</span>
+                <span className="block text-lime-400 leading-relaxed xl:inline">odkurzaczy Lublin</span>
               </h1>
               <div className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
                 <h3>Zamów odkurzacz piorący w Lublinie i wypierz sam:</h3>

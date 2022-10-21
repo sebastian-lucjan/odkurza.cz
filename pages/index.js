@@ -1,21 +1,21 @@
 import HeadMeta from 'components/HeadMeta';
-import Hero from 'components/Lublin/Hero';
-import Header from 'components/Lublin/Header';
+import HeaderLublin from 'components/Lublin/Header';
 import Footer from 'components/Footer';
 import Pros from 'components/Lublin/Pros';
-import Equipment from 'components/Lublin/Equipment';
+import Equipment from 'components/Equipment';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
 import Conversation from 'components/Conversation';
-import Link from 'next/link';
+import HeroLublin from 'components/Lublin/Hero';
+import { pricesLublin } from 'data/pricesList';
+import cityData from 'data/citiesData';
 
-const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin i Wrocław';
-const description =
-  'odkurza.cz, wynajem odkurzaczy piorących w Lublinie i Wrocławiu, wypożycz odkurzacz i wyczyść dywan, wykładzinę oraz tapicerkę samochodową.';
+const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
+const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
 const ogData = {};
 const canonical = 'https://odkurza.cz';
 
-export default function Home() {
+export default function Lublin() {
   return (
     <>
       <HeadMeta />
@@ -32,38 +32,17 @@ export default function Home() {
       </Script>
 
       <main className="relative bg-white">
-        <Header />
+        <HeaderLublin />
 
-        {/* <PolishMap/> */}
-        <div className="my-5 sm:mt-8 sm:flex sm:justify-center">
-          <div className="rounded-md">
-            <Link href="/lublin">
-              <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-sky-200 to-lime-400 color-black px-8 py-3 text-base font-medium text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125">
-                <p>Lublin</p> <span className="text-4xl ml-2">🫧</span>
-              </a>
-            </Link>
-          </div>
-        </div>
-
-        <div className="my-5 sm:mt-8 sm:flex sm:justify-center">
-          <div className="rounded-md">
-            <Link href="/wroclaw">
-              <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 color-black px-8 py-3 text-base font-medium text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125">
-                <p>Wroclaw</p> <span className="text-4xl ml-2">🫧</span>
-              </a>
-            </Link>
-          </div>
-        </div>
-
-        <Hero />
+        <HeroLublin />
 
         <Pros />
 
-        <Equipment />
+        <Equipment city="Lublin" prices={pricesLublin} />
 
-        <Conversation />
+        <Conversation lublin />
 
-        <Footer />
+        <Footer cityObj={cityData.lublin} />
       </main>
     </>
   );
