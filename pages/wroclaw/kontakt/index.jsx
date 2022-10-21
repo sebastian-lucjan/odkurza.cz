@@ -1,15 +1,15 @@
 import { NextSeo } from 'next-seo';
 import HeadMeta from 'components/HeadMeta';
-import Header from 'components/Lublin/Header';
+import Header from 'components/Wroclaw/Header';
 import Footer from 'components/Footer';
-import Contact from 'components/Contact';
+import ContactWroclaw from 'components/Wroclaw/Contact';
 import Script from 'next/script';
 import cityData from 'data/citiesData';
 
-const title = 'odkurza.cz - kontakt, wynajem odkurzaczy piorących Lublin';
-const description = 'odkurza.cz, napisz lub zadzwoń i wynajmij odkurzacz piorący Lublin, wyczyść dywan lub tapicerkę.';
+const title = 'odkurza.cz - kontakt, wynajem odkurzaczy piorących Wrocław';
+const description = 'odkurza.cz, wynajmij odkurzacz piorący Wrocław, wyczyść dywan lub tapicerkę w samochodzie.';
 const ogData = {};
-const canonical = 'https://odkurza.cz/kontakt';
+const canonical = 'https://odkurza.cz/wroclaw/kontakt';
 
 export default function ContactPage() {
   return (
@@ -28,9 +28,9 @@ export default function ContactPage() {
       </Script>
       <main className="relative bg-white">
         <Header />
-        <Contact />
+        <ContactWroclaw />
 
-        <Footer cityObj={cityData.lublin} />
+        <Footer cityObj={cityData.wroclaw} />
       </main>
     </>
   );

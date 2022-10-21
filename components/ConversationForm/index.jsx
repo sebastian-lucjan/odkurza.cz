@@ -5,7 +5,7 @@ import submitFunc from 'utils/submitFunc';
 import FormErrors from '../FormErrors';
 import { CustomersIcon } from '../Icons';
 
-export default function ConversationForm({ setMessageSend, setMessage, message }) {
+export default function ConversationForm({ setMessageSend, setMessage, message, lublin }) {
   const [error, setError] = useState('');
 
   const {
@@ -17,6 +17,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
   } = useForm();
 
   const formType = 'conversation-form';
+  const city = lublin ? 'Lublin' : 'Wrocław';
 
   const {
     conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
@@ -73,7 +74,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
       ) : (
         <div className="flex flex-row-reverse justify-start items-end my-8 ml-10">
           <CustomersIcon />
-          <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType, setMessage))}>
+          <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType, city, setMessage))}>
             <div className="overflow-hidden shadow bg-gray-50 border border-gray-200 rounded-2xl">
               <div className="px-4 py-5 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
@@ -144,7 +145,9 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
               <div className="flex justify-end bg-gray-100 px-6 py-3 text-left">
                 <button
                   type="submit"
-                  className="inline-flex justify-center rounded-md border border-transparent bg-lime-300 text-gray-800 py-3 w-full laptop:w-[300px] text-md font-semibold text-black shadow-sm hover:bg-green-500 focus:outline-none hover:text-white focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                  className={`inline-flex justify-center rounded-md border border-transparent ${
+                    lublin ? 'bg-lime-300' : 'bg-lime-300'
+                  } text-gray-800 py-3 w-full laptop:w-[300px] text-md font-semibold text-black shadow-sm hover:bg-green-500 focus:outline-none hover:text-white focus:ring-2 focus:ring-green-500 focus:ring-offset-2`}
                 >
                   {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
                 </button>
