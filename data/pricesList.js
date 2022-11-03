@@ -29,9 +29,9 @@ export const pricesWroclaw = {
     100: 0,
     200: 10,
     300: 18,
-    400: 24,
-    600: 32,
-    1000: 50,
+    400: 26,
+    600: 40,
+    1000: 60,
   },
   delivery: {
     toCustomer: 30,
