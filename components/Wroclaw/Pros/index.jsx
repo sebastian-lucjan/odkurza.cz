@@ -14,7 +14,7 @@ export default function Pros() {
       </Link>
 
       <Link href="/wroclaw/kontakt">
-        <div className="w-60 h-60 tablet:w-[220px] tablet:h-[220px] bg-sky-500 rounded-full flex flex-col justify-center items-center cursor-pointer">
+        <div className="w-60 h-60 tablet:w-[220px] tablet:h-[220px] bg-sky-500 rounded-full flex flex-col justify-center items-center cursor-pointer mb-10 tablet:mb-0">
           <HandThumbUpIcon className="w-20 h-20 mb-2" />
 
           <p className="text-center font-bold">

@@ -2,15 +2,15 @@ export const pricesLublin = {
   dayRenting: {
     smallPrice: 60,
     mediumPrice: 80,
-    biggestPrice: 120,
+    biggestPrice: 100,
   },
   cleaner: {
     100: 0,
-    200: 10,
-    300: 18,
+    200: 8,
+    300: 16,
     400: 24,
-    600: 32,
-    1000: 50,
+    600: 40,
+    1000: 64,
   },
   delivery: {
     toCustomer: 30,
@@ -28,14 +28,14 @@ export const pricesWroclaw = {
   cleaner: {
     100: 0,
     200: 10,
-    300: 18,
-    400: 26,
-    600: 40,
-    1000: 60,
+    300: 20,
+    400: 30,
+    600: 50,
+    1000: 80,
   },
   delivery: {
-    toCustomer: 30,
-    fromCustomer: 30,
+    toCustomer: 40,
+    fromCustomer: 40,
     inPerson: 0,
   },
 };
