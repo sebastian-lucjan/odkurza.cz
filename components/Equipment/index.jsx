@@ -17,8 +17,6 @@ export default function Equipment({ city, prices }) {
     delivery: { toCustomer, fromCustomer },
   } = prices;
 
-  console.log(mainColor(city));
-
   return (
     <div id="equipment" className="mx-auto py-12 flex justify-evenly items-end max-w-7xl  sm:px-6 border-b-2 border-gray-100">
       <div className="border flex flex-col bg-white border-gray-200 shadow-lg rounded-xl mx-4 tablet:w-[60%] laptop:w-[480px]">
@@ -154,7 +152,7 @@ export default function Equipment({ city, prices }) {
                     <div className="flex mb-4 border-b-4 pb-2 border-gray-100">
                       <p className="font-bold mr-4 w-1/4">DOWÓZ:</p>
                       <div className="w-[80%]">
-                        <p>W granicach Wrocławia:</p>
+                        <p>W granicach {city === 'Lublin' ? 'Lublina' : 'Wrocławia'}:</p>
                         <div className="flex justify-between">
                           <p>Dowóz:</p>
                           <p>{toCustomer}zł</p>

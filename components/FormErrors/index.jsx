@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 
 export default function FormErrors({ errors, errorServ, conversation }) {
-  console.log(Object.values(errors));
+  // console.log(Object.values(errors));
 
   return (
     <div>
