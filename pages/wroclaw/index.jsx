@@ -19,7 +19,7 @@ export default function Wroclaw() {
   return (
     <>
       <HeadMeta />
-      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {` 
