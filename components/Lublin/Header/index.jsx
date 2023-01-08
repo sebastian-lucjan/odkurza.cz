@@ -1,6 +1,4 @@
 import Link from 'next/link';
-// import Image from 'next/image';
-// import labelLublin from 'public/images/label-lublin.png';
 
 export default function HeaderLublin() {
   return (
