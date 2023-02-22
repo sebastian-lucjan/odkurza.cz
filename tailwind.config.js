@@ -34,7 +34,7 @@ module.exports = {
       colors: {
         black: 'hsl(0, 0%, 15%)',
         lublin: '#BEF264',
-        wroclaw: '#F63A34',
+        // wroclaw: '#F63A34',
         // blue: 'hsl(213, 99%, 39%)',
         // blueLight: 'hsl(222, 83%, 77%)',
         // darkestGray: 'hsl(0, 0%, 22%)',

@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import iotenWhiteLogo from 'public/ioten-logo-white-small.png';
 import Link from 'next/link';
+import cityData from 'data/citiesData';
 
-export default function Footer({ cityObj }) {
-  const { cityName, mail, mobile, address } = cityObj;
-
-  const mainColor = cityName === 'Lublin' ? 'lime' : 'sky';
+export default function Footer() {
+  const { cityName, mail, mobile, address } = cityData;
 
   return (
     <div className="mx-auto py-12 flex flex-col laptop:flex-row justify-between max-w-7xl px-4 sm:px-6">
@@ -22,7 +21,7 @@ export default function Footer({ cityObj }) {
         <p className="h-[24px] ">
           <a
             href={`mailto:${mail}`}
-            className={`inline-flex items-center justify-center underline underline-offset-2 decoration-2 decoration-${mainColor}-300`}
+            className="inline-flex items-center justify-center underline underline-offset-2 decoration-2 decoration-lime-300"
           >
             <span className="hover:font-semibold">{mail}</span>
           </a>
@@ -31,7 +30,7 @@ export default function Footer({ cityObj }) {
           tel:
           <a
             href={`tel:+48${mobile}`}
-            className={`ml-2 inline-flex items-center justify-center underline underline-offset-2 decoration-2 decoration-${mainColor}-300`}
+            className="ml-2 inline-flex items-center justify-center underline underline-offset-2 decoration-2 decoration-lime-300"
           >
             <span className="hover:font-semibold">{mobile}</span>
           </a>

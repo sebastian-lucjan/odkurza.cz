@@ -1,29 +1,38 @@
 import HeadMeta from 'components/HeadMeta';
-import HeaderLublin from 'components/Lublin/Header';
+import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Pros from 'components/Lublin/Pros';
+import Pros from 'components/Pros';
 import Equipment from 'components/Equipment';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
 import Conversation from 'components/Conversation';
-import HeroLublin from 'components/Lublin/Hero';
-import { pricesLublin } from 'data/pricesList';
-import cityData from 'data/citiesData';
+import Hero from 'components/Hero';
+import { prices } from 'data/pricesList';
 
 const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
 const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
 const ogData = {};
 const canonical = 'https://odkurza.cz';
 
-export default function Lublin() {
+export default function Page() {
+  const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
+
   return (
     <>
       <HeadMeta />
-      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={canonical}
+        openGraph={ogData}
+        noindex={noRobotsCondition}
+        nofollow={noRobotsCondition}
+      />
+
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {` 
-          window.dataLayer = window.dataLayer || []; 
+          window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);} 
           gtag('js', new Date()); 
 
@@ -32,17 +41,17 @@ export default function Lublin() {
       </Script>
 
       <main className="relative bg-white">
-        <HeaderLublin />
+        <Header />
 
-        <HeroLublin />
+        <Hero />
 
         <Pros />
 
-        <Equipment city="Lublin" prices={pricesLublin} />
+        <Equipment prices={prices} />
 
-        <Conversation lublin />
+        <Conversation />
 
-        <Footer cityObj={cityData.lublin} />
+        <Footer />
       </main>
     </>
   );
