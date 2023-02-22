@@ -1,10 +1,9 @@
 import { NextSeo } from 'next-seo';
 import HeadMeta from 'components/HeadMeta';
-import Header from 'components/Lublin/Header';
+import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Contact from 'components/Contact';
 import Script from 'next/script';
-import cityData from 'data/citiesData';
 
 const title = 'odkurza.cz - kontakt, wynajem odkurzaczy piorących Lublin';
 const description = 'odkurza.cz, napisz lub zadzwoń i wynajmij odkurzacz piorący Lublin, wyczyść dywan lub tapicerkę.';
@@ -30,7 +29,7 @@ export default function ContactPage() {
         <Header />
         <Contact />
 
-        <Footer cityObj={cityData.lublin} />
+        <Footer />
       </main>
     </>
   );

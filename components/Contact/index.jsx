@@ -1,5 +1,4 @@
 import ContactForm from 'components/ContactForm';
-import cityData from 'data/citiesData';
 
 export default function Contact() {
   return (
@@ -36,7 +35,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <ContactForm city={cityData.lublin.cityName} />
+          <ContactForm />
         </div>
       </div>
     </div>

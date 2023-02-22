@@ -4,9 +4,8 @@ import contactData from 'src/data/contactForm';
 import Link from 'next/link';
 import submitFunc from 'utils/submitFunc';
 import FormErrors from 'components/FormErrors';
-import cityData from '../../data/citiesData';
 
-export default function ContactForm({ city }) {
+export default function ContactForm() {
   const [error, setError] = useState('');
   const [messageSend, setMessageSend] = useState(false);
 
@@ -23,6 +22,8 @@ export default function ContactForm({ city }) {
   const {
     conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
   } = contactData.form;
+
+  const city = 'Lublin';
 
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -41,7 +42,7 @@ export default function ContactForm({ city }) {
           <h2 className="text-lg text-green-600 font-semibold text-gray-800 mb-4">Twoja wiadomość została wysłana.</h2>
           <p className="text-sm text-gray-700">Zwykle odpowiadamy maksymalnie w ciągu kilku godzin roboczych.</p>
           <p className="text-sm text-gray-700">Jeśli zależy Ci na czasie zadzwoń do nas.</p>
-          <Link href={`${city === cityData.lublin.cityName ? '/' : '/wroclaw'}`}>
+          <Link href="/">
             <a className="mt-4 text-md font-medium underline underline-offset-[5px] text-gray-700 hover:text-green-600 cursor-pointer">
               Wróć do strony głównej
             </a>
