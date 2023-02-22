@@ -14,11 +14,21 @@ const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz
 const ogData = {};
 const canonical = 'https://odkurza.cz';
 
-export default function Lublin() {
+export default function Page() {
+  const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
+
   return (
     <>
       <HeadMeta />
-      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={canonical}
+        openGraph={ogData}
+        noindex={noRobotsCondition}
+        nofollow={noRobotsCondition}
+      />
+
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {` 
