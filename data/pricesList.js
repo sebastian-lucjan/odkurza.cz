@@ -6,15 +6,15 @@ export const prices = {
   },
   cleaner: {
     100: 0,
-    200: 8,
-    300: 16,
-    400: 24,
-    600: 40,
-    1000: 64,
+    200: 10,
+    300: 20,
+    400: 28,
+    600: 44,
+    1000: 66,
   },
   delivery: {
-    toCustomer: 30,
-    fromCustomer: 30,
+    toCustomer: 35,
+    fromCustomer: 35,
     inPerson: 0,
   },
 };
