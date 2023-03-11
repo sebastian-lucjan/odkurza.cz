@@ -8,6 +8,7 @@ import Script from 'next/script';
 import Conversation from 'components/Conversation';
 import Hero from 'components/Hero';
 import { prices } from 'data/pricesList';
+import AdditionalInfo from 'components/AdditionalInfo';
 
 const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
 const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
@@ -50,6 +51,8 @@ export default function Page() {
         <Equipment prices={prices} />
 
         <Conversation />
+
+        <AdditionalInfo />
 
         <Footer />
       </main>
