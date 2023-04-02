@@ -9,14 +9,36 @@ import Conversation from 'components/Conversation';
 import Hero from 'components/Hero';
 import { prices } from 'data/pricesList';
 import AdditionalInfo from 'components/AdditionalInfo';
+import { getContent } from 'src/services/cms/getContent';
+import InfoBar from 'components/InfoBar';
 
 const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
 const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
 const ogData = {};
 const canonical = 'https://odkurza.cz';
 
-export default function Page() {
+export async function getStaticProps() {
+  const infoBar = await getContent('infoBar');
+
+  return {
+    props: {
+      infoBar,
+    },
+  };
+}
+
+export default function Page({ infoBar }) {
   const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
+
+  const infoBarData = infoBar[0]?.fields;
+
+  console.log('infoBarData: ', infoBarData);
+
+  const isInfoBarVisible = () => {
+    const visibleCondition = infoBarData?.isVisible === true;
+
+    return visibleCondition;
+  };
 
   return (
     <>
@@ -42,6 +64,8 @@ export default function Page() {
       </Script>
 
       <main className="relative bg-white">
+        {isInfoBarVisible() && <InfoBar infoBarData={infoBarData} />}
+
         <Header />
 
         <Hero />
@@ -59,3 +83,5 @@ export default function Page() {
     </>
   );
 }
+
+// todo: 404 page
