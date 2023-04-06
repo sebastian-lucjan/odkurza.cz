@@ -56,18 +56,18 @@ export default function Equipment({ prices }) {
                       <div className="w-[80%]">
                         <div className="flex justify-between">
                           <p>Pon. - Czw.:</p>
-                          <p className="font-semibold">{smallPrice} / dzień</p>
+                          <p className="font-semibold">{smallPrice} zł / dzień</p>
                         </div>
                         <div className="flex justify-between">
                           <div className="flex font-bold text-black">
                             <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Pt. - Nd. (weekend):</p>
                             <p className="text-xl">*</p>
                           </div>
-                          <p>{mediumPrice} / dzień</p>
+                          <p>{mediumPrice} zł / dzień</p>
                         </div>
                         <div className="flex justify-between">
                           <p>Święta ustawowe:</p>
-                          <p>{biggestPrice} / dzień</p>
+                          <p>{biggestPrice} zł / dzień</p>
                         </div>
                       </div>
                     </div>
