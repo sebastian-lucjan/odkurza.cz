@@ -9,8 +9,9 @@ import Conversation from 'components/Conversation';
 import Hero from 'components/Hero';
 import { prices } from 'data/pricesList';
 import AdditionalInfo from 'components/AdditionalInfo';
-import { getContent } from 'src/services/cms/getContent';
 import InfoBar from 'components/InfoBar';
+import { getContent } from 'src/services/cms/getContent';
+// import BaseLayout from '../components/BaseLayout';
 
 const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
 const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
@@ -27,17 +28,19 @@ export async function getStaticProps() {
   };
 }
 
-export default function Page({ infoBar }) {
+export default function Page({ infoBar = [{ fields: { isVisible: false, turnOffDate: '2021-05-06' } }] }) {
   const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
 
-  const infoBarData = infoBar[0]?.fields;
-
-  console.log('infoBarData: ', infoBarData);
+  const infoBarData = infoBar[0].fields;
+  const { isVisible, turnOffDate } = infoBarData;
 
   const isInfoBarVisible = () => {
-    const visibleCondition = infoBarData?.isVisible === true;
+    const visibleCondition = isVisible === true;
 
-    return visibleCondition;
+    const nowDate = new Date();
+    const validUntilDate = new Date(turnOffDate);
+
+    return visibleCondition && nowDate < validUntilDate;
   };
 
   return (
@@ -63,6 +66,7 @@ export default function Page({ infoBar }) {
         `}
       </Script>
 
+      {/* <BaseLayout infoBar={infoBar}> */}
       <main className="relative bg-white">
         {isInfoBarVisible() && <InfoBar infoBarData={infoBarData} />}
 
@@ -80,8 +84,7 @@ export default function Page({ infoBar }) {
 
         <Footer />
       </main>
+      {/* </BaseLayout> */}
     </>
   );
 }
-
-// todo: 404 page

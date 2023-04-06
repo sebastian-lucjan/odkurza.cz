@@ -2,6 +2,18 @@ import 'styles/globals.css';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
+// export async function getStaticProps() {
+//   const infoBar = await getContent('infoBar');
+//
+//   return {
+//     props: {
+//       infoBar,
+//     },
+//   };
+// }
+
+// todo: can i use it here ?
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
@@ -20,7 +32,13 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.events]);
 
-  return <Component {...pageProps} />;
+  return (
+    // <PageContext>
+    <Component {...pageProps} />
+    // </PageContext>
+  );
 }
+
+// todo: add Wrapper with context for InfoBar visibility
 
 export default MyApp;
