@@ -2,7 +2,7 @@ export const prices = {
   dayRenting: {
     smallPrice: 60,
     mediumPrice: 80,
-    biggestPrice: 100,
+    biggestPrice: 90,
   },
   cleaner: {
     100: 0,
@@ -13,8 +13,8 @@ export const prices = {
     1000: 66,
   },
   delivery: {
-    toCustomer: 35,
-    fromCustomer: 35,
+    toCustomer: 40,
+    fromCustomer: 40,
     inPerson: 0,
   },
 };
