@@ -7,11 +7,9 @@ import { NextSeo } from 'next-seo';
 import Script from 'next/script';
 import Conversation from 'components/Conversation';
 import Hero from 'components/Hero';
-import { prices } from 'data/pricesList';
 import AdditionalInfo from 'components/AdditionalInfo';
 import InfoBar from 'components/InfoBar';
 import { getContent } from 'src/services/cms/getContent';
-// import BaseLayout from '../components/BaseLayout';
 
 const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
 const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
@@ -20,19 +18,27 @@ const canonical = 'https://odkurza.cz';
 
 export async function getStaticProps() {
   const infoBar = await getContent('infoBar');
+  const pricesData = await getContent('pricesData');
 
   return {
     props: {
       infoBar,
+      pricesData,
     },
   };
 }
 
-export default function Page({ infoBar = [{ fields: { isVisible: false, turnOffDate: '2021-05-06' } }] }) {
+export default function Page({
+  infoBar: [
+    {
+      fields: { isVisible, turnOffDate, textContent, bargain },
+    },
+  ],
+  pricesData,
+}) {
   const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
 
-  const infoBarData = infoBar[0].fields;
-  const { isVisible, turnOffDate } = infoBarData;
+  const prices = pricesData[0].fields.pricesObj;
 
   const isInfoBarVisible = () => {
     const visibleCondition = isVisible === true;
@@ -66,9 +72,8 @@ export default function Page({ infoBar = [{ fields: { isVisible: false, turnOffD
         `}
       </Script>
 
-      {/* <BaseLayout infoBar={infoBar}> */}
       <main className="relative bg-white">
-        {isInfoBarVisible() && <InfoBar infoBarData={infoBarData} />}
+        {isInfoBarVisible() && <InfoBar textContent={textContent} bargain={bargain} />}
 
         <Header />
 
@@ -84,7 +89,6 @@ export default function Page({ infoBar = [{ fields: { isVisible: false, turnOffD
 
         <Footer />
       </main>
-      {/* </BaseLayout> */}
     </>
   );
 }
