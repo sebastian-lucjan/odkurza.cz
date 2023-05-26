@@ -10,9 +10,9 @@ const sendForm = async (req, res) => {
         const payload = req.body;
 
         // console.log('POST');
-        const { name, mobile, email, message, formType, city } = await validate({ ...payload });
+        const { name, mobile, email, message, formType } = await validate({ ...payload });
 
-        await sendMessageToOdkurzaCz(name, mobile, email, message, formType, city);
+        await sendMessageToOdkurzaCz(name, mobile, email, message, formType);
 
         res.status(200).json({
           status: 'payload_sent',

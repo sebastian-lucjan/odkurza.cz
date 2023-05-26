@@ -12,7 +12,7 @@ export default function Footer() {
         <p className="font-bold">odkurza.cz</p>
         <p>Wypożyczalnia odkurzaczy {cityName}</p>
         <p>Wynajmij, posprzątaj i oddaj...</p>
-        {cityName === 'Lublin' ? <p>Miej problem z głowy i wolne miejsce w domu.</p> : <p>Bez kaucji, 7 dni w tygodniu.</p>}
+        <p>Miej problem z głowy i wolne miejsce w domu.</p>
       </div>
 
       <div className="py-4 laptop:pt-0 laptop:pb-0">

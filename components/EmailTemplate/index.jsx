@@ -1,4 +1,4 @@
-const EmailTemplate = ({ name, mobile = 'unknown', email, message, formType, city }) => {
+const EmailTemplate = ({ name, mobile = 'unknown', email, message, formType }) => {
   return (
     <section className="email">
       <div>
@@ -17,7 +17,6 @@ const EmailTemplate = ({ name, mobile = 'unknown', email, message, formType, cit
         <p>{message}</p>
 
         <p>Wiadomość przesłana z formularza: {formType}</p>
-        <p>Wiadomość przesłana z miasta: {city}</p>
       </div>
 
       <br />
