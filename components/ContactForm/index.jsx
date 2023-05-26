@@ -23,8 +23,6 @@ export default function ContactForm() {
     conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
   } = contactData.form;
 
-  const city = 'Lublin';
-
   useEffect(() => {
     if (isSubmitSuccessful) {
       setMessageSend(true);
@@ -49,7 +47,7 @@ export default function ContactForm() {
           </Link>
         </div>
       ) : (
-        <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType, city))}>
+        <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType))}>
           <div className="overflow-hidden shadow rounded-md">
             <div className="bg-white px-4 py-5 sm:p-6">
               <div className="grid grid-cols-6 gap-6">

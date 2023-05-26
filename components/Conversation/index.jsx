@@ -10,7 +10,6 @@ export default function Conversation() {
     email: null,
     message: null,
     formType: 'unset',
-    city: 'unset',
   });
 
   return (
