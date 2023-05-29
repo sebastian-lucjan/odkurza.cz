@@ -18,12 +18,20 @@ const canonical = 'https://odkurza.cz';
 
 export async function getStaticProps() {
   const infoBar = await getContent('infoBar');
+  const mobileData = await getContent('mobile');
   const pricesData = await getContent('pricesData');
+
+  const [
+    {
+      fields: { mobile: mobileNumber },
+    },
+  ] = mobileData;
 
   return {
     props: {
       infoBar,
       pricesData,
+      mobileNumber,
     },
   };
 }
@@ -35,6 +43,7 @@ export default function Page({
     },
   ],
   pricesData,
+  mobileNumber,
 }) {
   const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
 
@@ -75,7 +84,7 @@ export default function Page({
       <main className="relative bg-white">
         {isInfoBarVisible() && <InfoBar textContent={textContent} bargain={bargain} />}
 
-        <Header />
+        <Header mobileNumber={mobileNumber} />
 
         <Hero />
 
