@@ -4,14 +4,50 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Contact from 'components/Contact';
 import Script from 'next/script';
+import { getContent } from 'src/services/cms/getContent';
+import InfoBar from 'components/InfoBar';
 
 const title = 'odkurza.cz - kontakt, wynajem odkurzaczy piorących Lublin';
 const description = 'odkurza.cz, napisz lub zadzwoń i wynajmij odkurzacz piorący Lublin, wyczyść dywan lub tapicerkę.';
 const ogData = {};
 const canonical = 'https://odkurza.cz/kontakt';
 
-export default function ContactPage() {
+export async function getStaticProps() {
+  const infoBar = await getContent('infoBar');
+  const mobileData = await getContent('mobile');
+
+  const [
+    {
+      fields: { mobile: mobileNumber },
+    },
+  ] = mobileData;
+
+  return {
+    props: {
+      infoBar,
+      mobileNumber,
+    },
+  };
+}
+
+export default function ContactPage({
+  infoBar: [
+    {
+      fields: { isVisible, turnOffDate, textContent, bargain },
+    },
+  ],
+  mobileNumber,
+}) {
   const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
+
+  const isInfoBarVisible = () => {
+    const visibleCondition = isVisible === true;
+
+    const nowDate = new Date();
+    const validUntilDate = new Date(turnOffDate);
+
+    return visibleCondition && nowDate < validUntilDate;
+  };
 
   return (
     <>
@@ -36,7 +72,9 @@ export default function ContactPage() {
         `}
       </Script>
       <main className="relative bg-white">
-        <Header />
+        {isInfoBarVisible() && <InfoBar textContent={textContent} bargain={bargain} />}
+
+        <Header mobileNumber={mobileNumber} />
         <Contact />
 
         <Footer />
