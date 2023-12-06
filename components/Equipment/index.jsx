@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { Menu, Transition, Disclosure } from '@headlessui/react';
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 import Link from 'next/link';
@@ -56,18 +56,18 @@ export default function Equipment({ prices }) {
                       <div className="w-[80%]">
                         <div className="flex justify-between">
                           <p>Pon. - Czw.:</p>
-                          <p className="font-semibold">{smallPrice} zł / dzień</p>
+                          <p className="font-semibold">{smallPrice} zł / dzień (24h)</p>
                         </div>
                         <div className="flex justify-between">
                           <div className="flex font-bold text-black">
                             <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Pt. - Nd. (weekend):</p>
                             <p className="text-xl">*</p>
                           </div>
-                          <p>{mediumPrice} zł / dzień</p>
+                          <p>{mediumPrice} zł / dzień (24h)</p>
                         </div>
                         <div className="flex justify-between">
                           <p>Święta ustawowe:</p>
-                          <p>{biggestPrice} zł / dzień</p>
+                          <p>{biggestPrice} zł / dzień (24h)</p>
                         </div>
                       </div>
                     </div>
@@ -132,12 +132,38 @@ export default function Equipment({ prices }) {
                           </ul>
                           <p className="w-1/5 font-semibold">{cleaner[1000]}zł</p>
                         </div>
-                        <div className="flex justify-between border-t border-gray-100">
+                        <div className="flex flex-col justify-between border-t border-gray-100">
                           <p className="font-semibold text-[10px] text-gray-700">
-                            Ilość potrzebnego środka czyszczącego jest zależna od stopnia zabrudzeń oraz sposobu prania. Jeśli dalej nie wiesz ile
-                            środka czyszczącego zamówić napisz albo zadzwoń i się zapytaj :)
+                            <span>☝️</span>Do odkurzacza dodajemy większą ilość środków czyszczących. Rozliczenie jest przy oddaniu gdy wiadomym jest
+                            ile chemii zostało ostatecznie zużyte.
+                          </p>
+                          <p className="font-semibold text-[10px] text-gray-700">
+                            ✌️ Ilość potrzebnego środka czyszczącego jest zależna od stopnia zabrudzeń oraz sposobu prania.
                           </p>
                         </div>
+
+                        <Disclosure>
+                          {({ open }) => (
+                            <>
+                              <Disclosure.Button
+                                className={`${
+                                  open ? 'rounded-t-lg' : 'rounded-lg'
+                                } flex w-full justify-between bg-neutral-700 px-4 py-2 text-left font-semibold text-white hover:bg-neutral-600 focus:outline-none focus-visible:ring focus-visible:ring-lime-500/75`}
+                              >
+                                <span>🥼 Chemia do cięższych zabrudzeń? 🧪</span>
+                                <ChevronUpIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-white`} />
+                              </Disclosure.Button>
+                              <Disclosure.Panel className={`${open ? 'rounded-b-lg' : 'rounded-lg'} px-2 pb-2 pt-2 text-natural-700 bg-neutral-100`}>
+                                <p>Jeśli chcesz uprać uporczywe plamy lepszym rozwiązaniem będzie użycie mocniejszej chemii w proszku.</p>
+                                <div className="flex justify-between">
+                                  <p className="w-1/5">100g</p>
+                                  <div className="w-3/5">- Kanapa 3os.</div>
+                                  <p className="w-1/5 font-semibold">12zł</p>
+                                </div>
+                              </Disclosure.Panel>
+                            </>
+                          )}
+                        </Disclosure>
                       </div>
                     </div>
                     <div className="flex mb-4 border-b-4 pb-2 border-gray-100">
