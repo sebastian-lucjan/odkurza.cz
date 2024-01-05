@@ -28,6 +28,7 @@
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^2.0.10",
     "axios": "^0.27.2",
+    "clsx": "^2.1.0",
     "contentful": "^9.3.5",
     "joi": "^17.6.0",
     "next": "12.2.5",

@@ -1,5 +1,5 @@
 import ContactForm from 'components/ContactForm';
-import { urlAddress } from '../../data/googleMap';
+import GoogleMap from 'components/GoogleMap';
 
 export default function Contact() {
   return (
@@ -15,13 +15,7 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="mt-8">
-              <h3 className="text-lg font-medium leading-6 text-gray-900">Lokalizacja</h3>
-              <p className="mt-1 text-sm text-gray-600">Wygodna lokalizacja niedaleko centrum.</p>
-              <div className="mt-4 shadow w-full h-[320px]">
-                <iframe className="w-full h-full" title="map" src={urlAddress} />
-              </div>
-            </div>
+            <GoogleMap displayOn="tablet-and-up" />
 
             <div className="hidden px-4 sm:px-0 laptop:block mt-8">
               <h3 className="mt-4 text-lg font-medium leading-6 text-gray-900">Inne formy kontaktu</h3>
@@ -46,6 +40,8 @@ export default function Contact() {
           </div>
 
           <ContactForm />
+
+          <GoogleMap displayOn="mobile" />
         </div>
       </div>
     </div>

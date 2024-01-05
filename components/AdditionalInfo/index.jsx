@@ -1,3 +1,5 @@
+import { urlAddress } from 'data/googleMap';
+
 export default function AdditionalInfo() {
   return (
     <div className="relative flex flex-col justify-between px-4 sm:px-6 max-w-7xl mx-auto laptop:w-full overflow-hidden bg-white border-b-2 border-gray-100 mx-auto py-20">
@@ -113,6 +115,14 @@ export default function AdditionalInfo() {
           trudniejszymi plamami. Samodzielne pranie jest bardzo proste, a dodatkowo satysfakcjonujące. Oczywistym jest, że piorąc samemu naszą
           ulubioną kanapę staramy się najlepiej jak potrafimy.
         </p>
+      </div>
+
+      <div className="mt-12">
+        <h2 className="mb-4">Lokalizacja</h2>
+        <p className="mb-3">Wygodna lokalizacja niedaleko centrum.</p>
+        <div className="mt-4 shadow w-full h-[400px]">
+          <iframe className="w-full h-full" title="map" src={urlAddress} />
+        </div>
       </div>
     </div>
   );
