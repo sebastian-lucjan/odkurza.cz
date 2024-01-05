@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
-import contactData from 'src/data/contactForm';
+import contactData from 'data/contactForm';
 import Link from 'next/link';
 import submitFunc from 'utils/submitFunc';
 import FormErrors from 'components/FormErrors';
@@ -37,7 +37,7 @@ export default function ContactForm() {
     <div className="mt-5 md:col-span-2 md:mt-0">
       {messageSend ? (
         <div className="overflow-hidden h-full flex flex-col justify-between shadow rounded-md bg-white px-4 py-5 sm:p-6">
-          <h2 className="text-lg text-green-600 font-semibold text-gray-800 mb-4">Twoja wiadomość została wysłana.</h2>
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">Twoja wiadomość została wysłana.</h2>
           <p className="text-sm text-gray-700">Zwykle odpowiadamy maksymalnie w ciągu kilku godzin roboczych.</p>
           <p className="text-sm text-gray-700">Jeśli zależy Ci na czasie zadzwoń do nas.</p>
           <Link href="/">

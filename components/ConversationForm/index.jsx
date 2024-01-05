@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
-import contactData from 'src/data/contactForm';
+import contactData from 'data/contactForm';
 import submitFunc from 'utils/submitFunc';
 import FormErrors from '../FormErrors';
 import { CustomersIcon } from '../Icons';
