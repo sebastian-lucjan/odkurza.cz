@@ -17,6 +17,7 @@ module.exports = {
       fontFamily: {
         lato: ['Lato, sans-serif', ...defaultTheme.fontFamily.sans],
         roboto: ['Roboto, sans-serif', ...defaultTheme.fontFamily.sans],
+        poppins: ['Poppins, sans-serif', ...defaultTheme.fontFamily.sans],
       },
       minHeight: {
         pageView: 'calc(100vh - 128px)',
@@ -34,26 +35,6 @@ module.exports = {
       colors: {
         black: 'hsl(0, 0%, 15%)',
         lublin: '#BEF264',
-        // wroclaw: '#F63A34',
-        // blue: 'hsl(213, 99%, 39%)',
-        // blueLight: 'hsl(222, 83%, 77%)',
-        // darkestGray: 'hsl(0, 0%, 22%)',
-        // darkerGray: 'hsl(0, 0%, 42%)',
-        // darkGray: 'hsl(0, 0%, 53%)',
-        // lightNavy: 'hsla(197, 58%, 36%, 1)',
-        // darkNavy: 'hsla(197, 58%, 8%, 1)',
-        // darkerNavy: 'hsla(197, 58%, 0%, 1)',
-        // gray: 'hsl(0, 0%, 47%)',
-        // green: 'hsl(119, 55%, 63%)',
-        // greenDark: 'hsl(119,35%,50%)',
-        // lightGray: 'hsl(0, 0%, 80%)',
-        // lighterGray: 'hsl(0, 0%, 87%)',
-        // lightestGray: 'hsl(0, 0%, 95%)',
-        // beige: 'hsl(27, 33%, 62%)',
-        // yellow: 'hsl(65, 88%, 48%)',
-        // yellowLight: 'hsl(72, 100%, 65%)',
-        // transparent: 'hsl(0, 0%, 0%, 0%)',
-        // red: 'hsl(0, 84%, 52%)',
         white: 'hsl(0, 0%, 100%)',
       },
       lineHeight: {
@@ -64,7 +45,6 @@ module.exports = {
           '0 -2px 4px rgba(0,0,0,0.02), 0 2px 2px rgba(0,0,0,0.05), 0 4px 4px rgba(0,0,0,0.05), 0 8px 8px rgba(0,0,0,0.05), 0 16px 16px rgba(0,0,0,0.05);',
       },
       screens: {
-        // https://tailwindcss.com/docs/screens
         xxs: '360px',
         400: '400px',
         xs: '480px',
