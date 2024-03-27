@@ -12,7 +12,7 @@ export function FirmIcon({ iconSize, bubblesSize }) {
 
 export function CustomersIcon() {
   return (
-    <div className="flex justify-center items-end bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-300 shadow-md rounded-full text-xl mx-4 w-[32px] h-[32px] text-sm">
+    <div className="flex justify-center items-end bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-300 shadow-md rounded-full text-xl mx-4 w-[32px] h-[32px]">
       <UserIcon className="w-[32px] h-[32px] p-1 text-gray-700" />
     </div>
   );

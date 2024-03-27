@@ -7,6 +7,11 @@ export const homepageData = {
       highlightedText: 'odkurzaczy Lublin',
     },
 
+    pros: {
+      heading: 'Zamów odkurzacz piorący w Lublinie i wypierz sam:',
+      list: ['Wykładziny i dywany', 'Sofy, kanapy, fotele', 'Tapicerka samochodowa'],
+    },
+
     image: {
       src: vacuumCleaner?.src,
       alt: 'Zdjęcia odkurzacza piorącego Karcher',
