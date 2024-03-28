@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Currently implemented changes:
 - 🌕🌕🌑️🌑️🌑️ adding typescript,
 - 🌑️🌑️🌑️🌑️🌑️  update to next 14,
-- 🌑️🌑️🌑️🌑️🌑️  switched to shadcn/ui,
+- 🌑️🌑️🌑️🌑️🌑️  switch to shadcn/ui,
 - 🌕🌗🌑️🌑️🌑️  cleaning and updating the code
 
 ```note
