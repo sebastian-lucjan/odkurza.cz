@@ -2,8 +2,8 @@ import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import contactData from 'data/contactForm';
 import submitFunc from 'utils/submitFunc';
-import FormErrors from '../../FormErrors';
-import { CustomersIcon } from '../../Icons';
+import FormErrors from 'components/FormErrors';
+import { CustomersIcon } from 'components/Icons';
 
 export default function ConversationForm({ setMessageSend, setMessage, message }) {
   const [error, setError] = useState('');
@@ -144,7 +144,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
               <div className="flex justify-end bg-gray-100 px-6 py-3 text-left">
                 <button
                   type="submit"
-                  className="inline-flex justify-center rounded-md border border-transparent bg-lime-300 text-gray-800 py-3 w-full laptop:w-[300px] text-md font-semibold text-black shadow-sm hover:bg-green-500 focus:outline-none hover:text-white focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                  className="inline-flex justify-center rounded-md border border-transparent bg-lime-300 py-3 w-full laptop:w-[300px] text-md font-semibold text-black shadow-sm hover:bg-green-500 focus:outline-none hover:text-white focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                 >
                   {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
                 </button>
