@@ -2,10 +2,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Project Under Refactoring
 Currently implemented changes:
-- adding typescript,
-- update to next 14,
-- switched to shadcn/ui
-- cleaning and updating the code
+- 🌕🌕🌑️🌑️🌑️ adding typescript,
+- 🌑️🌑️🌑️🌑️🌑️  update to next 14,
+- 🌑️🌑️🌑️🌑️🌑️  switched to shadcn/ui,
+- 🌕🌗🌑️🌑️🌑️  cleaning and updating the code
 
 ```note
 planned completion of the refactor: April 2, 2024
