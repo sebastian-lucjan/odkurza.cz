@@ -1,6 +1,30 @@
 import { useState } from 'react';
-import ConversationForm from 'components/ConversationForm';
+import ConversationForm from 'components/Conversation/ConversationForm';
 import { CustomersIcon, FirmIcon } from 'components/Icons';
+// import { homepageData } from 'data/homepageData';
+import IntroSection from './IntroSection';
+
+// function ConversationMessage({ messageType }) {
+//   if (messageType === 'question')
+//     return (
+//       <div className="flex flex-row-reverse justify-start items-end my-8">
+//         <CustomersIcon />
+//         <p className="rounded-2xl bg-gray-50 border border-gray-300 px-4 py-2 text-gray-700 shadow-md">Co mogę wyczyścić takim odkurzaczem?</p>
+//       </div>
+//     );
+//
+//   // messageType === 'answer'
+//   return (
+//     <div className="flex items-start mr-10 items-end my-8">
+//       <FirmIcon iconSize={32} bubblesSize="xl" />
+//
+//       <p className="ml-4 bg-gradient-to-b from-lime-200 to-lime-300 max-w-[60%] rounded-2xl px-4 2 text-black shadow-md">
+//         Wypożyczalnia odkurzaczy piorących z Lublina <span className="font-semibold">odkurza.cz</span> ma dla Ciebie profesjonalne odkurzacze znanej
+//         firmy <span className="font-semibold">Karcher</span> wraz ze środkiem piorącym Karcher.
+//       </p>
+//     </div>
+//   );
+// }
 
 export default function Conversation() {
   const [messageSend, setMessageSend] = useState(false);
@@ -12,19 +36,12 @@ export default function Conversation() {
     formType: 'unset',
   });
 
+  // const { headingCTA, companyAddress } = homepageData.conversation;
+
   return (
     <section id="faq" className="mx-auto py-12 flex flex-col max-w-7xl sm:px-6 border-b-2 border-gray-100">
       <div className="mx-4 laptop:mx-20">
-        <div className="flex justify-center text-3xl font-semibold text-gray-800">Porozmawiajmy...</div>
-        <div className="flex items-center border-b-2 border-gray-100 pb-4 mb-4">
-          <FirmIcon iconSize={60} bubblesSize="4xl" />
-          <h2 className="ml-4 text-2xl font-semibold text-gray-800">odkurza.cz</h2>
-        </div>
-
-        <div className="flex flex-row-reverse justify-start items-end my-4">
-          <CustomersIcon />
-          <p className="rounded-2xl bg-gray-50 border border-gray-300 px-4 py-2 text-gray-700 shadow-md">odkurza.cz czyli kto?</p>
-        </div>
+        <IntroSection />
 
         <div className="flex items-start mr-10 items-end my-8">
           <FirmIcon iconSize={32} bubblesSize="xl" />

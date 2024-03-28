@@ -2,8 +2,8 @@ import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import contactData from 'data/contactForm';
 import submitFunc from 'utils/submitFunc';
-import FormErrors from '../FormErrors';
-import { CustomersIcon } from '../Icons';
+import FormErrors from '../../FormErrors';
+import { CustomersIcon } from '../../Icons';
 
 export default function ConversationForm({ setMessageSend, setMessage, message }) {
   const [error, setError] = useState('');
