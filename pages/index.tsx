@@ -5,11 +5,11 @@ import Pros from 'components/Pros';
 import Equipment from 'components/Equipment';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
-import Conversation from 'components/Conversation';
 import Hero from 'components/Hero';
 import AdditionalInfo from 'components/AdditionalInfo';
 import InfoBar from 'components/InfoBar';
 import { getContent } from 'src/services/cms/getContent';
+import Conversation from 'components/Conversation';
 
 const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
 const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
@@ -44,7 +44,7 @@ export default function Page({
   ],
   pricesData,
   mobileNumber,
-}) {
+}: any) {
   const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
 
   const prices = pricesData[0].fields.pricesObj;
