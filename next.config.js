@@ -14,6 +14,10 @@ const nextConfig = {
     locales: ['pl'],
     defaultLocale: 'pl',
   },
+
+  async rewrites() {
+    return [{ source: '/kontakt', destination: '/contact' }];
+  },
 };
 
 module.exports = nextConfig;

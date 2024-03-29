@@ -1,5 +1,5 @@
-import sendMessageToOdkurzacz from 'src/services/contactForm/sendMessageToOdkurzacz';
-import validate from 'src/services/contactForm/validateMessageToOdkurzacz';
+import sendMessageToOdkurzacz from '../../../app/lib/services/contactForm/sendMessageToOdkurzacz';
+import validate from '../../../app/lib/services/contactForm/validateMessageToOdkurzacz';
 
 const sendForm = async (req, res) => {
   // console.log('req.method', req.method);

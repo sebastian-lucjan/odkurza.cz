@@ -24,6 +24,9 @@
     "check-lint": "eslint . --ext js",
     "format": "prettier --write ."
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^2.0.10",

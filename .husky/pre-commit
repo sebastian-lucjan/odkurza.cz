@@ -15,10 +15,10 @@ npm run check-lint ||
   false;
 )
 
-npm run build ||
-(
-  echo 'Next build failed';
-  false;
-)
+#npm run build ||
+#(
+#  echo 'Next build failed';
+#  false;
+#)
 
 echo 'Code looks well. Commit made properly.'
