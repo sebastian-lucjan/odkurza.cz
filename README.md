@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Project Under Refactoring
 Currently implemented changes:
 - 🌕🌕🌑️🌑️🌑️ adding typescript,
-- 🌑️🌑️🌑️🌑️🌑️  update to next 14,
+- 🌕️🌑️🌑️🌑️🌑️  update to next 14,
 - 🌑️🌑️🌑️🌑️🌑️  switch to shadcn/ui,
 - 🌕🌗🌑️🌑️🌑️  cleaning and updating the code
 

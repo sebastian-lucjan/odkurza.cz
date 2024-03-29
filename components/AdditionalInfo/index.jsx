@@ -1,8 +1,9 @@
 import { urlAddress } from 'data/googleMap';
+import Link from 'next/link';
 
 export default function AdditionalInfo() {
   return (
-    <div className="relative flex flex-col justify-between px-4 sm:px-6 max-w-7xl mx-auto laptop:w-full overflow-hidden bg-white border-b-2 border-gray-100 mx-auto py-20">
+    <div className="relative flex flex-col justify-between px-4 sm:px-6 max-w-7xl laptop:w-full overflow-hidden bg-white border-b-2 border-gray-100 mx-auto py-20">
       <div>
         <h2 className="mb-4">Pranie tapicerki i dywanu – jak to wygląda krok po kroku</h2>
 
@@ -18,9 +19,9 @@ export default function AdditionalInfo() {
 
         <p className="mb-3">
           Odpowiedzią na Twój problem jest pranie ekstrakcyjne profesjonalnym odkurzaczem Karcher, który wypożyczysz z{' '}
-          <a href="https://odkurza.cz" className="underline">
+          <Link href="https://odkurza.cz" className="underline">
             wypożyczalni odkurzaczy w Lublinie.
-          </a>
+          </Link>
           W ten sposób jesteś w stanie samodzielnie poradzić sobie z usunięciem zabrudzeń. Ważne jest korzystanie z specjalistycznego sprzętu Karcher,
           profesjonalnego środka czyszczącego i stosowanie się do instrukcji.
         </p>
@@ -64,9 +65,9 @@ export default function AdditionalInfo() {
 
         <p className="mb-3">
           Do prania wykorzystujemy płyn RM 519 dedykowany do Karcher SE 5.100, które można wypożyczać w naszej{' '}
-          <a href="https://odkurza.cz" className="underline">
+          <Link href="https://odkurza.cz" className="underline">
             wypożyczalni odkurzaczy piorących w Lublinie.
-          </a>{' '}
+          </Link>{' '}
           100 ml płynu łączymy z 4 litrami (cały zbiornik do zaznaczonej kreski) ciepłej (50 st. Celcjusza) wody.
         </p>
 

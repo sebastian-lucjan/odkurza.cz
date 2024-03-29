@@ -1,4 +1,4 @@
-import sendMessageToOdkurzaCz from 'src/services/contactForm/sendMessageToOdkurzacz';
+import sendMessageToOdkurzacz from 'src/services/contactForm/sendMessageToOdkurzacz';
 import validate from 'src/services/contactForm/validateMessageToOdkurzacz';
 
 const sendForm = async (req, res) => {
@@ -12,7 +12,7 @@ const sendForm = async (req, res) => {
         // console.log('POST');
         const { name, mobile, email, message, formType } = await validate({ ...payload });
 
-        await sendMessageToOdkurzaCz(name, mobile, email, message, formType);
+        await sendMessageToOdkurzacz(name, mobile, email, message, formType);
 
         res.status(200).json({
           status: 'payload_sent',

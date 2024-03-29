@@ -208,10 +208,11 @@ export default function Equipment({ prices }) {
           </div>
           <div className="my-5 sm:mt-8 sm:flex sm:justify-center">
             <div className="rounded-md">
-              <Link href="/kontakt">
-                <a className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 color-black px-8 py-3 text-base font-medium text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125">
-                  <p>Wynajmij</p> <span className="text-4xl ml-2">🫧</span>
-                </a>
+              <Link
+                href="/kontakt"
+                className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 color-black px-8 py-3 text-base font-medium text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125"
+              >
+                <p>Wynajmij</p> <span className="text-4xl ml-2">🫧</span>
               </Link>
             </div>
           </div>

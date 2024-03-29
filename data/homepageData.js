@@ -1,6 +1,4 @@
 import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
-// import { CustomersIcon, FirmIcon } from '../components/Icons';
-// import ConversationForm from '../components/Conversation/ConversationForm';
 
 export const homepageData = {
   hero: {

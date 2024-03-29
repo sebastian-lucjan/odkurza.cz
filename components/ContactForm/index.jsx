@@ -40,10 +40,8 @@ export default function ContactForm() {
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Twoja wiadomość została wysłana.</h2>
           <p className="text-sm text-gray-700">Zwykle odpowiadamy maksymalnie w ciągu kilku godzin roboczych.</p>
           <p className="text-sm text-gray-700">Jeśli zależy Ci na czasie zadzwoń do nas.</p>
-          <Link href="/">
-            <a className="mt-4 text-md font-medium underline underline-offset-[5px] text-gray-700 hover:text-green-600 cursor-pointer">
-              Wróć do strony głównej
-            </a>
+          <Link href="/" className="mt-4 text-md font-medium underline underline-offset-[5px] text-gray-700 hover:text-green-600 cursor-pointer">
+            Wróć do strony głównej
           </Link>
         </div>
       ) : (

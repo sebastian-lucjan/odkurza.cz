@@ -9,7 +9,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: 'detect', // Automatically detect the react version
+      version: 'detect', // Automatically detect the React version
     },
   },
   env: {
@@ -40,29 +40,21 @@ module.exports = {
         jsxBracketSameLine: false,
       },
       { usePrettierrc: true },
-    ], // Use our .prettierrc file as source
-    // 'react/jsx-first-prop-new-line': 'off',
+    ],
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/img-redundant-alt': 'off',
     'jsx-a11y/alt-text': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
     'func-names': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'import/no-unresolved': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'no-console': 'off',
-    'react/function-component-definition': 'off',
-    'react/jsx-no-constructed-context-values': 'off',
-    'react/jsx-max-props-per-line': [1, { maximum: 8 }],
-    'react/self-closing-comp': 'off',
-    'react/jsx-filename-extension': 'off',
     'import/prefer-default-export': 'off',
-    'jsx-closing-bracket-location': 'off',
-    'react/jsx-closing-bracket-location': 1,
-    'jsx-a11y/label-has-associated-control': 'off',
-    'comma-dangle': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'import/extensions': 'off',
+    'no-console': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/function-component-definition': 'off',
   },
 };

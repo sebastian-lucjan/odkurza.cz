@@ -1,5 +1,6 @@
 import ContactForm from 'components/ContactForm';
 import GoogleMap from 'components/GoogleMap';
+import Link from 'next/link';
 
 export default function Contact() {
   return (
@@ -20,22 +21,19 @@ export default function Contact() {
             <div className="hidden px-4 sm:px-0 laptop:block mt-8">
               <h3 className="mt-4 text-lg font-medium leading-6 text-gray-900">Inne formy kontaktu</h3>
               <p className="text-sm text-gray-600">Jeśli nie masz ochoty korzystać z naszego formularza napisz do nas maila lub zadzwoń.</p>
-              <p className="h-[24px] ">
-                <a
-                  href="mailto:lublin@odkurza.cz"
-                  className="inline-flex text-sm mt-2 items-center justify-center underline underline-offset-2 decoration-amber-300"
-                >
-                  <span className="hover:font-semibold">lublin@odkurza.cz</span>
-                </a>
-              </p>
-              <p className="h-[24px] ">
-                <a
-                  href="tel:+48602446335"
-                  className="inline-flex text-sm mt-2 items-center justify-center underline underline-offset-2 decoration-amber-300"
-                >
-                  <span className="hover:font-semibold">602 446 335</span>
-                </a>
-              </p>
+              <Link
+                href="mailto:lublin@odkurza.cz"
+                className="h-[24px] inline-flex text-sm mt-2 items-center justify-center underline underline-offset-2 decoration-amber-300"
+              >
+                <span className="hover:font-semibold">lublin@odkurza.cz</span>
+              </Link>
+
+              <Link
+                href="mailto:lublin@odkurza.cz"
+                className="h-[24px] inline-flex text-sm mt-2 items-center justify-center underline underline-offset-2 decoration-amber-300"
+              >
+                <span className="hover:font-semibold">lublin@odkurza.cz</span>
+              </Link>
             </div>
           </div>
 

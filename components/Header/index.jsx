@@ -19,24 +19,24 @@ export default function HeaderLublin({ mobileNumber }) {
           <Link href="/">odkurza.cz</Link>
         </div>
         <nav className="my-8">
-          <Link href="/">
-            <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Home</a>
+          <Link href="/" className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">
+            Home
           </Link>
 
-          <Link href="/#equipment">
-            <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Sprzęt</a>
+          <Link href="/#equipment" className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">
+            Sprzęt
           </Link>
 
-          <Link href="/#faq">
-            <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">FAQ</a>
+          <Link href="/#faq" className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">
+            FAQ
           </Link>
 
-          <Link href="/kontakt">
-            <a className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">Kontakt</a>
+          <Link href="/kontakt" className="text-base p-6 font-medium text-gray-500 hover:text-gray-900">
+            Kontakt
           </Link>
         </nav>
         <div className="items-center justify-end">
-          <a
+          <Link
             href={`tel:+48${mobileNumber}`}
             className="flex items-center justify-center whitespace-nowrap transition-colors rounded-md bg-gradient-to-b from-lime-200 to-lime-400 hover:from-green-400 hover:to-green-600 px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-lime-400"
           >
@@ -55,7 +55,7 @@ export default function HeaderLublin({ mobileNumber }) {
               />
             </svg>
             <div className="mt-1">{addSpaces(mobileNumber)}</div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

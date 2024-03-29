@@ -17,10 +17,6 @@
     scroll-behavior: smooth;
   }
 
-  body {
-    /*font-size: 1.6rem;*/
-  }
-
   h2 {
     @apply text-4xl;
   }
