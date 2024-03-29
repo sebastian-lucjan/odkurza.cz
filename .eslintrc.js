@@ -65,5 +65,6 @@ module.exports = {
     'prefer-destructuring': 'off',
     'consistent-return': 'off',
     'arrow-body-style': 'off',
+    'import/no-unresolved': 'off',
   },
 };

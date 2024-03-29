@@ -1,24 +1,24 @@
-import HeadMeta from '@ui/components/HeadMeta';
-import Header from '@ui/components/Header';
-import Footer from '@ui/components/Footer';
-import { NextSeo } from 'next-seo';
+// import HeadMeta from '@ui/components/HeadMeta';
+// import Header from '@ui/components/Header';
+// import Footer from '@ui/components/Footer';
+// import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import Image from 'next/image';
 import vacuumCleaner from '../public/images/odkurzacz-pioracy-lublin.jpeg';
 
-const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
-const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
-const ogData = {};
-const canonical = 'https://odkurza.cz';
+// const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
+// const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
+// const ogData = {};
+// const canonical = 'https://odkurza.cz';
 
 export default function FourOneFour() {
   return (
     <>
-      <HeadMeta />
-      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+      {/*<HeadMeta />*/}
+      {/*<NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />*/}
 
       <main className="relative bg-white">
-        <Header />
+        {/*<Header />*/}
 
         <div className="relative laptop:flex justify-between max-w-7xl mx-auto laptop:w-full overflow-hidden bg-white border-b-2 border-gray-100">
           <div className="mx-auto max-w-7xl">
@@ -41,7 +41,7 @@ export default function FourOneFour() {
           </div>
         </div>
 
-        <Footer />
+        {/*<Footer />*/}
       </main>
     </>
   );

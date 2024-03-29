@@ -1,6 +1,4 @@
-import { renderToString } from 'react-dom/server';
 import nodemailer from 'nodemailer';
-import EmailTemplate from '@ui/components/EmailTemplate';
 
 const plainVersionText = (name, email, description, phoneNumber = 'unknown', fromType = 'unset') => {
   return `Autor wiadomości: ${name}
@@ -26,7 +24,7 @@ const sendMessageToOdkurzacz = async (name, mobile, email, message, formType) =>
     replyTo: `${email}`,
     subject: `✔ odkurza.cz - wiadomość z formularza kontaktowego od "${name}"`,
     text: plainVersionText(name, mobile, email, message, formType),
-    html: renderToString(<EmailTemplate name={name} mobile={mobile} email={email} message={message} formType={formType} />),
+    html: plainVersionText(name, mobile, email, message, formType),
   });
 };
 

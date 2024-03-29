@@ -8,7 +8,7 @@ export default async function submitFunc(reset, getFormValues, setError, formTyp
 
     setMessage({ ...payload, formType });
 
-    const response = await axios.post('/api/contact', { ...payload, formType }).catch((responseError) => setError(responseError.data.error));
+    const response = await axios.post('/contact', { ...payload, formType }).catch((responseError) => setError(responseError.data.error));
 
     if (response.status === 200) {
       reset();
