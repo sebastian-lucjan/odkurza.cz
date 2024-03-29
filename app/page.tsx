@@ -1,40 +1,37 @@
-// import HeadMeta from '@ui/components/HeadMeta';
 import Header from '@ui/components/Header';
 import Footer from '@ui/components/Footer';
 import Pros from '@ui/components/Pros';
 import Equipment from '@ui/components/Equipment';
-// import Script from 'next/script';
 import Hero from '@ui/components/Hero';
 import AdditionalInfo from '@ui/components/AdditionalInfo';
 import InfoBar from '@ui/components/InfoBar';
 import Conversation from '@ui/components/Conversation';
-import { getContent } from './lib/services/cms/getContent';
+import { getContent } from '@lib/services/cms/getContent';
+import openGraphImage from '@images/odkurzacz-pioracy-lublin.jpeg';
 
-// const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
-// const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
-// const ogData = {};
-// const canonical = 'https://odkurza.cz';
+export const metadata = {
+  title: 'odkurza.cz - wynajem odkurzaczy piorących Lublin',
+  description: 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .',
+  alternates: {
+    canonical: 'https://odkurza.cz',
+  },
+  openGraph: {
+    images: openGraphImage,
+  },
+};
 
 export default async function Page() {
   const infoBar = await getContent('infoBar');
   const mobileData = await getContent('mobile');
   const pricesData = await getContent('pricesData');
 
-  const [
-    {
-      fields: { mobile: mobileNumber },
-    },
-  ] = mobileData;
+  const { mobile: mobileNumber } = mobileData;
 
-  const [
-    {
-      fields: { isVisible, turnOffDate, textContent, bargain },
-    },
-  ] = infoBar;
+  const { isVisible, turnOffDate, textContent, bargain } = infoBar;
 
   const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
 
-  const { pricesObj: prices } = pricesData[0].fields;
+  const { pricesObj: prices } = pricesData;
 
   const isInfoBarVisible = () => {
     const visibleCondition = isVisible === true;

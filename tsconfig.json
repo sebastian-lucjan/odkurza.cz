@@ -5,7 +5,8 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "paths": {
       "@ui/*": ["app/ui/*"],
-      "@lib/*": ["app/lib/*"]
+      "@lib/*": ["app/lib/*"],
+      "@images/*": ["public/images/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
