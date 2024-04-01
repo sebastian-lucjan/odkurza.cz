@@ -1,3 +1,5 @@
+export type AppStageType = 'PROD' | 'DEV';
+
 export type MessageType = 'question' | 'answer';
 
 interface RegularText {

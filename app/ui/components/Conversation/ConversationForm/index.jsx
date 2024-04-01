@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import contactData from 'data/contactForm';
 import FormErrors from '@ui/components/FormErrors';
 import { CustomersIcon } from '@ui/components/Icons';
-import submitFunc from '../../../../lib/utils/submitFunc';
+import submitFunc from '@lib/services/contactForm/submitFunc';
 
 export default function ConversationForm({ setMessageSend, setMessage, message }) {
   const [error, setError] = useState('');

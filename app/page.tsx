@@ -7,18 +7,10 @@ import AdditionalInfo from '@ui/components/AdditionalInfo';
 import InfoBar from '@ui/components/InfoBar';
 import Conversation from '@ui/components/Conversation';
 import { getContent } from '@lib/services/cms/getContent';
-import openGraphImage from '@images/odkurzacz-pioracy-lublin.jpeg';
+import { pageMetadata } from 'data/metadata';
+import infoBarVisibility from '@lib/helpers/isInfoBarVisible';
 
-export const metadata = {
-  title: 'odkurza.cz - wynajem odkurzaczy piorących Lublin',
-  description: 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .',
-  alternates: {
-    canonical: 'https://odkurza.cz',
-  },
-  openGraph: {
-    images: openGraphImage,
-  },
-};
+export const metadata = pageMetadata.homepage;
 
 export default async function Page() {
   const infoBar = await getContent('infoBar');
@@ -29,18 +21,9 @@ export default async function Page() {
 
   const { isVisible, turnOffDate, textContent, bargain } = infoBar;
 
-  const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
-
   const { pricesObj: prices } = pricesData;
 
-  const isInfoBarVisible = () => {
-    const visibleCondition = isVisible === true;
-
-    const nowDate = new Date();
-    const validUntilDate = new Date(turnOffDate);
-
-    return visibleCondition && nowDate < validUntilDate;
-  };
+  const isInfoBarVisible = infoBarVisibility(isVisible, turnOffDate);
 
   return (
     <>
@@ -58,7 +41,7 @@ export default async function Page() {
       {/*</Script>*/}
 
       <main className="relative bg-white">
-        {isInfoBarVisible() && <InfoBar textContent={textContent} bargain={bargain} />}
+        {isInfoBarVisible && <InfoBar textContent={textContent} bargain={bargain} />}
 
         <Header mobileNumber={mobileNumber} />
 

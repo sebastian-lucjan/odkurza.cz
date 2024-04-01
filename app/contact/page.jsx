@@ -5,18 +5,10 @@ import Contact from '@ui/components/Contact';
 // import Script from 'next/script';
 import InfoBar from '@ui/components/InfoBar';
 import { getContent } from '@lib/services/cms/getContent';
-import openGraphImage from '@images/odkurzacz-pioracy-lublin.jpeg';
+import { pageMetadata } from 'data/metadata';
+import infoBarVisibility from '@lib/helpers/isInfoBarVisible';
 
-export const metadata = {
-  title: 'odkurza.cz - kontakt, wynajem odkurzaczy piorących Lublin',
-  description: 'odkurza.cz, napisz lub zadzwoń i wynajmij odkurzacz piorący Lublin, wyczyść dywan lub tapicerkę.',
-  alternates: {
-    canonical: 'https://odkurza.cz/kontakt',
-  },
-  openGraph: {
-    images: openGraphImage,
-  },
-};
+export const metadata = pageMetadata.contact;
 
 export default async function ContactPage() {
   const infoBar = await getContent('infoBar');
@@ -26,16 +18,7 @@ export default async function ContactPage() {
 
   const { isVisible, turnOffDate, textContent, bargain } = infoBar;
 
-  const noRobotsCondition = process.env.NEXT_PUBLIC_APP_STAGE === 'DEV';
-
-  const isInfoBarVisible = () => {
-    const visibleCondition = isVisible === true;
-
-    const nowDate = new Date();
-    const validUntilDate = new Date(turnOffDate);
-
-    return visibleCondition && nowDate < validUntilDate;
-  };
+  const isInfoBarVisible = infoBarVisibility(isVisible, turnOffDate);
 
   return (
     <>
@@ -60,7 +43,7 @@ export default async function ContactPage() {
       {/*  `}*/}
       {/*</Script>*/}
       <main className="relative bg-white">
-        {isInfoBarVisible() && <InfoBar textContent={textContent} bargain={bargain} />}
+        {isInfoBarVisible && <InfoBar textContent={textContent} bargain={bargain} />}
 
         <Header mobileNumber={mobileNumber} />
 

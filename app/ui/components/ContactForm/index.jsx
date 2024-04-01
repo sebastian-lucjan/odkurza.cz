@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import contactData from 'data/contactForm';
 import Link from 'next/link';
 import FormErrors from '@ui/components/FormErrors';
-import submitFunc from '@lib/utils/submitFunc';
+import submitFunc from '@lib/services/contactForm/submitFunc';
 
 export default function ContactForm() {
   const [error, setError] = useState('');

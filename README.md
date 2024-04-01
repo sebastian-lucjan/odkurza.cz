@@ -1,12 +1,12 @@
 ## Project Under Refactoring
 Currently implemented changes:
-- 🌕🌕🌑️🌑️🌑️ adding typescript,
+- 🌕🌕️🌗️🌑️🌑️ adding typescript,
 - 🌕️🌕️🌕️🌗🌑️  update to next 14,
 - 🌑️🌑️🌑️🌑️🌑️  switch to shadcn/ui,
-- 🌕🌗🌑️🌑️🌑️  cleaning and updating the code
+- 🌕🌕🌑️🌑️🌑️  cleaning and updating the code
 
 ```note
-planned completion of the refactor: April 2, 2024
+planned completion of the refactor: April 3, 2024
 ```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
