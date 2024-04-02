@@ -5,7 +5,7 @@ export default function ProsItem({ icon, textContent }: ProsItemProps) {
   return (
     <Link href="/contact" as="/kontakt">
       <div className="w-60 h-60 tablet:w-[240px] tablet:h-[240px] bg-lime-300 rounded-full flex flex-col justify-center items-center mb-10 tablet:mb-0 cursor-pointer shadow-custom">
-        {icon}
+        <div className="w-20 h-20 mb-2">{icon}</div>
         {textContent.map(({ textType, text }) => {
           if (textType === 'paragraph') {
             return (
