@@ -3,6 +3,11 @@
     "baseUrl": ".",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "paths": {
+      "@ui/*": ["app/ui/*"],
+      "@lib/*": ["app/lib/*"],
+      "@images/*": ["public/images/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
