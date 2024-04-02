@@ -6,5 +6,8 @@ export const pageData = {
     mobile: {
       id: 'mobile',
     },
+    pricesData: {
+      id: 'pricesData',
+    },
   },
 };

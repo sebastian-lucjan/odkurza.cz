@@ -21,11 +21,7 @@ const HeadMeta = () => {
 
       <link rel="shortcut icon" href="/public/icons/favicon.ico" />
 
-      <meta name="title" content="odkurza.cz - wynajem odkurzaczy piorących Lublin" />
-      <meta name="description" content="odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan lub tapicerkę." />
       <meta name="keywords" content="odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan lub tapicerkę." />
-
-      <meta property="og:locale" content="pl_PL" />
     </Head>
   );
 };

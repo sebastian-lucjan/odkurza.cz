@@ -9,54 +9,38 @@ import Conversation from '@ui/components/Conversation';
 import { getContent } from '@lib/services/cms/getContent';
 import { pageMetadata } from 'data/metadata';
 import infoBarVisibility from '@lib/helpers/isInfoBarVisible';
+import { pageData } from 'data/pageData';
 
 export const metadata = pageMetadata.homepage;
 
+const {
+  cmsData: { infoBar, mobile, pricesData },
+} = pageData;
+
 export default async function Page() {
-  const infoBar = await getContent('infoBar');
-  const mobileData = await getContent('mobile');
-  const pricesData = await getContent('pricesData');
-
-  const { mobile: mobileNumber } = mobileData;
-
-  const { isVisible, turnOffDate, textContent, bargain } = infoBar;
-
-  const { pricesObj: prices } = pricesData;
+  const { pricesObj: prices } = await getContent(pricesData.id);
+  const { isVisible, turnOffDate, textContent, bargain } = await getContent(infoBar.id);
+  const { mobile: mobileNumber } = await getContent(mobile.id);
 
   const isInfoBarVisible = infoBarVisibility(isVisible, turnOffDate);
 
   return (
-    <>
-      {/*<HeadMeta />*/}
+    <main className="relative bg-white">
+      {isInfoBarVisible && <InfoBar textContent={textContent} bargain={bargain} />}
 
-      {/*<Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} strategy="afterInteractive" />*/}
-      {/*<Script id="google-analytics" strategy="afterInteractive">*/}
-      {/*  {` */}
-      {/*    window.dataLayer = window.dataLayer || [];*/}
-      {/*    function gtag(){window.dataLayer.push(arguments);} */}
-      {/*    gtag('js', new Date()); */}
+      <Header mobileNumber={mobileNumber} />
 
-      {/*    gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}'); */}
-      {/*  `}*/}
-      {/*</Script>*/}
+      <Hero />
 
-      <main className="relative bg-white">
-        {isInfoBarVisible && <InfoBar textContent={textContent} bargain={bargain} />}
+      <Pros />
 
-        <Header mobileNumber={mobileNumber} />
+      <Equipment pricesJSON={JSON.stringify(prices)} />
 
-        <Hero />
+      <Conversation />
 
-        <Pros />
+      <AdditionalInfo />
 
-        <Equipment pricesJSON={JSON.stringify(prices)} />
-
-        <Conversation />
-
-        <AdditionalInfo />
-
-        <Footer />
-      </main>
-    </>
+      <Footer />
+    </main>
   );
 }
