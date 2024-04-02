@@ -1,11 +1,11 @@
 import nodemailer from 'nodemailer';
 
-const plainVersionText = (name, email, description, phoneNumber = 'unknown', fromType = 'unset') => {
+const plainVersionText = (name, mobile, email, message, formType) => {
   return `Autor wiadomości: ${name}
   Email podany w formularzu: ${email}
-  Numer telefonu: ${phoneNumber}
-  Treść wiadomości: ${description}
-  Wiadomość przesłana z formularza: ${fromType}`;
+  Numer telefonu: ${mobile}
+  Treść wiadomości: ${message}
+  Wiadomość przesłana z formularza: ${formType}`;
 };
 
 const transporterProd = nodemailer.createTransport({
