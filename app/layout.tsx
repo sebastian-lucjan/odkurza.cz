@@ -1,9 +1,11 @@
 import { ReactNode } from 'react';
 import '@ui/styles/globals.css';
+import HeadMeta from '@ui/components/HeadMeta';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pl">
+      <HeadMeta />
       <body>{children}</body>
     </html>
   );
