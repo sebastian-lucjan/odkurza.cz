@@ -1,4 +1,5 @@
 import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
+import { CalendarDaysIcon, HandThumbUpIcon, SparklesIcon } from '@heroicons/react/24/outline';
 
 export const homepageData = {
   hero: {
@@ -18,7 +19,43 @@ export const homepageData = {
     },
   },
 
-  pros: [],
+  pros: [
+    {
+      icon: <CalendarDaysIcon className="w-20 h-20 mb-2" />,
+      textContent: [
+        {
+          textType: 'paragraph',
+          text: 'Wynajmij',
+        },
+        {
+          textType: 'highlighted',
+          text: '7 dni w tyg.',
+        },
+      ],
+    },
+    {
+      icon: <SparklesIcon className="w-20 h-20 mb-2" />,
+      textContent: [
+        {
+          textType: 'highlighted',
+          text: '100ml',
+        },
+        {
+          textType: 'paragraph',
+          text: 'środka czyszczącego Karcher w cenie',
+        },
+      ],
+    },
+    {
+      icon: <HandThumbUpIcon className="w-20 h-20 mb-2" />,
+      textContent: [
+        {
+          textType: 'highlighted',
+          text: 'Kaucja 0 zł',
+        },
+      ],
+    },
+  ],
 
   conversation: {
     headingCTA: 'Porozmawiajmy...',
