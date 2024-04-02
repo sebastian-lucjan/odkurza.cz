@@ -8,7 +8,7 @@ Currently implemented changes:
 - 🌕🌗🌑️🌑️🌑️  cleaning and updating the code
 
 ```note
-planned completion of the refactor: April 2, 2024
+planned completion of the refactor: April 4, 2024
 ```
 
 ## Getting Started
