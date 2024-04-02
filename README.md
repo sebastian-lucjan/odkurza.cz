@@ -2,7 +2,7 @@
 Currently implemented changes:
 - 🌕🌕️🌕️🌑️🌑️ adding typescript,
 - 🌕️🌕️🌕️🌕🌑️  update to next 14,
-- 🌑️🌑️🌑️🌑️🌑️  switch to shadcn/ui,
+- 🌕️🌑️🌑️🌑️🌑️  switch to shadcn/ui,
 - 🌕🌕🌗🌑️🌑️  cleaning and updating the code
 
 ```note
