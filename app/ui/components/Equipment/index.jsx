@@ -1,11 +1,12 @@
 'use client';
 
 import { Fragment } from 'react';
-import { Menu, Transition, Disclosure } from '@headlessui/react';
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid';
+import { Menu, Transition } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 import Link from 'next/link';
+import AdditionalChemistryAccordion from '@ui/components/AdditionalChemistryAccordion';
 
 export default function Equipment({ pricesJSON }) {
   const prices = JSON.parse(pricesJSON);
@@ -22,7 +23,9 @@ export default function Equipment({ pricesJSON }) {
         <div className="m-8">
           <Image
             className="transition-transform h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full hover:scale-105"
-            src={vacuumCleaner}
+            src={vacuumCleaner?.src}
+            width={800}
+            height={800}
             alt="Odkurzacz piorący z akcesoriami dostępny w wypożyczalni w Lublinie"
           />
         </div>
@@ -53,9 +56,9 @@ export default function Equipment({ pricesJSON }) {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-left divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none w-[100%] text-xs leading-6">
+                <Menu.Items className="absolute left-0 z-10 mt-2 origin-top-left divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none w-[100%] text-xs leading-6">
                   <div className="relative p-4 w-full">
-                    <div className="flex mb-4 border-b-4 pb-2 border-gray-100 border-b-4 pb-2 border-gray-100">
+                    <div className="flex mb-4 border-b-4 pb-2 border-gray-100">
                       <p className="font-bold mr-4 w-[25%]">CENNIK:</p>
                       <div className="w-[80%]">
                         <div className="flex justify-between">
@@ -146,28 +149,7 @@ export default function Equipment({ pricesJSON }) {
                           </p>
                         </div>
 
-                        <Disclosure>
-                          {({ open }) => (
-                            <>
-                              <Disclosure.Button
-                                className={`${
-                                  open ? 'rounded-t-lg' : 'rounded-lg'
-                                } flex w-full justify-between bg-neutral-700 px-4 py-2 text-left font-semibold text-white hover:bg-neutral-600 focus:outline-none focus-visible:ring focus-visible:ring-lime-500/75`}
-                              >
-                                <span>🥼 Chemia do cięższych zabrudzeń? 🧪</span>
-                                <ChevronUpIcon className={`${open ? 'rotate-180 transform' : ''} h-5 w-5 text-white`} />
-                              </Disclosure.Button>
-                              <Disclosure.Panel className={`${open ? 'rounded-b-lg' : 'rounded-lg'} px-2 pb-2 pt-2 text-natural-700 bg-neutral-100`}>
-                                <p>Jeśli chcesz uprać uporczywe plamy lepszym rozwiązaniem będzie użycie mocniejszej chemii w proszku.</p>
-                                <div className="flex justify-between">
-                                  <p className="w-1/5">100g</p>
-                                  <div className="w-3/5">- Kanapa 3os.</div>
-                                  <p className="w-1/5 font-semibold">12zł</p>
-                                </div>
-                              </Disclosure.Panel>
-                            </>
-                          )}
-                        </Disclosure>
+                        <AdditionalChemistryAccordion />
                       </div>
                     </div>
                     <div className="flex mb-4 border-b-4 pb-2 border-gray-100">
@@ -215,7 +197,7 @@ export default function Equipment({ pricesJSON }) {
               <Link
                 href="/contact"
                 as="/kontakt"
-                className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 color-black px-8 py-3 text-base font-medium text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125"
+                className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 color-black px-8 py-3 text-base text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125"
               >
                 <p>Wynajmij</p> <span className="text-4xl ml-2">🫧</span>
               </Link>
