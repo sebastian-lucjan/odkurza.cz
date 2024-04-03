@@ -4,10 +4,6 @@ export type AppStageType = 'PROD' | 'DEV';
 
 export type MobileNumber = number;
 
-export interface HeaderProps {
-  mobileNumber: MobileNumber;
-}
-
 export interface EquipmentProps {
   pricesJSON: string;
 }
@@ -41,4 +37,24 @@ export interface ProsTextContentItemType {
 export interface ProsItemProps {
   icon: ReactNode;
   textContent: ProsTextContentItemType[];
+}
+
+export interface MessageObjectType {
+  name: null;
+  mobile: null;
+  email: null;
+  message: null;
+  formType: 'unset';
+}
+
+export interface ConversationFormProps {
+  setMessageSend: any;
+  setMessage: any;
+  message: MessageObjectType;
+}
+
+export interface FormErrorProps {
+  errors?: any;
+  errorServ?: string;
+  conversation?: boolean;
 }

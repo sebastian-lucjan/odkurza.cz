@@ -6,7 +6,7 @@ import { FirmIcon } from '@ui/Icons';
 import ConversationMessage from '@ui/Conversation/ConversationMessage';
 import IntroSection from '@ui/Conversation/IntroSection';
 import { homepageData } from 'data/homepageData';
-import { MessageType, TextContentType } from 'app/types/types';
+import { MessageObjectType, MessageType, TextContentType } from 'app/types/types';
 
 export default function Conversation() {
   const [messageSend, setMessageSend] = useState(false);
@@ -16,7 +16,7 @@ export default function Conversation() {
     email: null,
     message: null,
     formType: 'unset',
-  });
+  } as MessageObjectType);
 
   const { messages } = homepageData.conversation;
 

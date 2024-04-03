@@ -28,7 +28,7 @@ export default function AdditionalInfo() {
 
         <p className="mb-3">
           Piorąc kanapę lub dywan gąbką Twoje niepowodzenie nie wynikało z tego, że nie umiesz tego robić. Po prostu nie posiadałeś urządzenia
-          przeznaczonego do tego typu prania. W rezutlacie dąbką tylko wcieramy brud w włókna przedmiotu, który chcemy uprać.
+          przeznaczonego do tego typu prania. W rezultacie gąbką tylko wcieramy brud w włókna przedmiotu, który chcemy uprać.
         </p>
       </div>
 
@@ -68,7 +68,7 @@ export default function AdditionalInfo() {
           <Link href="https://odkurza.cz" className="underline">
             wypożyczalni odkurzaczy piorących w Lublinie.
           </Link>{' '}
-          100 ml płynu łączymy z 4 litrami (cały zbiornik do zaznaczonej kreski) ciepłej (50 st. Celcjusza) wody.
+          100 ml płynu łączymy z 4 litrami (cały zbiornik do zaznaczonej kreski) ciepłej (50 st. Celsjusza) wody.
         </p>
 
         <p className="mb-3">
@@ -77,7 +77,7 @@ export default function AdditionalInfo() {
         </p>
 
         <p className="mb-3">
-          Odkurzacz posiada dwa przyciski. Pierwszy odpowiada za uruchomienie pompy wody – dzięki temu będziemy mieć mozłiwość nanosić chemię na prany
+          Odkurzacz posiada dwa przyciski. Pierwszy odpowiada za uruchomienie pompy wody – dzięki temu będziemy mieć możliwość nanosić chemię na prany
           przedmiot. Drugi przycisk jest odpowiedzialny za uruchomienie odkurzacza, który z dużą mocą odsysa brud i wodę.
         </p>
 
@@ -105,7 +105,7 @@ export default function AdditionalInfo() {
 
         <p className="mb-3">
           Jak można zaobserwować samodzielne pranie kanap, dywanów i tapicerki nie jest niczym trudnym. Mając profesjonalny sprzęt zadbasz o czystość
-          w Twoim otoczeniu bez trudu. Dzięki samodzielnemu praniu można oszczędzić pieniądze. Ponieważ tego typu pranie zdaża się nam raz lub dwa
+          w Twoim otoczeniu bez trudu. Dzięki samodzielnemu praniu można oszczędzić pieniądze. Ponieważ tego typu pranie zdarza się nam raz lub dwa
           razy na rok – nie ma sensu kupować do domu profesjonalnego odkurzacza piorącego wraz z środkiem piorącym, którego nie będziemy w stanie
           wykorzystać. Korzystając z usług naszej wypożyczalni odkurzaczy piorących w Lublinie w cenie kilkudziesięciu złotych można wyprać zarówno
           tapicerkę samochodowa, kanapy, dywany oraz krzesła.

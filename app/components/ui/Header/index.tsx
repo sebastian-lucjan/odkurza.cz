@@ -1,11 +1,16 @@
-'use client';
-
 import Link from 'next/link';
 import Button from '@ui/Button';
 import Navigation from '@ui/NavigationMenu';
-import { HeaderProps } from 'app/types/types';
+import { getContent } from '@lib/services/cms/getContent';
+import { pageData } from 'data/pageData';
 
-export default function Header({ mobileNumber }: HeaderProps) {
+const {
+  cmsData: { mobile },
+} = pageData;
+
+export default async function Header() {
+  const { mobile: mobileNumber } = await getContent(mobile.id);
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
       <div className="relative flex flex-col laptop:flex-row items-center justify-between border-b-2 border-gray-100 py-6">
