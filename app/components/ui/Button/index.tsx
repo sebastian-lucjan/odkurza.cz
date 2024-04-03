@@ -10,7 +10,7 @@ export default function Button({ mobileNumber }: ButtonProps) {
   return (
     <Link
       href={`tel:+48${mobileNumber}`}
-      className="flex items-center justify-center whitespace-nowrap transition-colors rounded-md bg-gradient-to-b from-lime-200 to-lime-400 hover:from-green-400 hover:to-green-600 px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-lime-400"
+      className="flex items-center justify-center whitespace-nowrap transition-colors rounded-md bg-gradient-to-b from-lime-200 to-lime-400 hover:from-green-400 hover:to-green-600 px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-lime-400 my-4"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

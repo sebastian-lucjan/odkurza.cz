@@ -2,34 +2,10 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { cn } from '@lib/utils';
-
-import { Sheet, SheetContent, SheetClose, SheetTrigger } from 'app/ui/components/ui/sheet';
-
-import Image from 'next/image';
+import { Sheet, SheetContent, SheetClose, SheetTrigger } from '@ui/Sheet';
 import { useState } from 'react';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@ui/Navigation';
-
-const ListItem = React.forwardRef<React.ElementRef<'a'>, React.ComponentPropsWithoutRef<'a'>>(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-            className,
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = 'ListItem';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
@@ -37,64 +13,51 @@ export default function Navigation() {
   return (
     <NavigationMenu>
       {/* Desktop navigation */}
-      <NavigationMenuList className="hidden justify-between w-[500px] desktop-sm:flex">
-        <NavigationMenuItem>
-          <Link href="/public" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Strona główna</NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
+      <div className="my-8 hidden laptop:block">
+        <Link href="/" className="text-base p-6 font-medium text-gray-600 hover:text-gray-900">
+          Home
+        </Link>
 
-        <NavigationMenuItem>
-          <Link href="/blog" as="/artykuly" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Artykuły</NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
+        <Link href="/#equipment" className="text-base p-6 font-medium text-gray-600 hover:text-gray-900">
+          Sprzęt
+        </Link>
 
-        <NavigationMenuItem>
-          <Link href="/contact" as="/kontakt" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Kontakt</NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
+        <Link href="/#faq" className="text-base p-6 font-medium text-gray-600 hover:text-gray-900">
+          FAQ
+        </Link>
+
+        <Link href="/kontakt" className="text-base p-6 font-medium text-gray-600 hover:text-gray-900">
+          Kontakt
+        </Link>
+      </div>
 
       {/* Mobile / tablet navigation */}
       <Sheet open={open} onOpenChange={setOpen}>
-        <div className="block desktop-sm:hidden">
+        <div className="block laptop:hidden">
           <SheetTrigger>
-            <div>
-              <Image src={cpkBurger} className="w-[30px] mobile-lg:w-[40px]" alt="Navigation burger" />
-              {/*<Image src={cpkMenuClose} className="" />*/}
-            </div>
+            <Bars3Icon width={40} height={40} className="absolute left-0 top-0" />
           </SheetTrigger>
-          <SheetContent className="w-full flex justify-center items-center">
+          <SheetContent className="w-full flex justify-center items-center bg-white">
             <SheetClose>
-              <Image
-                src={cpkMenuClose}
-                className="w-[30px] h-[28px] mobile-lg:w-[40px] mobile-lg:h-[37px]  absolute top-3 mobile-lg:top-4 right-4"
-                alt="Navigation close menu icon"
-              />
+              <XMarkIcon width={40} height={40} className="absolute top-0 right-0 m-6" />
             </SheetClose>
 
             <NavigationMenuList className="flex flex-col justify-between w-full desktop-sm:hidden h-[300px]">
-              <NavigationMenuItem onClick={() => setOpen(false)}>
-                <Link href="/public" legacyBehavior passHref>
+              <NavigationMenuItem onClick={() => setOpen(false)} className="hover:bg-neutral-50 rounded-md">
+                <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>Strona główna</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
 
-              <NavigationMenuItem className="relative cursor-[default]">
-                {/*<Link href="/about-cpk" as="/o-cpk" legacyBehavior passHref>*/}
-                <Badge className="absolute px-2 text-[10px] top-[-8px] h-[18px] bg-blue-dark hover:bg-blue-dark right-[-24px]">soon</Badge>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-neutral-50 hover:bg-neutral-50 text-gray hover:text-gray')}>
-                  O CPK
-                </NavigationMenuLink>
-                {/*<NavigationMenuLink className={navigationMenuTriggerStyle()}>O CPK</NavigationMenuLink>*/}
-                {/*</Link>*/}
+              <NavigationMenuItem onClick={() => setOpen(false)}>
+                <Link href="/#equipment" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Sprzęt</NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem onClick={() => setOpen(false)}>
-                <Link href="/blog" as="/artykuly" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Artykuły</NavigationMenuLink>
+                <Link href="/#faq" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>FAQ</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
 
