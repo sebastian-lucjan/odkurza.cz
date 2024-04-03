@@ -1,4 +1,4 @@
-import { CustomersIcon, FirmIcon } from '@ui/components/Icons';
+import { CustomersIcon, FirmIcon } from '@ui/Icons';
 import { homepageData } from 'data/homepageData';
 
 export default function IntroSection() {

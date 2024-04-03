@@ -1,7 +1,7 @@
-import Header from '@ui/components/Header';
-import Footer from '@ui/components/Footer';
-import Contact from '@ui/components/Contact';
-import InfoBar from '@ui/components/InfoBar';
+import Header from '@ui/Header';
+import Footer from '@ui/Footer';
+import Contact from '@ui/Contact';
+import InfoBar from '@ui/InfoBar';
 import { getContent } from '@lib/services/cms/getContent';
 import { pageMetadata } from 'data/metadata';
 import infoBarVisibility from '@lib/helpers/isInfoBarVisible';

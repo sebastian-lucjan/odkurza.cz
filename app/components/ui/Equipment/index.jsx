@@ -6,7 +6,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 import Link from 'next/link';
-import AdditionalChemistryAccordion from '@ui/components/AdditionalChemistryAccordion';
+import AdditionalChemistryAccordion from '@ui/AdditionalChemistryAccordion';
 
 export default function Equipment({ pricesJSON }) {
   const prices = JSON.parse(pricesJSON);

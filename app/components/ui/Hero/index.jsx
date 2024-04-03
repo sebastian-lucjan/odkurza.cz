@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import HeroHeading from '@ui/components/Hero/HeroHeading';
-import HeroButton from '@ui/components/Hero/HeroButton';
-import HeroProsList from '@ui/components/Hero/HeroProsList';
+import HeroHeading from '@ui/Hero/HeroHeading';
+import HeroButton from '@ui/Hero/HeroButton';
+import HeroProsList from '@ui/Hero/HeroProsList';
 import { homepageData } from 'data/homepageData';
 
 export default function HeroLublin() {

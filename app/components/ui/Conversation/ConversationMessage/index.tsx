@@ -1,4 +1,4 @@
-import { CustomersIcon, FirmIcon } from '@ui/components/Icons';
+import { CustomersIcon, FirmIcon } from '@ui/Icons';
 import { ConversationMessageType, TextContentArray } from 'app/types/types';
 
 export default function ConversationMessage({ type, textContent }: ConversationMessageType) {

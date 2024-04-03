@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@ui/components/Accordion';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@ui/Accordion';
 import { cn } from '@lib/utils';
 import { useState } from 'react';
 

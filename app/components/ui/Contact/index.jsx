@@ -1,5 +1,5 @@
-import ContactForm from '@ui/components/ContactForm';
-import GoogleMap from '@ui/components/GoogleMap';
+import ContactForm from '@ui/ContactForm';
+import GoogleMap from '@ui/GoogleMap';
 import Link from 'next/link';
 
 export default function Contact() {
