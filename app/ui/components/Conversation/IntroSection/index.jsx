@@ -1,5 +1,5 @@
 import { CustomersIcon, FirmIcon } from '@ui/components/Icons';
-import { homepageData } from 'data/homepageData';
+import { homepageData } from '../data/homepageData';
 
 export default function IntroSection() {
   const { headingCTA, companyAddress } = homepageData.conversation;

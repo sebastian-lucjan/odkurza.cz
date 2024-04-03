@@ -1,5 +1,5 @@
 import { CheckCircleIcon } from '@heroicons/react/20/solid';
-import { homepageData } from 'data/homepageData';
+import { homepageData } from '../data/homepageData';
 
 export default function HeroProsList() {
   const {

@@ -1,5 +1,5 @@
-import { urlAddress } from 'data/googleMap';
 import clsx from 'clsx';
+import { urlAddress } from 'data/googleMap';
 
 export default function GoogleMap({ displayOn = 'all' }) {
   const allClasses = clsx(

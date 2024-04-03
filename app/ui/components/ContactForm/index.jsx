@@ -2,10 +2,10 @@
 
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
-import contactData from 'data/contactForm';
 import Link from 'next/link';
 import FormErrors from '@ui/components/FormErrors';
 import submitFunc from '@lib/services/contactForm/submitFunc';
+import contactData from 'data/contactForm';
 
 export default function ContactForm() {
   const [error, setError] = useState('');

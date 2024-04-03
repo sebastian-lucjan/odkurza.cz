@@ -1,5 +1,5 @@
-import { urlAddress } from 'data/googleMap';
 import Link from 'next/link';
+import { urlAddress } from 'data/googleMap';
 
 export default function AdditionalInfo() {
   return (
