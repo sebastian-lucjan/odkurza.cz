@@ -1,4 +1,4 @@
-import { homepageData } from '../data/homepageData';
+import { homepageData } from 'data/homepageData';
 
 export default function HeroHeading() {
   const { heading } = homepageData.hero;
