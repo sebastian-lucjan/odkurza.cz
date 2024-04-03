@@ -21,7 +21,7 @@ export const homepageData = {
 
   pros: [
     {
-      icon: <CalendarDaysIcon className="w-20 h-20 mb-2" />,
+      icon: <CalendarDaysIcon />,
       textContent: [
         {
           textType: 'paragraph',
@@ -34,7 +34,7 @@ export const homepageData = {
       ],
     },
     {
-      icon: <SparklesIcon className="w-20 h-20 mb-2" />,
+      icon: <SparklesIcon />,
       textContent: [
         {
           textType: 'highlighted',
@@ -47,7 +47,7 @@ export const homepageData = {
       ],
     },
     {
-      icon: <HandThumbUpIcon className="w-20 h-20 mb-2" />,
+      icon: <HandThumbUpIcon />,
       textContent: [
         {
           textType: 'highlighted',

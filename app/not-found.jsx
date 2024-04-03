@@ -4,7 +4,7 @@
 // import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import Image from 'next/image';
-import vacuumCleaner from '../public/images/odkurzacz-pioracy-lublin.jpeg';
+import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 
 // const title = 'odkurza.cz - wynajem odkurzaczy piorących Lublin';
 // const description = 'odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan, tapicerkę lub siedzenia samochodowe .';
