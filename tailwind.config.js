@@ -1,6 +1,3 @@
-/** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 module.exports = {
   mode: 'jit',
   purge: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -15,15 +12,8 @@ module.exports = {
         recaptcha: '304px', // recaptcha width
       },
       fontFamily: {
-        lato: ['Lato, sans-serif', ...defaultTheme.fontFamily.sans],
-        roboto: ['Roboto, sans-serif', ...defaultTheme.fontFamily.sans],
-        poppins: ['Poppins, sans-serif', ...defaultTheme.fontFamily.sans],
-      },
-      minHeight: {
-        pageView: 'calc(100vh - 128px)',
-      },
-      maxHeight: {
-        about: '600px',
+        roboto: ['Roboto, sans-serif'],
+        poppins: ['Poppins, sans-serif'],
       },
       fontSize: {
         base: '1rem',
@@ -34,7 +24,6 @@ module.exports = {
       },
       colors: {
         black: 'hsl(0, 0%, 15%)',
-        lublin: '#BEF264',
         white: 'hsl(0, 0%, 100%)',
       },
       lineHeight: {
@@ -96,9 +85,6 @@ module.exports = {
         green: '2px solid #00cc00',
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   // eslint-disable-next-line global-require
   plugins: [require('@tailwindcss/forms')],

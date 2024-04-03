@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import ConversationForm from '@ui/components/Conversation/ConversationForm';
-import { FirmIcon } from '@ui/components/Icons';
-import ConversationMessage from '@ui/components/Conversation/ConversationMessage';
-import IntroSection from '@ui/components/Conversation/IntroSection';
+import ConversationForm from '@ui/Conversation/ConversationForm';
+import { FirmIcon } from '@ui/Icons';
+import ConversationMessage from '@ui/Conversation/ConversationMessage';
+import IntroSection from '@ui/Conversation/IntroSection';
 import { homepageData } from 'data/homepageData';
 import { MessageType, TextContentType } from 'app/types/types';
 

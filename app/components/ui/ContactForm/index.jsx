@@ -3,7 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import FormErrors from '@ui/components/FormErrors';
+import FormErrors from '@ui/FormErrors';
 import submitFunc from '@lib/services/contactForm/submitFunc';
 import contactData from 'data/contactForm';
 

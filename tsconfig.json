@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "paths": {
-      "@ui/*": ["app/ui/*"],
+      "@ui/*": ["app/components/ui/*"],
       "@lib/*": ["app/lib/*"],
       "@images/*": ["public/images/*"]
     },

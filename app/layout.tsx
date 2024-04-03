@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import '@ui/styles/globals.css';
-import HeadMeta from '@ui/components/HeadMeta';
+import 'app/styles/globals.css';
+import HeadMeta from '@ui/HeadMeta';
 import Script from 'next/script';
 
 export default function RootLayout({ children }: { children: ReactNode }) {

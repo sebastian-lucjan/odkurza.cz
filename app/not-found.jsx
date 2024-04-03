@@ -1,6 +1,6 @@
-// import HeadMeta from '@ui/components/HeadMeta';
-// import Header from '@ui/components/Header';
-// import Footer from '@ui/components/Footer';
+// import HeadMeta from '@ui/HeadMeta';
+// import Header from '@ui/Header';
+// import Footer from '@ui/Footer';
 // import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import Image from 'next/image';

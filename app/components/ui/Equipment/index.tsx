@@ -1,15 +1,18 @@
 'use client';
 
-import { Fragment } from 'react';
-import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@ui/Accordion';
+import { cn } from '@lib/utils';
+import { useState } from 'react';
 import Image from 'next/image';
 import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 import Link from 'next/link';
-import AdditionalChemistryAccordion from '@ui/components/AdditionalChemistryAccordion';
+import AdditionalChemistryAccordion from '@ui/AdditionalChemistryAccordion';
+import { EquipmentProps } from 'app/types/types';
 
-export default function Equipment({ pricesJSON }) {
+export default function Equipment({ pricesJSON }: EquipmentProps) {
   const prices = JSON.parse(pricesJSON);
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const {
     dayRenting: { smallPrice, mediumPrice, biggestPrice },
@@ -18,19 +21,19 @@ export default function Equipment({ pricesJSON }) {
   } = prices;
 
   return (
-    <div id="equipment" className="mx-auto py-12 flex justify-evenly items-end max-w-7xl  sm:px-6 border-b-2 border-gray-100">
-      <div className="border flex flex-col bg-white border-gray-200 shadow-lg rounded-xl mx-4 tablet:w-[60%] laptop:w-[480px]">
+    <div id="equipment" className="mx-auto py-12 flex justify-evenly items-end max-w-7xl sm:px-6 border-b-2 border-gray-100">
+      <div className="border flex flex-col bg-white border-gray-200 shadow-lg rounded-xl mx-4 w-[100% - 32px] tablet:w-[60%] laptop:w-[480px] overflow-hidden">
         <div className="m-8">
           <Image
-            className="transition-transform h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full hover:scale-105"
+            className="transition-transform h-full object-cover md:h-96 lg:h-full lg:w-full hover:scale-105"
             src={vacuumCleaner?.src}
             width={800}
             height={800}
             alt="Odkurzacz piorący z akcesoriami dostępny w wypożyczalni w Lublinie"
           />
         </div>
-        <div className="bg-gray-50 pt-6 px-6">
-          <div className="flex justify-center pb-6 flex-col">
+        <div className="bg-gray-50 pt-6 px-6 ">
+          <div className="flex relative justify-center flex-col tablet:justify-start">
             <p className="text-2xl font-[600]">ODKURZACZ PIORĄCY KARCHER SE 5.100</p>
             <p className="text-md mt-4">
               Profesjonalne urządzenie do czyszczenie dywanów i wykładzin. Metoda polega na natryskiwaniu silnie skoncentrowanego środka czyszczącego
@@ -38,28 +41,23 @@ export default function Equipment({ pricesJSON }) {
               maksymalnie skrócony.
             </p>
 
-            <Menu as="div" className="relative text-left">
-              <div className="mt-6">
-                <Menu.Button className="inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+            <Accordion type="single" collapsible>
+              <AccordionItem value="price-list-item">
+                <AccordionTrigger
+                  className={cn(
+                    'inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 mt-6 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 focus:ring-offset-gray-100',
+                    isOpen ? 'rounded-t-lg' : 'rounded-lg',
+                  )}
+                  onClick={() => setIsOpen((prev) => !prev)}
+                >
                   Szczegółowy <span className="ml-2 font-semibold">CENNIK</span>
                   <span className="ml-2 animate-wiggle">🔔</span>
-                  <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
-                </Menu.Button>
-              </div>
+                </AccordionTrigger>
 
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="absolute left-0 z-10 mt-2 origin-top-left divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none w-[100%] text-xs leading-6">
-                  <div className="relative p-4 w-full">
+                <AccordionContent className="mt-2 origin-top-left rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none text-xs leading-6">
+                  <div className="relative p-4 w-[100% - 32px]">
                     <div className="flex mb-4 border-b-4 pb-2 border-gray-100">
-                      <p className="font-bold mr-4 w-[25%]">CENNIK:</p>
+                      <p className="font-bold mr-3 w-[25%]">CENNIK:</p>
                       <div className="w-[80%]">
                         <div className="flex justify-between">
                           <p>Pon. - Czw.:</p>
@@ -67,7 +65,7 @@ export default function Equipment({ pricesJSON }) {
                         </div>
                         <div className="flex justify-between">
                           <div className="flex font-bold text-black">
-                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Pt. - Nd. (weekend):</p>
+                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Pt./ Sob./ Nd.:</p>
                             <p className="text-xl">*</p>
                           </div>
                           <p>{mediumPrice} zł / dzień (24h)</p>
@@ -79,7 +77,7 @@ export default function Equipment({ pricesJSON }) {
                       </div>
                     </div>
                     <div className="flex mb-4 border-b-4 pb-2 border-gray-100">
-                      <p className="font-bold text-[12px] mr-4 w-[25%]">ŚRODEK CZYSZCZĄCY:</p>
+                      <p className="font-bold text-[12px] mr-3 w-[25%]">ŚRODEK CZYSZCZĄCY:</p>
                       <div className="w-[80%]">
                         <div className="flex justify-between">
                           <p className="w-1/5">100ml</p>
@@ -153,7 +151,7 @@ export default function Equipment({ pricesJSON }) {
                       </div>
                     </div>
                     <div className="flex mb-4 border-b-4 pb-2 border-gray-100">
-                      <p className="font-bold mr-4 w-1/4">DOWÓZ:</p>
+                      <p className="font-bold mr-3 w-1/4">DOWÓZ:</p>
                       <div className="w-[80%]">
                         <p>W granicach Lublina:</p>
                         <div className="flex justify-between">
@@ -175,7 +173,7 @@ export default function Equipment({ pricesJSON }) {
                     </div>
 
                     <div className="flex">
-                      <div className="flex font-bold  mr-4 w-1/4">
+                      <div className="flex font-bold mr-3 w-1/4">
                         <p className="underline underline-offset-[-4px] decoration-4 decoration-lime-300 text-4xl text-black">*</p>
                       </div>
                       <div className="w-4/5">
@@ -183,9 +181,9 @@ export default function Equipment({ pricesJSON }) {
                       </div>
                     </div>
                   </div>
-                </Menu.Items>
-              </Transition>
-            </Menu>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
           <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8 flex justify-center">
             <div>

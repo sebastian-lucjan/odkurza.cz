@@ -1,9 +1,9 @@
 ## Project Under Refactoring
 Currently implemented changes:
-- 🌕🌕️🌕️🌑️🌑️ adding typescript,
-- 🌕️🌕️🌕️🌕🌑️  update to next 14,
-- 🌕️🌑️🌑️🌑️🌑️  switch to shadcn/ui,
-- 🌕🌕🌗🌑️🌑️  cleaning and updating the code
+- 🌕🌕️🌕️🌗🌑️ adding typescript,
+- 🌕️🌕️🌕️🌕🌗  update to next 14,
+- 🌕️🌕️🌕️🌕️🌑️  switch to shadcn/ui,
+- 🌕🌕🌕️🌑️🌑️  cleaning and updating the code
 
 ```note
 planned completion of the refactor: April 4, 2024

@@ -1,4 +1,4 @@
-import ProsItem from '@ui/components/Pros/ProsItem';
+import ProsItem from '@ui/Pros/ProsItem';
 import { ProsTextContentItemType } from 'app/types/types';
 import { homepageData } from 'data/homepageData';
 

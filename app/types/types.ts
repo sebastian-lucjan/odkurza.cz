@@ -2,6 +2,16 @@ import { ReactNode } from 'react';
 
 export type AppStageType = 'PROD' | 'DEV';
 
+export type MobileNumber = number;
+
+export interface HeaderProps {
+  mobileNumber: MobileNumber;
+}
+
+export interface EquipmentProps {
+  pricesJSON: string;
+}
+
 export type MessageType = 'question' | 'answer';
 
 interface RegularText {

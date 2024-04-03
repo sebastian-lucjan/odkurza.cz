@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@ui/components/Accordion';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@ui/Accordion';
 import { cn } from '@lib/utils';
 import { useState } from 'react';
 
@@ -7,15 +7,15 @@ export default function AdditionalChemistryAccordion() {
 
   return (
     <Accordion type="single" collapsible className="bg-whiteish">
-      <AccordionItem value="item-1">
+      <AccordionItem value="additional-chemistry-item">
         <AccordionTrigger
           className={cn(
-            'flex w-full justify-between bg-neutral-700 h-10 px-4 py-2 text-left font-semibold text-white text-xs hover:bg-neutral-600 focus:outline-none focus-visible:ring focus-visible:ring-lime-500/75 leading-6',
+            'flex w-full justify-between bg-neutral-700 px-3 text-left font-semibold text-white text-[11px] tablet:text-xs hover:bg-neutral-600 focus:outline-none focus-visible:ring focus-visible:ring-lime-500/75',
             isOpen ? 'rounded-t-lg' : 'rounded-lg',
           )}
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          🥼 Chemia do cięższych zabrudzeń? 🧪
+          🥼Chemia do cięższych zabrudzeń?🧪
         </AccordionTrigger>
         <AccordionContent className={`${isOpen ? 'rounded-b-lg' : 'rounded-lg'} px-2 pb-2 pt-2 text-natural-700 bg-neutral-100 text-xs leading-6`}>
           <p>Jeśli chcesz uprać uporczywe plamy lepszym rozwiązaniem będzie użycie mocniejszej chemii w proszku.</p>
