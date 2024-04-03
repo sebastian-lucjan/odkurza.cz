@@ -7,6 +7,7 @@ interface ButtonProps {
 
 export default function Button({ mobileNumber }: ButtonProps) {
   const mobileNumberFormatted = addSpaces(mobileNumber);
+
   return (
     <Link
       href={`tel:+48${mobileNumber}`}

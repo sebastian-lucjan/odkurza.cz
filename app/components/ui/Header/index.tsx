@@ -3,8 +3,9 @@
 import Link from 'next/link';
 import Button from '@ui/Button';
 import Navigation from '@ui/NavigationMenu';
+import { HeaderProps } from 'app/types/types';
 
-export default function Header({ mobileNumber }) {
+export default function Header({ mobileNumber }: HeaderProps) {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
       <div className="relative flex flex-col laptop:flex-row items-center justify-between border-b-2 border-gray-100 py-6">

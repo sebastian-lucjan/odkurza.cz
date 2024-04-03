@@ -7,8 +7,9 @@ import Image from 'next/image';
 import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 import Link from 'next/link';
 import AdditionalChemistryAccordion from '@ui/AdditionalChemistryAccordion';
+import { EquipmentProps } from 'app/types/types';
 
-export default function Equipment({ pricesJSON }) {
+export default function Equipment({ pricesJSON }: EquipmentProps) {
   const prices = JSON.parse(pricesJSON);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -64,7 +65,7 @@ export default function Equipment({ pricesJSON }) {
                         </div>
                         <div className="flex justify-between">
                           <div className="flex font-bold text-black">
-                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Pt. - Nd. (weekend):</p>
+                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Pt./ Sob./ Nd.:</p>
                             <p className="text-xl">*</p>
                           </div>
                           <p>{mediumPrice} zł / dzień (24h)</p>
