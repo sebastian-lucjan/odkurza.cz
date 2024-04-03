@@ -39,8 +39,8 @@ export default function Footer() {
         rel="noopener noreferrer"
       >
         <p className="text-xs text-neutral-600 font-light">Created by</p>
-        <div className="relative w-[70px] h-[16px]">
-          <Image src={iotenWhiteLogo?.src} priority layout="fill" objectFit="contain" alt="ioten, autor strony internetowej pulire" />
+        <div className="relative w-[70px] h-[16px] flex justify-center">
+          <Image src={iotenWhiteLogo?.src} width={41} height={15} alt="ioten, autor strony internetowej" />
         </div>
         <p className="text-xs font-bold text-neutral-500 pt-[1px]">ioten.io</p>
       </Link>

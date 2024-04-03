@@ -1,8 +1,8 @@
 ## Project Under Refactoring
 Currently implemented changes:
 - 🌕🌕️🌕️🌑️🌑️ adding typescript,
-- 🌕️🌕️🌕️🌕🌑️  update to next 14,
-- 🌕️🌑️🌑️🌑️🌑️  switch to shadcn/ui,
+- 🌕️🌕️🌕️🌕🌗  update to next 14,
+- 🌕️🌕️🌗🌑️🌑️  switch to shadcn/ui,
 - 🌕🌕🌗🌑️🌑️  cleaning and updating the code
 
 ```note

@@ -24,7 +24,7 @@ export default function HeroLublin() {
       </div>
 
       <div className="flex justify-center my-8 tablet:my-12 laptop:w-1/2">
-        <Image className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full" src={src} alt={alt} width={800} height={800} />
+        <Image className="h-full w-full object-cover lg:w-full" src={src} alt={alt} width={800} height={800} />
       </div>
     </div>
   );

@@ -7,6 +7,8 @@ const indexRobotsCondition = (NEXT_PUBLIC_APP_STAGE as AppStageType) === 'PROD';
 
 export const pageMetadata = {
   homepage: {
+    metadataBase: new URL('https://odkurza.cz'),
+
     alternates: {
       canonical: 'https://odkurza.cz',
     },
@@ -37,6 +39,8 @@ export const pageMetadata = {
     },
   },
   contact: {
+    metadataBase: new URL('https://odkurza.cz/kontakt'),
+
     alternates: {
       canonical: 'https://odkurza.cz/kontakt',
     },
