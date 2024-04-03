@@ -4,10 +4,6 @@ export type AppStageType = 'PROD' | 'DEV';
 
 export type MobileNumber = number;
 
-export interface HeaderProps {
-  mobileNumber: MobileNumber;
-}
-
 export interface EquipmentProps {
   pricesJSON: string;
 }

@@ -1,9 +1,10 @@
 ## Project Under Refactoring
 Currently implemented changes:
-- 🌕🌕️🌕️🌗🌑️ adding typescript,
+- 🌕🌕️🌕🌕️🌗️ adding typescript,
 - 🌕️🌕️🌕️🌕🌗  update to next 14,
 - 🌕️🌕️🌕️🌕️🌑️  switch to shadcn/ui,
 - 🌕🌕🌕️🌑️🌑️  cleaning and updating the code
+- 🌑️🌑️🌑️🌑️🌑️  Figma design file
 
 ```note
 planned completion of the refactor: April 4, 2024

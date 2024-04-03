@@ -67,4 +67,14 @@ export const pageMetadata = {
     },
     title: 'odkurza.cz - kontakt, wynajem odkurzaczy piorących Lublin',
   },
+  notFound: {
+    metadataBase: new URL('https://odkurza.cz'),
+
+    description: 'odkurza.cz, napisz lub zadzwoń i wynajmij odkurzacz piorący Lublin, wyczyść dywan lub tapicerkę.',
+    robots: {
+      index: false,
+      follow: false,
+    },
+    title: 'odkurza.cz - strona 404',
+  },
 };

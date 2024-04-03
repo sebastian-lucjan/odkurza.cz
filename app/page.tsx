@@ -14,13 +14,12 @@ import { pageData } from 'data/pageData';
 export const metadata = pageMetadata.homepage;
 
 const {
-  cmsData: { infoBar, mobile, pricesData },
+  cmsData: { infoBar, pricesData },
 } = pageData;
 
 export default async function Page() {
   const { pricesObj: prices } = await getContent(pricesData.id);
   const { isVisible, turnOffDate, textContent, bargain } = await getContent(infoBar.id);
-  const { mobile: mobileNumber } = await getContent(mobile.id);
 
   const isInfoBarVisible = infoBarVisibility(isVisible, turnOffDate);
 
@@ -28,7 +27,7 @@ export default async function Page() {
     <main className="relative bg-white">
       {isInfoBarVisible && <InfoBar textContent={textContent} bargain={bargain} />}
 
-      <Header mobileNumber={mobileNumber} />
+      <Header />
 
       <Hero />
 

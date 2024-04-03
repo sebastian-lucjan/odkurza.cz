@@ -11,12 +11,11 @@ import { Metadata } from 'next';
 export const metadata: Metadata = pageMetadata.contact;
 
 const {
-  cmsData: { infoBar, mobile },
+  cmsData: { infoBar },
 } = pageData;
 
 export default async function ContactPage() {
   const { isVisible, turnOffDate, textContent, bargain } = await getContent(infoBar.id);
-  const { mobile: mobileNumber } = await getContent(mobile.id);
 
   const isInfoBarVisible = infoBarVisibility(isVisible, turnOffDate);
 
@@ -24,7 +23,7 @@ export default async function ContactPage() {
     <main className="relative bg-white">
       {isInfoBarVisible && <InfoBar textContent={textContent} bargain={bargain} />}
 
-      <Header mobileNumber={mobileNumber} />
+      <Header />
 
       <Contact />
 
