@@ -57,7 +57,6 @@ export default function ContactForm() {
                   </label>
                   <input
                     type="text"
-                    name="name"
                     id="name"
                     autoComplete="name"
                     {...register('name', nameStringConditions)}
@@ -71,7 +70,6 @@ export default function ContactForm() {
                   </label>
                   <input
                     type="text"
-                    name="mobile"
                     id="mobile"
                     autoComplete="tel"
                     {...register('mobile', phoneNumberStringConditions)}
@@ -85,7 +83,6 @@ export default function ContactForm() {
                   </label>
                   <input
                     type="text"
-                    name="email"
                     id="email"
                     autoComplete="email"
                     {...register('email', emailStringConditions)}
@@ -99,9 +96,8 @@ export default function ContactForm() {
                   </label>
                   <p className="text-xs w-1/2 text-gray-500">Napisz model sprzętu, ilość dni oraz termin wypożyczenia.</p>
                   <textarea
-                    name="message"
                     id="message"
-                    rows="6"
+                    rows={6}
                     {...register('message', textareaStringConditions)}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
@@ -113,7 +109,7 @@ export default function ContactForm() {
               </p>
             </div>
 
-            {Object.values(errors).length ? <FormErrors hasError errorServ={error} errors={errors} /> : null}
+            {Object.values(errors).length ? <FormErrors errorServ={error} errors={errors} /> : null}
 
             <div className="flex justify-end bg-gray-50 px-6 py-3 text-left">
               <button

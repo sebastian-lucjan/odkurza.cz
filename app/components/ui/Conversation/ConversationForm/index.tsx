@@ -4,8 +4,9 @@ import FormErrors from '@ui/FormErrors';
 import { CustomersIcon } from '@ui/Icons';
 import submitFunc from '@lib/services/contactForm/submitFunc';
 import contactData from 'data/contactForm';
+import { ConversationFormProps } from 'app/types/types';
 
-export default function ConversationForm({ setMessageSend, setMessage, message }) {
+export default function ConversationForm({ setMessageSend, setMessage, message }: ConversationFormProps) {
   const [error, setError] = useState('');
 
   const {
@@ -83,7 +84,6 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
                     </label>
                     <input
                       type="text"
-                      name="name"
                       id="name"
                       autoComplete="name"
                       {...register('name', nameStringConditions)}
@@ -97,7 +97,6 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
                     </label>
                     <input
                       type="text"
-                      name="mobile"
                       id="mobile"
                       autoComplete="tel"
                       {...register('mobile', phoneNumberStringConditions)}
@@ -111,7 +110,6 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
                     </label>
                     <input
                       type="text"
-                      name="email"
                       id="email"
                       autoComplete="email"
                       {...register('email', emailStringConditions)}
@@ -125,9 +123,8 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
                     </label>
                     <p className="text-xs w-3/5 tablet:w-1/2 text-gray-500">Napisz model sprzętu, ilość dni oraz termin wypożyczenia.</p>
                     <textarea
-                      name="message"
                       id="message"
-                      rows="6"
+                      rows={6}
                       {...register('message', textareaStringConditions)}
                       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                     />
@@ -139,7 +136,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
                 </p>
               </div>
 
-              {Object.values(errors).length ? <FormErrors conversation hasError errorServ={error} errors={errors} /> : null}
+              {Object.values(errors).length ? <FormErrors conversation errorServ={error} errors={errors} /> : null}
 
               <div className="flex justify-end bg-gray-100 px-6 py-3 text-left">
                 <button
