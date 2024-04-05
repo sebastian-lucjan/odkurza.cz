@@ -6,10 +6,6 @@ Currently implemented changes:
 - 🌕🌕🌕️🌑️🌑️  cleaning and updating the code
 - 🌑️🌑️🌑️🌑️🌑️  Figma design file
 
-```note
-planned completion of the refactor: April 4, 2024
-```
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
