@@ -4,6 +4,7 @@ import validate from '@lib/services/contactForm/validateMessageToOdkurzacz';
 export async function POST(req: Request) {
   try {
     const payload = await req.json();
+
     const { name, mobile, email, message, formType } = await validate({ ...payload });
 
     await sendMessageToOdkurzacz(name, mobile, email, message, formType);

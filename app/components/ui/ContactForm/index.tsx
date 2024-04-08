@@ -1,53 +1,23 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import FormErrors from '@ui/FormErrors';
-import submitFunc from '@lib/services/contactForm/submitFunc';
 import contactData from 'data/contactForm';
+import useCustomForm from 'app/hooks/useCustomForm';
+import MessageSend from '@ui/ContactForm/MessageSend';
 
 export default function ContactForm() {
-  const [error, setError] = useState('');
-  const [messageSend, setMessageSend] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    watch,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
-  } = useForm();
-
-  const formType = 'contact-form';
+  const { errorServer, errors, isMessageSend, isSending, register, handleSubmit, handleBackToForm } = useCustomForm('contact-form');
 
   const {
     conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
   } = contactData.form;
 
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      setMessageSend(true);
-    }
-
-    return () => {
-      setMessageSend(false);
-    };
-  }, [isSubmitSuccessful, setMessageSend]);
-
   return (
     <div className="mt-5 md:col-span-2 md:mt-0">
-      {messageSend ? (
-        <div className="overflow-hidden h-full flex flex-col justify-between shadow rounded-md bg-white px-4 py-5 sm:p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Twoja wiadomość została wysłana.</h2>
-          <p className="text-sm text-gray-700">Zwykle odpowiadamy maksymalnie w ciągu kilku godzin roboczych.</p>
-          <p className="text-sm text-gray-700">Jeśli zależy Ci na czasie zadzwoń do nas.</p>
-          <Link href="/" className="mt-4 text-md font-medium underline underline-offset-[5px] text-gray-700 hover:text-green-600 cursor-pointer">
-            Wróć do strony głównej
-          </Link>
-        </div>
+      {isMessageSend ? (
+        <MessageSend handleBackToForm={handleBackToForm} />
       ) : (
-        <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType))}>
+        <form onSubmit={handleSubmit}>
           <div className="overflow-hidden shadow rounded-md">
             <div className="bg-white px-4 py-5 sm:p-6">
               <div className="grid grid-cols-6 gap-6">
@@ -109,14 +79,14 @@ export default function ContactForm() {
               </p>
             </div>
 
-            {Object.values(errors).length ? <FormErrors errorServ={error} errors={errors} /> : null}
+            {Object.values(errors).length || errorServer ? <FormErrors errorServ={errorServer} errors={errors} /> : null}
 
             <div className="flex justify-end bg-gray-50 px-6 py-3 text-left">
               <button
                 type="submit"
                 className="inline-flex justify-center rounded-md border border-transparent bg-green-600 py-3 w-full laptop:w-[300px] text-md font-semibold text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
               >
-                {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
+                {isSending ? 'Wysyłanie...' : 'Wyślij wiadomość'}
               </button>
             </div>
           </div>

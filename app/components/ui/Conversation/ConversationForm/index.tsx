@@ -1,56 +1,33 @@
-import { useForm } from 'react-hook-form';
-import { useEffect, useState } from 'react';
 import FormErrors from '@ui/FormErrors';
-import { CustomersIcon } from '@ui/Icons';
-import submitFunc from '@lib/services/contactForm/submitFunc';
+import { CustomersIcon, FirmIcon } from '@ui/Icons';
 import contactData from 'data/contactForm';
-import { ConversationFormProps } from 'app/types/types';
+import useCustomForm from 'app/hooks/useCustomForm';
 
-export default function ConversationForm({ setMessageSend, setMessage, message }: ConversationFormProps) {
-  const [error, setError] = useState('');
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    watch,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
-  } = useForm();
-
-  const formType = 'conversation-form';
+export default function ConversationForm() {
+  const { errorServer, errors, getFormValues, isMessageSend, isSending, register, handleSubmit } = useCustomForm('conversation-form');
 
   const {
     conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
   } = contactData.form;
 
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      setMessageSend(true);
-    }
-
-    return () => {
-      setMessageSend(false);
-    };
-  }, [isSubmitSuccessful, setMessageSend, message]);
-
   return (
     <div className="mt-5 md:col-span-2 md:mt-0">
-      {isSubmitSuccessful ? (
+      {isMessageSend ? (
         <>
           <div className="flex flex-row-reverse justify-start items-end my-8">
             <CustomersIcon />
             <p className="rounded-2xl bg-gray-50 border border-gray-300 px-4 py-2 text-gray-700 shadow-md">
               Imię i nazwisko:
-              <span className="ml-2 font-semibold">{message.name}</span>
+              <span className="ml-2 font-semibold">{getFormValues().name}</span>
             </p>
           </div>
 
-          {message.mobile ? (
+          {getFormValues().mobile ? (
             <div className="flex flex-row-reverse justify-start items-end my-8">
               <CustomersIcon />
               <p className="rounded-2xl bg-gray-50 border border-gray-300 px-4 py-2 text-gray-700 shadow-md">
                 Telefon:
-                <span className="ml-2 font-semibold">{message.mobile}</span>
+                <span className="ml-2 font-semibold">{getFormValues().mobile}</span>
               </p>
             </div>
           ) : null}
@@ -59,7 +36,7 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
             <CustomersIcon />
             <p className="rounded-2xl bg-gray-50 border border-gray-300 px-4 py-2 text-gray-700 shadow-md">
               Email:
-              <span className="ml-2 font-semibold">{message.email}</span>
+              <span className="ml-2 font-semibold">{getFormValues().email}</span>
             </p>
           </div>
 
@@ -67,14 +44,22 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
             <CustomersIcon />
             <p className="flex flex-col rounded-2xl bg-gray-50 border border-gray-300 px-4 py-2 text-gray-700 shadow-md">
               Twoja wiadomość:
-              <span className="font-semibold">{message.message}</span>
+              <span className="font-semibold">{getFormValues().message}</span>
+            </p>
+          </div>
+
+          <div className="flex mr-10 items-end my-4">
+            <FirmIcon iconSize={32} bubblesSize="xl" />
+            <p className="ml-4 bg-gradient-to-b from-lime-200 to-lime-300 max-w-[60%] rounded-2xl px-4 py-2 text-black shadow-md">
+              Dzięki za wiadomość <span className="font-semibold">{getFormValues().name}</span>. Odpiszemy w ciągu kilku godzin roboczych. Jeśli
+              zależy Ci na czasie zapraszamy do kontaktu telefonicznego.
             </p>
           </div>
         </>
       ) : (
         <div className="flex flex-row-reverse justify-start items-end my-8 ml-10">
           <CustomersIcon />
-          <form onSubmit={handleSubmit(() => submitFunc(reset, watch, setError, formType, setMessage))}>
+          <form onSubmit={handleSubmit}>
             <div className="overflow-hidden shadow bg-gray-50 border border-gray-200 rounded-2xl">
               <div className="px-4 py-5 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
@@ -136,14 +121,14 @@ export default function ConversationForm({ setMessageSend, setMessage, message }
                 </p>
               </div>
 
-              {Object.values(errors).length ? <FormErrors conversation errorServ={error} errors={errors} /> : null}
+              {Object.values(errors).length ? <FormErrors conversation errorServ={errorServer} errors={errors} /> : null}
 
               <div className="flex justify-end bg-gray-100 px-6 py-3 text-left">
                 <button
                   type="submit"
                   className="inline-flex justify-center rounded-md border border-transparent bg-lime-300 py-3 w-full laptop:w-[300px] text-md font-semibold text-black shadow-sm hover:bg-green-500 focus:outline-none hover:text-white focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                 >
-                  {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
+                  {isSending ? 'Wysyłanie...' : 'Wyślij wiadomość'}
                 </button>
               </div>
             </div>

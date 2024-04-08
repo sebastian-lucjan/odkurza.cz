@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { urlAddress } from 'data/googleMap';
+import { googleMapData } from 'data/googleMap';
 
 export default function AdditionalInfo() {
   return (
@@ -122,7 +122,7 @@ export default function AdditionalInfo() {
         <h2 className="mb-4">Lokalizacja</h2>
         <p className="mb-3">Wygodna lokalizacja niedaleko centrum.</p>
         <div className="mt-4 shadow w-full h-[400px]">
-          <iframe className="w-full h-full" title="map" src={urlAddress} />
+          <iframe className="w-full h-full" title="map" src={googleMapData.urlAddress} />
         </div>
       </div>
     </div>

@@ -39,22 +39,36 @@ export interface ProsItemProps {
   textContent: ProsTextContentItemType[];
 }
 
-export interface MessageObjectType {
-  name: null;
-  mobile: null;
-  email: null;
-  message: null;
-  formType: 'unset';
-}
-
-export interface ConversationFormProps {
-  setMessageSend: any;
-  setMessage: any;
-  message: MessageObjectType;
-}
-
 export interface FormErrorProps {
   errors?: any;
   errorServ?: string;
   conversation?: boolean;
+}
+
+export interface GoogleMapProps {
+  displayOn: 'all' | 'tablet-and-up' | 'mobile';
+}
+
+export interface FirmIconProps {
+  iconSize: number;
+  bubblesSize: 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+}
+
+export interface InfoBarProps {
+  textContent: string;
+  bargain: string;
+}
+
+export type FormTypeType = 'conversation-form' | 'contact-form' | 'unset';
+
+export interface PayloadType {
+  name: string;
+  mobile: string;
+  email: string;
+  message: string;
+  formType: FormTypeType;
+}
+
+export interface MessageSendProps {
+  handleBackToForm: () => void;
 }

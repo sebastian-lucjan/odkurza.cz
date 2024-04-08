@@ -1,12 +1,27 @@
 ## Project Under Refactoring
 Currently implemented changes:
-- 🌕🌕️🌕🌕️🌗️ adding typescript,
-- 🌕️🌕️🌕️🌕🌗  update to next 14,
-- 🌕️🌕️🌕️🌕️🌑️  switch to shadcn/ui,
-- 🌕🌕🌕️🌑️🌑️  cleaning and updating the code
+- 🌕🌕🌕️🌕️🌑️  cleaning and updating the code
+- 🌕️🌑️🌑️🌑️🌑️  unit tests
+- 🌕🌕🌑️🌑️🌑️  readme and simple documentation
 - 🌑️🌑️🌑️🌑️🌑️  Figma design file
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Project details
+### Tech stack
+- Next.js
+- React
+- TypeScript
+- Tailwind
+- Contentful CMS
+- Shadcn/ui
+
+### Design
+- Figma
+
+### Deployment
+- Vercel
+
 
 ## Getting Started
 

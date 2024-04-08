@@ -1,6 +1,7 @@
 import { UserIcon } from '@heroicons/react/24/outline';
+import { FirmIconProps } from 'app/types/types';
 
-export function FirmIcon({ iconSize, bubblesSize }) {
+export function FirmIcon({ iconSize, bubblesSize }: FirmIconProps) {
   return (
     <div
       className={`flex justify-center items-center bg-gradient-to-b from-lime-100 to-lime-400 w-[${iconSize}px] h-[${iconSize}px] px-2 py-2 rounded-full text-${bubblesSize} ml-2 shadow-md`}
