@@ -1,6 +1,9 @@
 import { createClient } from 'contentful';
 
+const spaceId: string = process.env.CONTENTFUL_SPACE_ID || '';
+const accessToken: string = process.env.CONTENTFUL_ACCESS_TOKEN || '';
+
 export default createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  space: spaceId,
+  accessToken,
 });
