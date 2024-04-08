@@ -2,11 +2,11 @@ import Header from '@ui/Header';
 import Footer from '@ui/Footer';
 import Contact from '@ui/Contact';
 import InfoBar from '@ui/InfoBar';
-import { getContent } from '@lib/services/cms/getContent';
 import { pageMetadata } from 'data/metadata';
 import infoBarVisibility from '@lib/helpers/isInfoBarVisible';
 import { pageData } from 'data/pageData';
 import { Metadata } from 'next';
+import { getContent } from '@lib/services/cms/getContent';
 
 export const metadata: Metadata = pageMetadata.contact;
 

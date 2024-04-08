@@ -1,17 +1,20 @@
 import axios from 'axios';
 
-export default async function submitFunc(reset, getFormValues, setError, formType, setMessage = () => {}) {
+export default async function submitFunc(getFormValues, setError, formType, setIsSending, setIsMessageSend) {
   try {
     setError('');
+    setIsSending(true);
+
     const payload = getFormValues();
-    setMessage({ ...payload, formType });
 
     const response = await axios.post('/api/contact', { ...payload, formType }).catch((responseError) => setError(responseError.data.error));
 
     if (response.status === 200) {
-      reset();
+      setIsMessageSend(true);
     }
   } catch (error) {
     setError(error);
+  } finally {
+    setIsSending(false);
   }
 }
