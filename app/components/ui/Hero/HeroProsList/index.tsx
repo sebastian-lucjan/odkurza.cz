@@ -7,14 +7,14 @@ export default function HeroProsList() {
   } = homepageData.hero;
 
   return (
-    <div className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+    <div className="my-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
       <h3>{heading}</h3>
 
       <ul className="flex flex-col">
         {list.map((listItem) => {
           return (
             <li key={listItem} className="inline-flex">
-              <CheckCircleIcon className="w-6 h-6 mr-2 mt-[2px] text-lime-300" />
+              <CheckCircleIcon className="mr-2 mt-[2px] h-6 w-6 text-lime-300" />
               <p>{listItem}</p>
             </li>
           );

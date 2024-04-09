@@ -1,5 +1,9 @@
 const contactData = {
   form: {
+    types: {
+      contactType: 'contact-form',
+      conversationForm: 'conversation-form',
+    },
     conditions: {
       nameStringConditions: {
         required: 'Pole "Imię" jest wymagane.',

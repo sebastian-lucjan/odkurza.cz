@@ -3,7 +3,7 @@ import { googleMapData } from 'data/googleMap';
 
 export default function AdditionalInfo() {
   return (
-    <div className="relative flex flex-col justify-between px-4 sm:px-6 max-w-7xl laptop:w-full overflow-hidden bg-white border-b-2 border-gray-100 mx-auto py-20">
+    <div className="relative mx-auto flex max-w-7xl flex-col justify-between overflow-hidden border-b-2 border-gray-100 bg-white px-4 py-20 sm:px-6 laptop:w-full">
       <div>
         <h2 className="mb-4">Pranie tapicerki i dywanu – jak to wygląda krok po kroku</h2>
 
@@ -121,8 +121,8 @@ export default function AdditionalInfo() {
       <div className="mt-12">
         <h2 className="mb-4">Lokalizacja</h2>
         <p className="mb-3">Wygodna lokalizacja niedaleko centrum.</p>
-        <div className="mt-4 shadow w-full h-[400px]">
-          <iframe className="w-full h-full" title="map" src={googleMapData.urlAddress} />
+        <div className="mt-4 h-[400px] w-full shadow">
+          <iframe className="h-full w-full" title="map" src={googleMapData.urlAddress} />
         </div>
       </div>
     </div>

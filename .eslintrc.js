@@ -60,6 +60,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'spaced-comment': 'off',
     'react-hooks/exhaustive-deps': 'off',
+    'react/button-has-type': 'off',
     '@next/next/no-head-element': 'off',
     '@next/next/no-img-element': 'off',
     '@next/next/no-page-custom-font': 'off',

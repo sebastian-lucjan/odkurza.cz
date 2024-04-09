@@ -14,19 +14,19 @@ export default function Navigation() {
     <NavigationMenu>
       {/* Desktop navigation */}
       <div className="my-8 hidden laptop:block">
-        <Link href="/" className="text-base p-6 font-medium text-gray-600 hover:text-gray-900">
+        <Link href="/" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
           Home
         </Link>
 
-        <Link href="/#equipment" className="text-base p-6 font-medium text-gray-600 hover:text-gray-900">
+        <Link href="/#equipment" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
           Sprzęt
         </Link>
 
-        <Link href="/#faq" className="text-base p-6 font-medium text-gray-600 hover:text-gray-900">
+        <Link href="/#faq" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
           FAQ
         </Link>
 
-        <Link href="/kontakt" className="text-base p-6 font-medium text-gray-600 hover:text-gray-900">
+        <Link href="/kontakt" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
           Kontakt
         </Link>
       </div>
@@ -37,13 +37,13 @@ export default function Navigation() {
           <SheetTrigger>
             <Bars3Icon width={40} height={40} className="absolute left-0 top-0" />
           </SheetTrigger>
-          <SheetContent className="w-full flex justify-center items-center bg-white">
+          <SheetContent className="flex w-full items-center justify-center bg-white">
             <SheetClose>
               <XMarkIcon width={40} height={40} className="absolute top-0 right-0 m-6" />
             </SheetClose>
 
-            <NavigationMenuList className="flex flex-col justify-between w-full desktop-sm:hidden h-[300px]">
-              <NavigationMenuItem onClick={() => setOpen(false)} className="hover:bg-neutral-50 rounded-md">
+            <NavigationMenuList className="desktop-sm:hidden flex h-[300px] w-full flex-col justify-between">
+              <NavigationMenuItem onClick={() => setOpen(false)} className="rounded-md hover:bg-neutral-50">
                 <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>Strona główna</NavigationMenuLink>
                 </Link>
