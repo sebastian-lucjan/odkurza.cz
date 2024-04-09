@@ -1,5 +1,4 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@ui/Accordion';
-import { cn } from '@lib/utils';
 import AdditionalChemistryAccordion from '@ui/AdditionalChemistryAccordion';
 import { PricesType } from 'app/types/types';
 
