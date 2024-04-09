@@ -21,19 +21,19 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
   } = prices;
 
   return (
-    <div id="equipment" className="mx-auto py-12 flex justify-evenly items-end max-w-7xl sm:px-6 border-b-2 border-gray-100">
-      <div className="border flex flex-col bg-white border-gray-200 shadow-lg rounded-xl mx-4 w-[100% - 32px] tablet:w-[60%] laptop:w-[480px] overflow-hidden">
+    <div id="equipment" className="mx-auto flex max-w-7xl items-end justify-evenly border-b-2 border-gray-100 py-12 sm:px-6">
+      <div className="w-[100% - 32px] mx-4 flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg tablet:w-[60%] laptop:w-[480px]">
         <div className="m-8">
           <Image
-            className="transition-transform h-full object-cover md:h-96 lg:h-full lg:w-full hover:scale-105"
+            className="h-full object-cover transition-transform hover:scale-105 md:h-96 lg:h-full lg:w-full"
             src={vacuumCleaner?.src}
             width={800}
             height={800}
             alt="Odkurzacz piorący z akcesoriami dostępny w wypożyczalni w Lublinie"
           />
         </div>
-        <div className="bg-gray-50 pt-6 px-6 ">
-          <div className="flex relative justify-center flex-col tablet:justify-start">
+        <div className="bg-gray-50 px-6 pt-6 ">
+          <div className="relative flex flex-col justify-center tablet:justify-start">
             <p className="text-2xl font-[600]">ODKURZACZ PIORĄCY KARCHER SE 5.100</p>
             <p className="text-md mt-4">
               Profesjonalne urządzenie do czyszczenie dywanów i wykładzin. Metoda polega na natryskiwaniu silnie skoncentrowanego środka czyszczącego
@@ -45,7 +45,7 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
               <AccordionItem value="price-list-item">
                 <AccordionTrigger
                   className={cn(
-                    'inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 mt-6 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 focus:ring-offset-gray-100',
+                    'mt-6 inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 focus:ring-offset-gray-100',
                     isOpen ? 'rounded-t-lg' : 'rounded-lg',
                   )}
                   onClick={() => setIsOpen((prev) => !prev)}
@@ -54,10 +54,10 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
                   <span className="ml-2 animate-wiggle">🔔</span>
                 </AccordionTrigger>
 
-                <AccordionContent className="mt-2 origin-top-left rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none text-xs leading-6">
-                  <div className="relative p-4 w-[100% - 32px]">
-                    <div className="flex mb-4 border-b-4 pb-2 border-gray-100">
-                      <p className="font-bold mr-3 w-[25%]">CENNIK:</p>
+                <AccordionContent className="mt-2 origin-top-left rounded-md bg-white text-xs leading-6 ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <div className="w-[100% - 32px] relative p-4">
+                    <div className="mb-4 flex border-b-4 border-gray-100 pb-2">
+                      <p className="mr-3 w-[25%] font-bold">CENNIK:</p>
                       <div className="w-[80%]">
                         <div className="flex justify-between">
                           <p>Pon. - Czw.:</p>
@@ -65,7 +65,7 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
                         </div>
                         <div className="flex justify-between">
                           <div className="flex font-bold text-black">
-                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Pt./ Sob./ Nd.:</p>
+                            <p className="underline decoration-lime-300 decoration-2 underline-offset-2">Pt./ Sob./ Nd.:</p>
                             <p className="text-xl">*</p>
                           </div>
                           <p>{mediumPrice} zł / dzień (24h)</p>
@@ -76,8 +76,8 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
                         </div>
                       </div>
                     </div>
-                    <div className="flex mb-4 border-b-4 pb-2 border-gray-100">
-                      <p className="font-bold text-[12px] mr-3 w-[25%]">ŚRODEK CZYSZCZĄCY:</p>
+                    <div className="mb-4 flex border-b-4 border-gray-100 pb-2">
+                      <p className="mr-3 w-[25%] text-[12px] font-bold">ŚRODEK CZYSZCZĄCY:</p>
                       <div className="w-[80%]">
                         <div className="flex justify-between">
                           <p className="w-1/5">100ml</p>
@@ -115,8 +115,8 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
                           <p className="w-1/5 font-semibold">{cleaner[400]}zł</p>
                         </div>
                         <div className="flex justify-between border-t border-gray-100">
-                          <div className="flex font-bold text-black w-1/5">
-                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">600ml</p>
+                          <div className="flex w-1/5 font-bold text-black">
+                            <p className="underline decoration-lime-300 decoration-2 underline-offset-2">600ml</p>
                             <p className="text-xl">*</p>
                           </div>
                           <ul className="w-3/5">
@@ -138,11 +138,11 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
                           <p className="w-1/5 font-semibold">{cleaner[1000]}zł</p>
                         </div>
                         <div className="flex flex-col justify-between border-t border-gray-100">
-                          <p className="font-semibold text-[10px] text-gray-700">
+                          <p className="text-[10px] font-semibold text-gray-700">
                             <span>☝️</span>Do odkurzacza dodajemy większą ilość środków czyszczących. Rozliczenie jest przy oddaniu gdy wiadomym jest
                             ile chemii zostało ostatecznie zużyte.
                           </p>
-                          <p className="font-semibold text-[10px] text-gray-700">
+                          <p className="text-[10px] font-semibold text-gray-700">
                             ✌️ Ilość potrzebnego środka czyszczącego jest zależna od stopnia zabrudzeń oraz sposobu prania.
                           </p>
                         </div>
@@ -150,8 +150,8 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
                         <AdditionalChemistryAccordion />
                       </div>
                     </div>
-                    <div className="flex mb-4 border-b-4 pb-2 border-gray-100">
-                      <p className="font-bold mr-3 w-1/4">DOWÓZ:</p>
+                    <div className="mb-4 flex border-b-4 border-gray-100 pb-2">
+                      <p className="mr-3 w-1/4 font-bold">DOWÓZ:</p>
                       <div className="w-[80%]">
                         <p>W granicach Lublina:</p>
                         <div className="flex justify-between">
@@ -164,7 +164,7 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
                         </div>
                         <div className="flex justify-between">
                           <div className="flex font-bold text-black">
-                            <p className="underline underline-offset-2 decoration-2 decoration-lime-300">Odbiór osobisty:</p>
+                            <p className="underline decoration-lime-300 decoration-2 underline-offset-2">Odbiór osobisty:</p>
                             <p className="text-xl">*</p>
                           </div>
                           <p className="font-semibold">0zł</p>
@@ -173,8 +173,8 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
                     </div>
 
                     <div className="flex">
-                      <div className="flex font-bold mr-3 w-1/4">
-                        <p className="underline underline-offset-[-4px] decoration-4 decoration-lime-300 text-4xl text-black">*</p>
+                      <div className="mr-3 flex w-1/4 font-bold">
+                        <p className="text-4xl text-black underline decoration-lime-300 decoration-4 underline-offset-[-4px]">*</p>
                       </div>
                       <div className="w-4/5">
                         <p className="">Najczęstszy wybór klientów</p>
@@ -185,9 +185,9 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
               </AccordionItem>
             </Accordion>
           </div>
-          <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8 flex justify-center">
+          <div className="flex justify-center bg-gray-50 px-5 py-5 sm:px-8 sm:py-8">
             <div>
-              CENA: od <span className="text-6xl font-bold decoration-green-500 underline underline-offset-8">{smallPrice}zł</span> / za dobę
+              CENA: od <span className="text-6xl font-bold underline decoration-green-500 underline-offset-8">{smallPrice}zł</span> / za dobę
             </div>
           </div>
           <div className="my-5 sm:mt-8 sm:flex sm:justify-center">
@@ -195,9 +195,9 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
               <Link
                 href="/contact"
                 as="/kontakt"
-                className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 color-black px-8 py-3 text-base text-black hover:text-white font-black hover:from-green-600 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg hover:brightness-125"
+                className="color-black flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 px-8 py-3 text-base font-black text-black shadow-lg hover:from-green-600 hover:to-green-600 hover:text-white hover:brightness-125 md:py-4 md:px-10 md:text-lg"
               >
-                <p>Wynajmij</p> <span className="text-4xl ml-2">🫧</span>
+                <p>Wynajmij</p> <span className="ml-2 text-4xl">🫧</span>
               </Link>
             </div>
           </div>

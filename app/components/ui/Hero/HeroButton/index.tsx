@@ -7,7 +7,7 @@ export default function HeroButton() {
         <Link
           href="/contact"
           as="/kontakt"
-          className="flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 color-black px-8 py-3 text-base  text-black font-black hover:from-green-400 hover:to-green-600 md:py-4 md:px-10 md:text-lg shadow-lg"
+          className="color-black flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 px-8 py-3 text-base  font-black text-black shadow-lg hover:from-green-400 hover:to-green-600 md:py-4 md:px-10 md:text-lg"
         >
           Wynajmij
         </Link>

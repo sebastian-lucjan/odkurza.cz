@@ -72,3 +72,12 @@ export interface PayloadType {
 export interface MessageSendProps {
   handleBackToForm: () => void;
 }
+
+export type ButtonType = 'button' | 'submit' | 'reset';
+
+export interface ButtonProps {
+  children?: ReactNode;
+  text: string;
+  href: string;
+  type: ButtonType;
+}

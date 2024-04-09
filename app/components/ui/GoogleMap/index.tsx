@@ -16,8 +16,8 @@ export default function GoogleMap({ displayOn = 'all' }: GoogleMapProps) {
     <div className={allClasses}>
       <h3 className="text-lg font-medium leading-6 text-gray-900">{heading}</h3>
       <p className="mt-1 text-sm text-gray-600">{description}</p>
-      <div className="mt-4 shadow w-full h-[320px]">
-        <iframe className="w-full h-full" title="map" src={urlAddress} />
+      <div className="mt-4 h-[320px] w-full shadow">
+        <iframe className="h-full w-full" title="map" src={urlAddress} />
       </div>
     </div>
   );

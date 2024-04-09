@@ -14,7 +14,7 @@ export default function HeroProsList() {
         {list.map((listItem) => {
           return (
             <li key={listItem} className="inline-flex">
-              <CheckCircleIcon className="w-6 h-6 mr-2 mt-[2px] text-lime-300" />
+              <CheckCircleIcon className="mr-2 mt-[2px] h-6 w-6 text-lime-300" />
               <p>{listItem}</p>
             </li>
           );

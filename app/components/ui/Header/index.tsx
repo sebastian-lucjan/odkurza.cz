@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import Button from '@ui/Button';
 import Navigation from '@ui/NavigationMenu';
 import { getContent } from '@lib/services/cms/getContent';
 import { pageData } from 'data/pageData';
+import Button from '@ui/Button';
+import MobileSVG from '@ui/svg/MobileSVG';
 
 const {
   cmsData: { mobile },
@@ -13,16 +14,16 @@ export default async function Header() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
-      <div className="relative flex flex-col laptop:flex-row items-center justify-between border-b-2 border-gray-100 py-6">
-        <div className="text-4xl text-gray-800 font-bold flex items-center justify-between w-[80%]">
+      <div className="relative flex flex-col items-center justify-between border-b-2 border-gray-100 py-6 laptop:flex-row">
+        <div className="flex w-[80%] items-center justify-between text-4xl font-bold text-gray-800">
           <Link href="/">odkurza.cz</Link>
 
           <Navigation />
         </div>
 
-        <div className="items-center justify-end">
-          <Button mobileNumber={mobileNumber} />
-        </div>
+        <Button text={mobileNumber} href={`tel:+48${mobileNumber}`}>
+          <MobileSVG />
+        </Button>
       </div>
     </div>
   );

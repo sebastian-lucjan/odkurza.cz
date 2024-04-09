@@ -10,14 +10,14 @@ export default function AdditionalChemistryAccordion() {
       <AccordionItem value="additional-chemistry-item">
         <AccordionTrigger
           className={cn(
-            'flex w-full justify-between bg-neutral-700 px-3 text-left font-semibold text-white text-[11px] tablet:text-xs hover:bg-neutral-600 focus:outline-none focus-visible:ring focus-visible:ring-lime-500/75',
+            'flex w-full justify-between bg-neutral-700 px-3 text-left text-[11px] font-semibold text-white hover:bg-neutral-600 focus:outline-none focus-visible:ring focus-visible:ring-lime-500/75 tablet:text-xs',
             isOpen ? 'rounded-t-lg' : 'rounded-lg',
           )}
           onClick={() => setIsOpen((prev) => !prev)}
         >
           🥼Chemia do cięższych zabrudzeń?🧪
         </AccordionTrigger>
-        <AccordionContent className={`${isOpen ? 'rounded-b-lg' : 'rounded-lg'} px-2 pb-2 pt-2 text-natural-700 bg-neutral-100 text-xs leading-6`}>
+        <AccordionContent className={`${isOpen ? 'rounded-b-lg' : 'rounded-lg'} text-natural-700 bg-neutral-100 px-2 pb-2 pt-2 text-xs leading-6`}>
           <p>Jeśli chcesz uprać uporczywe plamy lepszym rozwiązaniem będzie użycie mocniejszej chemii w proszku.</p>
           <div className="flex justify-between">
             <p className="w-1/5">100g</p>
