@@ -77,7 +77,8 @@ export type ButtonType = 'button' | 'submit' | 'reset';
 
 export interface ButtonProps {
   children?: ReactNode;
-  text: string;
+  text?: string;
   href: string;
-  type: ButtonType;
+  asHref?: string;
+  type?: ButtonType;
 }

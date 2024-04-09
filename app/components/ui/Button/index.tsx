@@ -2,9 +2,9 @@ import Link from 'next/link';
 import ButtonStyle from '@ui/Button/ButtonStyle';
 import { ButtonProps } from 'app/types/types';
 
-export default function ButtonLink({ children, text, href, type = 'button' }: ButtonProps) {
+export default function ButtonLink({ children, text, href, asHref, type = 'button' }: ButtonProps) {
   return (
-    <Link href={href}>
+    <Link href={href} as={asHref || href}>
       <button type={type}>
         <ButtonStyle>
           {children}

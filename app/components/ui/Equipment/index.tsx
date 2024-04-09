@@ -8,6 +8,7 @@ import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
 import Link from 'next/link';
 import AdditionalChemistryAccordion from '@ui/AdditionalChemistryAccordion';
 import { EquipmentProps } from 'app/types/types';
+import ButtonLink from '@ui/Button';
 
 export default function Equipment({ pricesJSON }: EquipmentProps) {
   const prices = JSON.parse(pricesJSON);
@@ -191,15 +192,9 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
             </div>
           </div>
           <div className="my-5 sm:mt-8 sm:flex sm:justify-center">
-            <div className="rounded-md">
-              <Link
-                href="/contact"
-                as="/kontakt"
-                className="color-black flex w-full items-center justify-center rounded-md bg-gradient-to-b from-lime-200 to-lime-400 px-8 py-3 text-base font-black text-black shadow-lg hover:from-green-600 hover:to-green-600 hover:text-white hover:brightness-125 md:py-4 md:px-10 md:text-lg"
-              >
-                <p>Wynajmij</p> <span className="ml-2 text-4xl">🫧</span>
-              </Link>
-            </div>
+            <ButtonLink href="/contact" asHref="/kontakt">
+              <p>Wynajmij</p> <span className="ml-2 text-4xl">🫧</span>
+            </ButtonLink>
           </div>
         </div>
       </div>
