@@ -5,7 +5,6 @@ import { cn } from '@lib/utils';
 import { useState } from 'react';
 import Image from 'next/image';
 import vacuumCleaner from 'public/images/odkurzacz-pioracy-lublin.jpeg';
-import Link from 'next/link';
 import AdditionalChemistryAccordion from '@ui/AdditionalChemistryAccordion';
 import { EquipmentProps } from 'app/types/types';
 import ButtonLink from '@ui/Button';

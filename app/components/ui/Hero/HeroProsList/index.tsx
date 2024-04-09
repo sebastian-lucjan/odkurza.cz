@@ -7,7 +7,7 @@ export default function HeroProsList() {
   } = homepageData.hero;
 
   return (
-    <div className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+    <div className="my-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
       <h3>{heading}</h3>
 
       <ul className="flex flex-col">
