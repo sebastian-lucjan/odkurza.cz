@@ -82,3 +82,20 @@ export interface ButtonProps {
   asHref?: string;
   type?: ButtonType;
 }
+
+export interface PricesType {
+  prices: {
+    dayRenting: {
+      smallPrice: number;
+      mediumPrice: number;
+      biggestPrice: number;
+    };
+    cleaner: {
+      [key: number]: number;
+    };
+    delivery: {
+      toCustomer: number;
+      fromCustomer: number;
+    };
+  };
+}
