@@ -1,7 +1,5 @@
 'use client';
 
-import * as React from 'react';
-import Link from 'next/link';
 import { Sheet, SheetContent, SheetClose, SheetTrigger } from '@ui/Sheet';
 import { useState } from 'react';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@ui/Navigation';
@@ -14,21 +12,21 @@ export default function Navigation() {
     <NavigationMenu>
       {/* Desktop navigation */}
       <div className="my-8 hidden laptop:block">
-        <Link href="/" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
+        <a href="/" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
           Home
-        </Link>
+        </a>
 
-        <Link href="/#equipment" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
+        <a href="/#equipment" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
           Sprzęt
-        </Link>
+        </a>
 
-        <Link href="/#faq" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
+        <a href="/#faq" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
           FAQ
-        </Link>
+        </a>
 
-        <Link href="/kontakt" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
+        <a href="/kontakt" className="p-6 text-base font-medium text-gray-600 hover:text-gray-900">
           Kontakt
-        </Link>
+        </a>
       </div>
 
       {/* Mobile / tablet navigation */}
@@ -44,27 +42,27 @@ export default function Navigation() {
 
             <NavigationMenuList className="desktop-sm:hidden flex h-[300px] w-full flex-col justify-between">
               <NavigationMenuItem onClick={() => setOpen(false)} className="rounded-md hover:bg-neutral-50">
-                <Link href="/" legacyBehavior passHref>
+                <a href="/">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>Strona główna</NavigationMenuLink>
-                </Link>
+                </a>
               </NavigationMenuItem>
 
               <NavigationMenuItem onClick={() => setOpen(false)}>
-                <Link href="/#equipment" legacyBehavior passHref>
+                <a href="/#equipment">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>Sprzęt</NavigationMenuLink>
-                </Link>
+                </a>
               </NavigationMenuItem>
 
               <NavigationMenuItem onClick={() => setOpen(false)}>
-                <Link href="/#faq" legacyBehavior passHref>
+                <a href="/#faq">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>FAQ</NavigationMenuLink>
-                </Link>
+                </a>
               </NavigationMenuItem>
 
               <NavigationMenuItem onClick={() => setOpen(false)}>
-                <Link href="/contact" as="/kontakt" legacyBehavior passHref>
+                <a href="/kontakt">
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>Kontakt</NavigationMenuLink>
-                </Link>
+                </a>
               </NavigationMenuItem>
             </NavigationMenuList>
           </SheetContent>
