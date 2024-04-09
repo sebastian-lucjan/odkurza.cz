@@ -1,12 +1,9 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@ui/Accordion';
 import { cn } from '@lib/utils';
 import AdditionalChemistryAccordion from '@ui/AdditionalChemistryAccordion';
-import { useState } from 'react';
 import { PricesType } from 'app/types/types';
 
 export default function EquipmentPricesList({ prices }: PricesType) {
-  const [isOpen, setIsOpen] = useState(false);
-
   const {
     dayRenting: { smallPrice, mediumPrice, biggestPrice },
     cleaner,
@@ -16,18 +13,12 @@ export default function EquipmentPricesList({ prices }: PricesType) {
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value="price-list-item">
-        <AccordionTrigger
-          className={cn(
-            'mt-6 inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 focus:ring-offset-gray-100',
-            isOpen ? 'rounded-t-lg' : 'rounded-lg',
-          )}
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
+        <AccordionTrigger className="my-6 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           Szczegółowy <span className="ml-2 font-semibold">CENNIK</span>
           <span className="ml-2 animate-wiggle">🔔</span>
         </AccordionTrigger>
 
-        <AccordionContent className="mt-2 origin-top-left rounded-md bg-white text-xs leading-6 ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <AccordionContent className="origin-top-left rounded-md bg-white text-xs leading-6 ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="w-[100% - 32px] relative p-4">
             <div className="mb-4 flex border-b-4 border-gray-100 pb-2">
               <p className="mr-3 w-[25%] font-bold">CENNIK:</p>

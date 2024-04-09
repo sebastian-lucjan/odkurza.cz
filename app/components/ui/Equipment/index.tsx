@@ -20,9 +20,11 @@ export default function Equipment({ pricesJSON }: EquipmentProps) {
         <EquipmentImage />
 
         <div className="flex flex-col items-center bg-gray-50 p-6">
-          <EquipmentTextContent />
+          <div className="relative flex flex-col justify-center tablet:justify-start">
+            <EquipmentTextContent />
 
-          <EquipmentPricesList prices={prices} />
+            <EquipmentPricesList prices={prices} />
+          </div>
 
           <HighlightedPrice smallPrice={smallPrice} />
 
