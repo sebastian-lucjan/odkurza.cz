@@ -1,4 +1,8 @@
 ## 🖥️ Project details
+https://odkurza.cz/
+
+__Important!__ This is a commercial site, environment variables are needed to run.
+
 ### Tech stack
 - Next.js
 - React
