@@ -1,5 +1,5 @@
 import { UserIcon } from '@heroicons/react/24/outline';
-import { FirmIconProps } from 'app/types/types';
+import { FirmIconProps } from 'app/types/UIComponentTypes';
 
 export function FirmIcon({ iconSize, bubblesSize }: FirmIconProps) {
   return (

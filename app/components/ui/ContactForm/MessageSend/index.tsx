@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MessageSendProps } from 'app/types/types';
+import { MessageSendProps } from 'app/types/FormTypes';
 
 export default function MessageSend({ handleBackToForm }: MessageSendProps) {
   return (

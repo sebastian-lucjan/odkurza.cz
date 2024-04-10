@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { MobileNumber } from 'app/types/types';
+import { MobileNumber } from 'app/types/UIComponentTypes';
 
 export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));

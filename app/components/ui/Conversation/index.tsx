@@ -4,7 +4,7 @@ import ConversationForm from '@ui/Conversation/ConversationForm';
 import ConversationMessage from '@ui/Conversation/ConversationMessage';
 import IntroSection from '@ui/Conversation/IntroSection';
 import { homepageData } from 'data/homepageData';
-import { MessageType, TextContentType } from 'app/types/types';
+import { MessageType, TextContentType } from 'app/types/ConversationTypes';
 
 export default function Conversation() {
   const { messages } = homepageData.conversation;

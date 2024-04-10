@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { googleMapData } from 'data/googleMap';
-import { GoogleMapProps } from 'app/types/types';
+import { GoogleMapProps } from 'app/types/UIComponentTypes';
 
 export default function GoogleMap({ displayOn = 'all' }: GoogleMapProps) {
   const { heading, description, urlAddress } = googleMapData;

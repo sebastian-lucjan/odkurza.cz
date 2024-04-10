@@ -1,5 +1,5 @@
 import openGraphImage from '@images/odkurzacz-pioracy-lublin.jpeg';
-import { AppStageType } from 'app/types/types';
+import { AppStageType } from 'app/types/AppTypes';
 
 const { NEXT_PUBLIC_APP_STAGE } = process.env;
 

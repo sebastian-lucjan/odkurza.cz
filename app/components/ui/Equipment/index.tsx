@@ -1,11 +1,11 @@
 'use client';
 
-import { EquipmentProps } from 'app/types/types';
 import ButtonLink from '@ui/Button';
 import EquipmentImage from '@ui/Equipment/EquipmentImage';
 import EquipmentTextContent from '@ui/Equipment/EquipmentTextContent';
 import EquipmentPricesList from '@ui/Equipment/EquipmentPricesList';
 import HighlightedPrice from '@ui/Equipment/HighlightedPrice';
+import { EquipmentProps } from 'app/types/UIComponentTypes';
 
 export default function Equipment({ pricesJSON }: EquipmentProps) {
   const prices = JSON.parse(pricesJSON);

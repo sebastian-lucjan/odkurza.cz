@@ -4,7 +4,7 @@ import FormErrors from '@ui/FormErrors';
 import contactData from 'data/contactForm';
 import useCustomForm from 'app/hooks/useCustomForm';
 import MessageSend from '@ui/ContactForm/MessageSend';
-import { FormTypeType } from 'app/types/types';
+import { FormTypeType } from 'app/types/FormTypes';
 
 export default function ContactForm() {
   const {

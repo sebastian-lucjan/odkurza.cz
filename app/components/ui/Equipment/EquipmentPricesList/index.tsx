@@ -1,6 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@ui/Accordion';
 import AdditionalChemistryAccordion from '@ui/AdditionalChemistryAccordion';
-import { PricesType } from 'app/types/types';
+import { PricesType } from 'app/types/UIComponentTypes';
 
 export default function EquipmentPricesList({ prices }: PricesType) {
   const {
