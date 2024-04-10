@@ -1,8 +1,8 @@
 'use client';
 
-import { InfoBarProps } from 'app/types/types';
 import Confetti from 'react-confetti';
 import useScreenSize from 'app/hooks/useScreenSize';
+import { InfoBarProps } from 'app/types/UIComponentTypes';
 
 const InfoBar = ({ textContent, bargain }: InfoBarProps) => {
   const { width } = useScreenSize();

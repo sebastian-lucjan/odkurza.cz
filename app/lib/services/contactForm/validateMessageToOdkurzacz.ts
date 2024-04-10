@@ -1,12 +1,12 @@
 import Joi from 'joi';
-import { PayloadType } from 'app/types/types';
+import { PayloadType } from 'app/types/FormTypes';
 
 const schema = Joi.object({
   name: Joi.string().min(3).max(40).required(),
   mobile: Joi.string().min(3).max(40).allow(''),
   email: Joi.string().email().min(6).max(60).required(),
   message: Joi.string().min(3).max(2000).required(),
-  formType: Joi.string().valid('conversation-form', 'contact-form', 'unset').required(),
+  formType: Joi.string().valid('conversation-form', 'contact-form').required(),
 });
 
 const validate = async (payload: PayloadType) => {

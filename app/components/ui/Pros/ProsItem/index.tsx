@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ProsItemProps } from 'app/types/types';
+import { ProsItemProps } from 'app/types/UIComponentTypes';
 
 export default function ProsItem({ icon, textContent }: ProsItemProps) {
   return (

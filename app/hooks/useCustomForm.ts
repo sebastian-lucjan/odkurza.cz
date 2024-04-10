@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import { useState } from 'react';
-import { FormTypeType } from 'app/types/types';
 import submitFunc from '@lib/services/contactForm/submitFunc';
+import { FormTypeType } from 'app/types/FormTypes';
 
 function useCustomForm(formType: FormTypeType) {
   const [errorServer, setErrorServer] = useState('');

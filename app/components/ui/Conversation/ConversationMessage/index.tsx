@@ -1,5 +1,5 @@
 import { CustomersIcon, FirmIcon } from '@ui/Icons';
-import { ConversationMessageType, TextContentArray } from 'app/types/types';
+import { ConversationMessageType, TextContentArray } from 'app/types/ConversationTypes';
 
 export default function ConversationMessage({ type, textContent }: ConversationMessageType) {
   if (type === 'question') {

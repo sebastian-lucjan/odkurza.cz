@@ -2,7 +2,7 @@ import FormErrors from '@ui/FormErrors';
 import { CustomersIcon, FirmIcon } from '@ui/Icons';
 import contactData from 'data/contactForm';
 import useCustomForm from 'app/hooks/useCustomForm';
-import { FormTypeType } from 'app/types/types';
+import { FormTypeType } from 'app/types/FormTypes';
 
 export default function ConversationForm() {
   const {

@@ -1,6 +1,6 @@
 import ProsItem from '@ui/Pros/ProsItem';
-import { ProsTextContentItemType } from 'app/types/types';
 import { homepageData } from 'data/homepageData';
+import { ProsTextContentItemType } from 'app/types/UIComponentTypes';
 
 export default function Pros() {
   return (

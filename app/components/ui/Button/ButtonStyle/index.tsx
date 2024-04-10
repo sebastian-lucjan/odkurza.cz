@@ -1,8 +1,4 @@
-import { ReactNode } from 'react';
-
-interface ButtonStyleProps {
-  children: ReactNode;
-}
+import { ButtonStyleProps } from 'app/types/ButtonTypes';
 
 export default function ButtonStyle({ children }: ButtonStyleProps) {
   return (
