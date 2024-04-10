@@ -99,3 +99,7 @@ export interface PricesType {
     };
   };
 }
+
+export interface ButtonStyleProps {
+  children: ReactNode;
+}

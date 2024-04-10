@@ -19,7 +19,7 @@
 ## 🚧 Project Under Refactoring
 Currently implemented changes:
 - 🌕️🌕️🌑️🌑️🌑️  unit tests
-- 🌕🌕🌑️🌑️🌑️  readme and documentation
+- 🌕🌕🌕️🌑️🌑️  readme and documentation
 - 🌕️🌑️🌑️🌑️🌑️  refactoring Figma design file
 
 ## 🚀 Getting Started
