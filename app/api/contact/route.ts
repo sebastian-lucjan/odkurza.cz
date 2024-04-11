@@ -6,9 +6,8 @@ export async function POST(req: Request) {
     const payload = await req.json();
 
     const { name, mobile, email, message, formType } = await validate({ ...payload });
-    console.log('payload: ', payload);
 
-    // await sendMessageToOdkurzacz(name, mobile, email, message, formType);
+    await sendMessageToOdkurzacz(name, mobile, email, message, formType);
 
     return new Response('Message sent', { status: 200 });
   } catch (e) {
