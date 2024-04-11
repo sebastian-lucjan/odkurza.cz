@@ -32,3 +32,7 @@ export interface ConversationMessageType {
   fieldValue?: string;
   children?: ReactNode;
 }
+
+export interface ConversationSubmitButtonProps {
+  isSending: boolean;
+}
