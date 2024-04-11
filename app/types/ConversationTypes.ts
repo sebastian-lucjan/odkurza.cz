@@ -36,3 +36,15 @@ export interface ConversationMessageType {
 export interface ConversationSubmitButtonProps {
   isSending: boolean;
 }
+
+export interface FormFieldProps {
+  autoComplete?: string;
+  conditions: any;
+  id: string;
+  label: string;
+  register?: (_ref: any, _condition: any) => any;
+  rows?: number;
+  size?: 'half-on-desktop' | 'full';
+  type: string;
+  labelDescription?: string;
+}
