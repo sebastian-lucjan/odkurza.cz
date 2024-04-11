@@ -47,7 +47,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 __Important!__ Start exploring project here: `app/page.tsx` (homepage).
 
-__node verion__ Check .nvmrc file
+__node version__ Check .nvmrc file
 
 ## 📖 How to reach me...
 

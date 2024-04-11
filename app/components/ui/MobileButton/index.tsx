@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { addSpaces } from '@lib/utils';
-import MobileSVG from '@ui/svg/MobileSVG';
+import MobileSVG from 'app/components/svg/MobileSVG';
 
 interface ButtonProps {
   mobileNumber: number;

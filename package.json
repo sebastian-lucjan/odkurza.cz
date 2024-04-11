@@ -1,8 +1,8 @@
 {
   "name": "odkurza-cz-website",
-  "version": "2.1.0",
+  "version": "3.1.0",
   "private": true,
-  "description": "Odkurza.cz - wypożyczalnia sprzętu do sprzątania",
+  "description": "Odkurza.cz - wypożyczalnia odkurzaczy piorących",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -48,8 +48,7 @@
     "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.35.0",
-    "tailwind-merge": "^2.2.2",
-    "uuid": "^9.0.0"
+    "tailwind-merge": "^2.2.2"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.2",

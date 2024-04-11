@@ -1,19 +1,15 @@
 import { ReactNode } from 'react';
 import 'app/styles/globals.css';
-import HeadMeta from '@ui/HeadMeta';
+import HeadMeta from 'app/components/web/HeadMeta';
 import InfoBar from '@ui/InfoBar';
 import { getContent } from '@lib/services/cms/getContent';
 import infoBarVisibility from '@lib/helpers/isInfoBarVisible';
-import ConversationFormProvider from './providers/ConversationFormProvider';
-import { pageData } from '../data/pageData';
-import GoogleAnalyticsScripts from './components/web/GoogleAnaliticsScripts';
-
-const {
-  cmsData: { infoBar },
-} = pageData;
+import ConversationFormProvider from 'app/providers/ConversationFormProvider';
+import GoogleAnalyticsScripts from 'app/components/web/GoogleAnaliticsScripts';
+import { INFOBAR_CMS_ID } from 'data/constants';
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
-  const { isVisible, turnOffDate, textContent, bargain } = await getContent(infoBar.id);
+  const { isVisible, turnOffDate, textContent, bargain } = await getContent(INFOBAR_CMS_ID);
 
   const isInfoBarVisible = infoBarVisibility(isVisible, turnOffDate);
 

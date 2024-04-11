@@ -3,13 +3,13 @@ import FormErrors from '@ui/FormErrors';
 import { useContext } from 'react';
 import { ConversationFormContext } from 'app/providers/ConversationFormProvider';
 import contactData from 'data/contactForm';
+import PrivacyPolicy from '@ui/Conversation/PrivacyPolicy';
+import ConversationSubmitButton from '@ui/Conversation/ConversationSubmitButton';
 
 export default function ConversationForm() {
   const { handleSubmit, register, errors, isSending, errorServer } = useContext(ConversationFormContext);
 
-  const {
-    conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
-  } = contactData.form;
+  const { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions } = contactData.form.conditions;
 
   return (
     <div className="my-8 ml-10 flex flex-row-reverse items-end justify-start">
@@ -70,22 +70,13 @@ export default function ConversationForm() {
                 />
               </div>
             </div>
-            <p className="mt-6 text-xs text-gray-500">
-              Zgodnie z naszą polityką prywatności Twoje dane <span className="font-semibold">nie zostaną</span> przekazane do żadnych podmiotów. Będą
-              przetwarzane tylko w ramach naszej oferty.
-            </p>
+
+            <PrivacyPolicy />
           </div>
 
           {(errors && Object.values(errors).length) || errorServer ? <FormErrors conversation errorServ={errorServer} errors={errors} /> : null}
 
-          <div className="flex justify-end bg-gray-100 px-6 py-3 text-left">
-            <button
-              type="submit"
-              className="text-md inline-flex w-full justify-center rounded-md border border-transparent bg-lime-300 py-3 font-semibold text-black shadow-sm hover:bg-green-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 laptop:w-[300px]"
-            >
-              {isSending ? 'Wysyłanie...' : 'Wyślij wiadomość'}
-            </button>
-          </div>
+          <ConversationSubmitButton isSending={isSending} />
         </div>
       </form>
     </div>

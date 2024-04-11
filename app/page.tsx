@@ -4,21 +4,15 @@ import Pros from '@ui/Pros';
 import Equipment from '@ui/Equipment';
 import Hero from '@ui/Hero';
 import AdditionalInfo from '@ui/AdditionalInfo';
-import InfoBar from '@ui/InfoBar';
 import Conversation from '@ui/Conversation';
 import { getContent } from '@lib/services/cms/getContent';
 import { pageMetadata } from 'data/metadata';
-import infoBarVisibility from '@lib/helpers/isInfoBarVisible';
-import { pageData } from 'data/pageData';
+import { PRICES_CMS_ID } from 'data/constants';
 
 export const metadata = pageMetadata.homepage;
 
-const {
-  cmsData: { infoBar, pricesData },
-} = pageData;
-
 export default async function Page() {
-  const { pricesObj: prices } = await getContent(pricesData.id);
+  const { pricesObj: prices } = await getContent(PRICES_CMS_ID);
 
   return (
     <>
