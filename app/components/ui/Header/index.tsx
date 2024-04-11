@@ -3,7 +3,7 @@ import Navigation from '@ui/NavigationMenu';
 import { getContent } from '@lib/services/cms/getContent';
 import { pageData } from 'data/pageData';
 import Button from '@ui/Button';
-import MobileSVG from '@ui/svg/MobileSVG';
+import MobileSVG from 'app/components/svg/MobileSVG';
 
 const {
   cmsData: { mobile },

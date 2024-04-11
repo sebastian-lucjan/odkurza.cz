@@ -19,7 +19,7 @@ const HeadMeta = () => {
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
 
-      <link rel="shortcut icon" href="/public/icons/favicon.ico" />
+      <link rel="shortcut icon" href="/icons/favicon.ico" />
 
       <meta name="keywords" content="odkurza.cz, wynajem odkurzaczy piorących Lublin, wypożycz odkurzacz i wyczyść dywan lub tapicerkę." />
     </Head>

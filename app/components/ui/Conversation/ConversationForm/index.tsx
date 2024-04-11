@@ -7,9 +7,7 @@ import contactData from 'data/contactForm';
 export default function ConversationForm() {
   const { handleSubmit, register, errors, isSending, errorServer } = useContext(ConversationFormContext);
 
-  const {
-    conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
-  } = contactData.form;
+  const { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions } = contactData.form.conditions;
 
   return (
     <div className="my-8 ml-10 flex flex-row-reverse items-end justify-start">
