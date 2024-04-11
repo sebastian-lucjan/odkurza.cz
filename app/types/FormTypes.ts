@@ -1,4 +1,5 @@
 import { FieldErrors } from 'react-hook-form';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 
 /**
  * Represents a single form validation error, specifying the field and error message.
@@ -44,4 +45,24 @@ export interface FormErrorProps {
  */
 export interface MessageSendProps {
   handleBackToForm: () => void;
+}
+
+/**
+ * Properties for conversation form data provider
+ */
+export interface CustomFormContextType {
+  errorServer: string;
+  isMessageSend: boolean;
+  setIsMessageSend?: Dispatch<SetStateAction<boolean>>;
+  isSending: boolean;
+  register?: (_ref: any, _condition: any) => any;
+  reset?: () => void;
+  getFormValues: () => any;
+  errors?: Record<string, any>;
+  handleSubmit?: () => any;
+  handleBackToForm?: () => void;
+}
+
+export interface ProvidersProps {
+  children: ReactNode;
 }

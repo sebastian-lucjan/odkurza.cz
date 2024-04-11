@@ -3,6 +3,7 @@ import FormErrors from '@ui/FormErrors';
 import { useContext } from 'react';
 import { ConversationFormContext } from 'app/providers/ConversationFormProvider';
 import contactData from 'data/contactForm';
+import PrivacyPolicy from '@ui/Conversation/PrivacyPolicy';
 
 export default function ConversationForm() {
   const { handleSubmit, register, errors, isSending, errorServer } = useContext(ConversationFormContext);
@@ -68,10 +69,8 @@ export default function ConversationForm() {
                 />
               </div>
             </div>
-            <p className="mt-6 text-xs text-gray-500">
-              Zgodnie z naszą polityką prywatności Twoje dane <span className="font-semibold">nie zostaną</span> przekazane do żadnych podmiotów. Będą
-              przetwarzane tylko w ramach naszej oferty.
-            </p>
+
+            <PrivacyPolicy />
           </div>
 
           {(errors && Object.values(errors).length) || errorServer ? <FormErrors conversation errorServ={errorServer} errors={errors} /> : null}
