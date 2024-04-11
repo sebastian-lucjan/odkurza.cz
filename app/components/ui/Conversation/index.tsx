@@ -1,10 +1,10 @@
 'use client';
 
-import ConversationForm from '@ui/Conversation/ConversationForm';
 import ConversationMessage from '@ui/Conversation/ConversationMessage';
 import IntroSection from '@ui/Conversation/IntroSection';
 import { homepageData } from 'data/homepageData';
 import { MessageType, TextContentType } from 'app/types/ConversationTypes';
+import ConversationFormSection from '@ui/Conversation/ConversationFormSection';
 
 export default function Conversation() {
   const { messages } = homepageData.conversation;
@@ -15,13 +15,13 @@ export default function Conversation() {
         <IntroSection />
 
         {messages.map(({ type, textContent }) => {
-          const customKey = typeof textContent === 'string' ? textContent : textContent[0].text;
+          const customKey = textContent[0].text;
           return <ConversationMessage key={customKey} type={type as MessageType} textContent={textContent as TextContentType} />;
         })}
 
         <div className="jus my-4 flex items-end justify-end">
           <div className="ml-4 mt-6 w-full tablet:w-[60%]">
-            <ConversationForm />
+            <ConversationFormSection />
           </div>
         </div>
       </div>

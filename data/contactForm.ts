@@ -23,6 +23,12 @@ const contactData = {
       },
     },
   },
+  successMessages: [
+    { type: 'user', textContent: [{ type: 'regular', text: 'Imię i nazwisko:' }], formField: 'name' },
+    { type: 'user', textContent: [{ type: 'regular', text: 'Telefon:' }], formField: 'mobile' },
+    { type: 'user', textContent: [{ type: 'regular', text: 'Email:' }], formField: 'email' },
+    { type: 'user', textContent: [{ type: 'regular', text: 'Twoja wiadomość:' }], formField: 'message' },
+  ],
 };
 
 export default contactData;

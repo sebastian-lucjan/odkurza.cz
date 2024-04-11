@@ -1,4 +1,6 @@
-export type MessageType = 'question' | 'answer';
+import { ReactNode } from 'react';
+
+export type MessageType = 'user' | 'answer';
 
 interface RegularText {
   type: 'regular';
@@ -23,7 +25,10 @@ export type TextContentType = string | TextContentArray;
 /**
  * Defines the structure of a message in a conversation, supporting both questions and answers.
  */
+
 export interface ConversationMessageType {
   type: MessageType;
-  textContent: TextContentType;
+  textContent?: TextContentType;
+  fieldValue?: string;
+  children?: ReactNode;
 }
