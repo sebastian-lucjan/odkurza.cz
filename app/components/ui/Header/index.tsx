@@ -5,12 +5,10 @@ import { pageData } from 'data/pageData';
 import Button from '@ui/Button';
 import MobileSVG from 'app/components/svg/MobileSVG';
 
-const {
-  cmsData: { mobile },
-} = pageData;
+const mobileID = pageData.cmsData.mobile.id;
 
 export default async function Header() {
-  const { mobile: mobileNumber } = await getContent(mobile.id);
+  const { mobile: mobileNumber } = await getContent(mobileID);
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
