@@ -1,14 +1,12 @@
 import Link from 'next/link';
 import Navigation from '@ui/NavigationMenu';
 import { getContent } from '@lib/services/cms/getContent';
-import { pageData } from 'data/pageData';
 import Button from '@ui/Button';
 import MobileSVG from 'app/components/svg/MobileSVG';
-
-const mobileID = pageData.cmsData.mobile.id;
+import { MOBILE_CMS_ID } from 'data/constants';
 
 export default async function Header() {
-  const { mobile: mobileNumber } = await getContent(mobileID);
+  const { mobile: mobileNumber } = await getContent(MOBILE_CMS_ID);
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">

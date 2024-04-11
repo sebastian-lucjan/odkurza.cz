@@ -4,18 +4,14 @@ import Contact from '@ui/Contact';
 import InfoBar from '@ui/InfoBar';
 import { pageMetadata } from 'data/metadata';
 import infoBarVisibility from '@lib/helpers/isInfoBarVisible';
-import { pageData } from 'data/pageData';
 import { Metadata } from 'next';
 import { getContent } from '@lib/services/cms/getContent';
+import { INFOBAR_CMS_ID } from 'data/constants';
 
 export const metadata: Metadata = pageMetadata.contact;
 
-const {
-  cmsData: { infoBar },
-} = pageData;
-
 export default async function ContactPage() {
-  const { isVisible, turnOffDate, textContent, bargain } = await getContent(infoBar.id);
+  const { isVisible, turnOffDate, textContent, bargain } = await getContent(INFOBAR_CMS_ID);
 
   const isInfoBarVisible = infoBarVisibility(isVisible, turnOffDate);
 

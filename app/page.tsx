@@ -7,14 +7,12 @@ import AdditionalInfo from '@ui/AdditionalInfo';
 import Conversation from '@ui/Conversation';
 import { getContent } from '@lib/services/cms/getContent';
 import { pageMetadata } from 'data/metadata';
-import { pageData } from 'data/pageData';
+import { PRICES_CMS_ID } from 'data/constants';
 
 export const metadata = pageMetadata.homepage;
 
-const { pricesData } = pageData.cmsData;
-
 export default async function Page() {
-  const { pricesObj: prices } = await getContent(pricesData.id);
+  const { pricesObj: prices } = await getContent(PRICES_CMS_ID);
 
   return (
     <>
