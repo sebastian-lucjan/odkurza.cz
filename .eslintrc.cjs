@@ -68,5 +68,13 @@ module.exports = {
     'consistent-return': 'off',
     'arrow-body-style': 'off',
     'import/no-unresolved': 'off',
+    'no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+      },
+    ],
   },
 };

@@ -17,9 +17,9 @@ function useCustomForm(formType: FormTypeType) {
   } = useForm<FieldValues>();
 
   const onSubmit: SubmitHandler<FieldValues> = () => {
+    console.log('here');
     submitFunc(getFormValues, setErrorServer, formType, setIsSending, setIsMessageSend);
   };
-
   const handleBackToForm = () => {
     reset();
     setIsMessageSend(false);

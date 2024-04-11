@@ -62,8 +62,8 @@ export const homepageData = {
     companyAddress: 'odkurza.cz',
     messages: [
       {
-        type: 'question',
-        textContent: 'odkurza.cz czyli kto?',
+        type: 'user',
+        textContent: [{ type: 'regular', text: 'odkurza.cz czyli kto?' }],
       },
       {
         type: 'answer',
@@ -76,8 +76,8 @@ export const homepageData = {
         ],
       },
       {
-        type: 'question',
-        textContent: 'Co mogę wyczyścić takim odkurzaczem?',
+        type: 'user',
+        textContent: [{ type: 'regular', text: 'Co mogę wyczyścić takim odkurzaczem?' }],
       },
       {
         type: 'answer',
@@ -91,8 +91,8 @@ export const homepageData = {
         ],
       },
       {
-        type: 'question',
-        textContent: 'Jak działa odkurzacz piorący?',
+        type: 'user',
+        textContent: [{ type: 'regular', text: 'Jak działa odkurzacz piorący?' }],
       },
       {
         type: 'answer',
@@ -104,8 +104,8 @@ export const homepageData = {
         ],
       },
       {
-        type: 'question',
-        textContent: 'Jak mogę wynająć odkurzacz?',
+        type: 'user',
+        textContent: [{ type: 'regular', text: 'Jak mogę wynająć odkurzacz?' }],
       },
       {
         type: 'answer',

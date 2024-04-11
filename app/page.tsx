@@ -19,14 +19,9 @@ const {
 
 export default async function Page() {
   const { pricesObj: prices } = await getContent(pricesData.id);
-  const { isVisible, turnOffDate, textContent, bargain } = await getContent(infoBar.id);
-
-  const isInfoBarVisible = infoBarVisibility(isVisible, turnOffDate);
 
   return (
-    <main className="relative bg-white">
-      {isInfoBarVisible && <InfoBar textContent={textContent} bargain={bargain} />}
-
+    <>
       <Header />
 
       <Hero />
@@ -40,6 +35,6 @@ export default async function Page() {
       <AdditionalInfo />
 
       <Footer />
-    </main>
+    </>
   );
 }
