@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer';
+import { FormTypeType } from 'app/types/FormTypes';
 
-const plainVersionText = (name, mobile, email, message, formType) => {
+const plainVersionText = (name: string, mobile: string, email: string, message: string, formType: FormTypeType) => {
   return `Autor wiadomości: ${name}
   Email podany w formularzu: ${email}
   Numer telefonu: ${mobile}
@@ -17,7 +18,7 @@ const transporterProd = nodemailer.createTransport({
   },
 });
 
-const sendMessageToOdkurzacz = async (name, mobile, email, message, formType) => {
+const sendMessageToOdkurzacz = async (name: string, mobile: string, email: string, message: string, formType: FormTypeType) => {
   await transporterProd.sendMail({
     from: `odkurza.cz - form lublin@odkurza.cz>`,
     to: 'odkurza.cz <info@odkurza.cz>',
