@@ -1,8 +1,8 @@
 'use client';
 
 import FormErrors from '@ui/FormErrors';
-import contactData from 'data/contactForm';
-import useCustomForm from 'app/hooks/useCustomForm';
+import contactData from '@data/contactForm';
+import useCustomForm from '@hooks/useCustomForm';
 import MessageSend from '@ui/ContactForm/MessageSend';
 import { FormTypeType } from 'app/types/FormTypes';
 
@@ -19,7 +19,7 @@ export default function ContactForm() {
       {isMessageSend ? (
         <MessageSend handleBackToForm={handleBackToForm} />
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} name="contact-form" aria-label="contact-form">
           <div className="overflow-hidden rounded-md shadow">
             <div className="bg-white px-4 py-5 sm:p-6">
               <div className="grid grid-cols-6 gap-6">
