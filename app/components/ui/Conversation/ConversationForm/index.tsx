@@ -15,7 +15,7 @@ export default function ConversationForm() {
   return (
     <div className="my-8 ml-10 flex flex-row-reverse items-end justify-start">
       <CustomersIcon />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} name="conversation-form" aria-label="conversation-form">
         <div className="overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 shadow">
           <div className="px-4 py-5 sm:p-6">
             <div className="grid grid-cols-6 gap-6">
