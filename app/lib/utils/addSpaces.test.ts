@@ -1,5 +1,5 @@
-import { addSpaces } from 'app/lib/utils';
 import { MobileNumber } from 'app/types/UIComponentTypes';
+import { addSpaces } from '.';
 
 describe('addSpaces', () => {
   it('should add spaces after every 3 digits', () => {

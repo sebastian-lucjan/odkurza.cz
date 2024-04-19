@@ -22,8 +22,7 @@ __Important!__ This is a commercial site, environment variables are needed to ru
 
 ## 🚧 Project Under Refactoring
 Currently implemented changes:
-- 🌕️🌕️🌑️🌑️🌑️  unit tests
-- 🌕🌕🌕️🌑️🌑️  readme and documentation
+- 🌕️🌕️🌑️🌑️🌑️  unit/integration tests
 - 🌕️🌑️🌑️🌑️🌑️  refactoring Figma design file
 
 ## 🚀 Getting Started
