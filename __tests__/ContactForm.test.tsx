@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ContactForm from '../app/components/ui/ContactForm';
+import ContactForm from '@ui/ContactForm';
 
 describe('ContactForm - Rendering', () => {
   it('should have form', () => {

@@ -1,4 +1,4 @@
-import { cn } from 'app/lib/utils';
+import { cn } from '@lib/utils';
 
 describe('cn function', () => {
   it('should concatenate class names', () => {
