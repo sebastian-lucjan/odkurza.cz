@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Button from '../app/components/ui/Button';
+import Button from '@ui/Button';
 
 describe('Button - Rendering', () => {
   it('should have Button with text Click me, and href attr', () => {

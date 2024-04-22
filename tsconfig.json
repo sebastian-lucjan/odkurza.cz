@@ -4,11 +4,12 @@
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "paths": {
-      "@ui/*": ["app/components/ui/*"],
       "@data/*": ["data/*"],
       "@hooks/*": ["app/hooks/*"],
+      "@images/*": ["public/images/*"],
       "@lib/*": ["app/lib/*"],
-      "@images/*": ["public/images/*"]
+      "@types/*": ["app/types/*"],
+      "@ui/*": ["app/components/ui/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
