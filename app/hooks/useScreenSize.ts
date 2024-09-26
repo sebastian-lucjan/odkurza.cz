@@ -2,23 +2,27 @@ import { useState, useEffect } from 'react';
 
 const useScreenSize = () => {
   const [screenSize, setScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
-    const handleResize = () => {
+    // Function to update screen size
+    const updateScreenSize = () => {
       setScreenSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
     };
 
-    window.addEventListener('resize', handleResize);
+    // Set initial size
+    updateScreenSize();
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    // Add event listener
+    window.addEventListener('resize', updateScreenSize);
+
+    // Clean up
+    return () => window.removeEventListener('resize', updateScreenSize);
   }, []);
 
   return screenSize;
