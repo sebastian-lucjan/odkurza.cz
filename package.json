@@ -27,7 +27,7 @@
     "test:watch": "jest --watchAll"
   },
   "engines": {
-    "node": ">=18"
+    "node": "20.x"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.10",
