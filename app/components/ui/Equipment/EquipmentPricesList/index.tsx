@@ -6,7 +6,6 @@ export default function EquipmentPricesList({ prices }: PricesType) {
   const {
     dayRenting: { smallPrice, mediumPrice, biggestPrice },
     cleaner,
-    // delivery: { toCustomer, fromCustomer },
   } = prices;
 
   return (
@@ -113,27 +112,6 @@ export default function EquipmentPricesList({ prices }: PricesType) {
                 <AdditionalChemistryAccordion />
               </div>
             </div>
-            {/* <div className="mb-4 flex border-b-4 border-gray-100 pb-2">
-              <p className="mr-3 w-1/4 font-bold">DOWÓZ:</p>
-              <div className="w-[80%]">
-                <p>W granicach Lublina:</p>
-                <div className="flex justify-between">
-                  <p>Dowóz:</p>
-                  <p>{toCustomer}zł</p>
-                </div>
-                <div className="flex justify-between">
-                  <p>Odbiór:</p>
-                  <p>{fromCustomer}zł</p>
-                </div>
-                <div className="flex justify-between">
-                  <div className="flex font-bold text-black">
-                    <p className="underline decoration-lime-300 decoration-2 underline-offset-2">Odbiór osobisty:</p>
-                    <p className="text-xl">*</p>
-                  </div>
-                  <p className="font-semibold">0zł</p>
-                </div>
-              </div>
-            </div> */}
 
             <div className="flex">
               <div className="mr-3 flex w-1/4 font-bold">
