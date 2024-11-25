@@ -1,6 +1,8 @@
 import sendMessageToOdkurzacz from '@lib/services/contactForm/sendMessageToOdkurzacz';
 import validate from '@lib/services/contactForm/validateMessageToOdkurzacz';
 
+export const maxDuration = 60;
+
 export async function POST(req: Request) {
   try {
     const payload = await req.json();
