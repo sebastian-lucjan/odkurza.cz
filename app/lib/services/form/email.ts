@@ -14,8 +14,8 @@ export async function sendMessage(formData: z.infer<typeof formSchema>) {
     const { name, email, mobile, message, formType } = formData;
 
     const { data, error } = await resend.emails.send({
-      from: 'Formularz kontaktowy - <odkurzacz.wypozycz@gmail.com>',
-      to: ['odkurzacz.wypozycz@gmail.com'],
+      from: 'Formularz kontaktowy - <info@odkurza.cz>',
+      to: ['info@odkurza.cz'],
       subject: 'Odkurza.cz - Formularz kontaktowy',
       text: `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\nMessage: ${message}`,
       react: EmailTemplate({ name, email, mobile, message, formType: formType as FormTypeType }),
