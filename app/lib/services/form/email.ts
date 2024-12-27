@@ -10,6 +10,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendMessage(formData: z.infer<typeof formSchema>) {
   try {
+    console.log('sendMessage() - formData', formData);
     const { name, email, mobile, message, formType } = formData;
 
     const { data, error } = await resend.emails.send({
@@ -19,6 +20,8 @@ export async function sendMessage(formData: z.infer<typeof formSchema>) {
       text: `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\nMessage: ${message}`,
       react: EmailTemplate({ name, email, mobile, message, formType: formType as FormTypeType }),
     });
+    console.log('sendMessage() - data', data);
+    console.log('sendMessage() - error', error);
 
     if (error) {
       console.error('Failed to send email:', error);

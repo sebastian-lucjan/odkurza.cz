@@ -34,6 +34,7 @@ export default function ContactForm() {
 
     try {
       const result = await sendMessage(values);
+      console.log('onSubmit() - result', result);
       if (result.success) {
         form.reset();
         setIsMessageSend(true);
