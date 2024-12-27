@@ -1,6 +1,5 @@
 'use client';
 
-import contactData from '@data/contactForm';
 import MessageSend from '@ui/ContactForm/MessageSend';
 import { useState } from 'react';
 import { formSchema } from '@lib/services/form/schemas';
@@ -10,12 +9,8 @@ import * as z from 'zod';
 import { sendMessage } from '@lib/services/form/email';
 
 export default function ContactForm() {
-  const {
-    conditions: { nameStringConditions, phoneNumberStringConditions, emailStringConditions, textareaStringConditions },
-    types: { contactType },
-  } = contactData.form;
-
   const [isMessageSend, setIsMessageSend] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -24,12 +19,11 @@ export default function ContactForm() {
       email: '',
       mobile: '',
       message: '',
-      formType: contactType,
+      formType: 'contact-form',
     },
   });
 
   const { register } = form;
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleBackToForm = () => {
     setIsMessageSend(false);
@@ -70,7 +64,7 @@ export default function ContactForm() {
                     type="text"
                     id="name"
                     autoComplete="name"
-                    {...register('name', nameStringConditions)}
+                    {...register('name')}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
@@ -83,7 +77,7 @@ export default function ContactForm() {
                     type="text"
                     id="mobile"
                     autoComplete="tel"
-                    {...register('mobile', phoneNumberStringConditions)}
+                    {...register('mobile')}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
@@ -96,7 +90,7 @@ export default function ContactForm() {
                     type="text"
                     id="email"
                     autoComplete="email"
-                    {...register('email', emailStringConditions)}
+                    {...register('email')}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
@@ -109,7 +103,7 @@ export default function ContactForm() {
                   <textarea
                     id="message"
                     rows={6}
-                    {...register('message', textareaStringConditions)}
+                    {...register('message')}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
                   />
                 </div>
