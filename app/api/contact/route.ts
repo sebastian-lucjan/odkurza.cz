@@ -1,5 +1,5 @@
-import sendMessageToOdkurzacz from '@lib/services/contactForm/sendMessageToOdkurzacz';
 import validate from '@lib/services/contactForm/validateMessageToOdkurzacz';
+import { sendMessage } from '@lib/services/form/email';
 
 export const maxDuration = 60;
 
@@ -7,9 +7,9 @@ export async function POST(req: Request) {
   try {
     const payload = await req.json();
 
-    const { name, mobile, email, message, formType } = await validate({ ...payload });
+    const payloadData = await validate({ ...payload });
 
-    await sendMessageToOdkurzacz(name, mobile, email, message, formType);
+    await sendMessage(payloadData);
 
     return new Response('Message sent', { status: 200 });
   } catch (e) {
