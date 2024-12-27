@@ -1,10 +1,13 @@
 'use client';
 
-import FormErrors from '@ui/FormErrors';
 import contactData from '@data/contactForm';
-import useCustomForm from '@hooks/useCustomForm';
 import MessageSend from '@ui/ContactForm/MessageSend';
-import { FormTypeType } from 'app/types/FormTypes';
+import { useState } from 'react';
+import { formSchema } from '@lib/services/form/schemas';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { sendMessage } from '@lib/services/form/email';
 
 export default function ContactForm() {
   const {
@@ -12,14 +15,50 @@ export default function ContactForm() {
     types: { contactType },
   } = contactData.form;
 
-  const { errorServer, errors, isMessageSend, isSending, register, handleSubmit, handleBackToForm } = useCustomForm(contactType as FormTypeType);
+  const [isMessageSend, setIsMessageSend] = useState(false);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      mobile: '',
+      message: '',
+      formType: contactType,
+    },
+  });
+
+  const { register } = form;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleBackToForm = () => {
+    setIsMessageSend(false);
+  };
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+
+    try {
+      const result = await sendMessage(values);
+      if (result.success) {
+        form.reset();
+        setIsMessageSend(true);
+      } else {
+        console.error('Failed to send email:', result.error);
+      }
+    } catch (error) {
+      console.error('Failed to send email:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <div className="mt-5 md:col-span-2 md:mt-0">
       {isMessageSend ? (
         <MessageSend handleBackToForm={handleBackToForm} />
       ) : (
-        <form onSubmit={handleSubmit} name="contact-form" aria-label="contact-form">
+        <form onSubmit={form.handleSubmit(onSubmit)} name="contact-form" aria-label="contact-form">
           <div className="overflow-hidden rounded-md shadow">
             <div className="bg-white px-4 py-5 sm:p-6">
               <div className="grid grid-cols-6 gap-6">
@@ -81,14 +120,12 @@ export default function ContactForm() {
               </p>
             </div>
 
-            {Object.values(errors).length || errorServer ? <FormErrors errorServ={errorServer} errors={errors} /> : null}
-
             <div className="flex justify-end bg-gray-50 px-6 py-3 text-left">
               <button
                 type="submit"
                 className="text-md inline-flex w-full justify-center rounded-md border border-transparent bg-green-600 py-3 font-semibold text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 laptop:w-[300px]"
               >
-                {isSending ? 'Wysyłanie...' : 'Wyślij wiadomość'}
+                {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
               </button>
             </div>
           </div>
