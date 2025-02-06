@@ -19,6 +19,7 @@ export async function sendMessage(formData: z.infer<typeof formSchema>) {
       subject: 'Odkurza.cz - Formularz kontaktowy',
       text: `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\nMessage: ${message}`,
       react: EmailTemplate({ name, email, mobile, message, formType: formType as FormTypeType }),
+      replyTo: email,
     });
     console.log('sendMessage() - data', data);
     console.log('sendMessage() - error', error);
